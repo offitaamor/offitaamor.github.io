@@ -14,3 +14,5 @@ if (menuButton && nav) {
 
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
+
+// OFFITA_V2_FIXED_2026_09_12
