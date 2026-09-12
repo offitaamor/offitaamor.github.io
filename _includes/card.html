@@ -1,0 +1,15 @@
+\
+<a class="content-card" href="{{ include.item.url | relative_url }}">
+  <div class="card-image">
+    {% if include.item.cover %}
+      <img src="{{ include.item.cover | relative_url }}" alt="{{ include.item.title }}">
+    {% else %}
+      <div class="placeholder">{{ include.index | default: "•" }}</div>
+    {% endif %}
+  </div>
+  <div class="card-meta">
+    <p>{{ include.item.category | default: include.item.section }}</p>
+    <h3>{{ include.item.title }}</h3>
+    {% if include.item.summary %}<p class="summary">{{ include.item.summary }}</p>{% endif %}
+  </div>
+</a>

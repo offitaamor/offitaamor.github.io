@@ -1,0 +1,17 @@
+\
+<header class="site-header">
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.data.site.brand }} Home">
+    <span class="brand-main">OFFITA</span><span class="brand-line"></span><span class="brand-sub">AMOR</span>
+  </a>
+
+  <button class="menu-button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+
+  <nav id="site-nav" class="site-nav" aria-label="Primary">
+    <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}class="active"{% endif %}>ABOUT</a>
+    <a href="{{ '/music/' | relative_url }}" {% if page.url contains '/music/' %}class="active"{% endif %}>MUSIC</a>
+    <a href="{{ '/visual/' | relative_url }}" {% if page.url contains '/visual/' %}class="active"{% endif %}>VISUAL</a>
+    <a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects/' %}class="active"{% endif %}>PROJECTS</a>
+    <a href="{{ '/writing/' | relative_url }}" {% if page.url contains '/writing/' %}class="active"{% endif %}>WRITING</a>
+    <a href="{{ '/contact/' | relative_url }}" {% if page.url contains '/contact/' %}class="active"{% endif %}>CONTACT</a>
+  </nav>
+</header>

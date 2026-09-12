@@ -1,0 +1,51 @@
+title: "OFFITA AMON"
+description: "OFFITA AMON — music, visual art, projects and writing."
+url: "https://offitaamor.github.io"
+baseurl: ""
+lang: "ko"
+timezone: "Asia/Seoul"
+markdown: kramdown
+
+collections:
+  music:
+    output: true
+    permalink: /music/:name/
+  visual:
+    output: true
+    permalink: /visual/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+  writing:
+    output: true
+    permalink: /writing/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: music
+    values:
+      layout: detail
+      section: MUSIC
+  - scope:
+      path: ""
+      type: visual
+    values:
+      layout: detail
+      section: VISUAL
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: detail
+      section: PROJECTS
+  - scope:
+      path: ""
+      type: writing
+    values:
+      layout: article
+      section: WRITING
+
+exclude:
+  - README.md
+  - UPLOAD-GUIDE.md

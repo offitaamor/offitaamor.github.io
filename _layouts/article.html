@@ -1,0 +1,20 @@
+\
+---
+layout: default
+---
+<article class="article-page">
+  <header class="article-header">
+    <a class="back-link" href="/writing/">← WRITING</a>
+    <p class="eyebrow">{{ page.category }}</p>
+    <h1>{{ page.title }}</h1>
+    <div class="article-meta">
+      {% if page.date %}<span>{{ page.date | date: "%Y.%m.%d" }}</span>{% endif %}
+      {% if page.tags %}<span>{{ page.tags | join: " / " }}</span>{% endif %}
+    </div>
+    {% if page.summary %}<p class="detail-summary">{{ page.summary }}</p>{% endif %}
+  </header>
+  {% if page.cover %}
+  <figure class="article-cover"><img src="{{ page.cover | relative_url }}" alt="{{ page.title }}"></figure>
+  {% endif %}
+  <div class="prose article-prose">{{ content }}</div>
+</article>

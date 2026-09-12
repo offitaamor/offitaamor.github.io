@@ -1,0 +1,38 @@
+\
+---
+layout: page
+title: About
+kicker: PROFILE / ARTIST STATEMENT / CV / PRESS
+intro: OFFITA AMOR의 작업 세계와 활동 이력을 정리합니다.
+permalink: /about/
+---
+<section class="page-section two-col">
+  <h2>{{ site.data.about.heading }}</h2>
+  <div class="prose">
+    <p class="lead">{{ site.data.about.bio_short }}</p>
+    {{ site.data.about.bio_long | newline_to_br }}
+  </div>
+</section>
+
+<section class="page-section two-col">
+  <h2>Artist Statement</h2>
+  <div class="prose">{{ site.data.about.statement | newline_to_br }}</div>
+</section>
+
+<section class="page-section two-col">
+  <h2>CV</h2>
+  <div class="timeline">
+    {% for row in site.data.about.cv %}
+      <div><span>{{ row.year }}</span><strong>{{ row.item }}</strong></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section two-col">
+  <h2>Press</h2>
+  <div class="timeline">
+    {% for row in site.data.about.press %}
+      <div><span>PRESS</span>{% if row.url != "" %}<a href="{{ row.url }}" target="_blank" rel="noopener">{{ row.title }}</a>{% else %}<strong>{{ row.title }}</strong>{% endif %}</div>
+    {% endfor %}
+  </div>
+</section>

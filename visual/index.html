@@ -1,0 +1,16 @@
+---
+layout: page
+title: Visual
+kicker: WORKS / SERIES / VISUAL PRACTICE
+intro: 시각 작업과 시리즈, 작품별 작가노트를 기록합니다.
+permalink: /visual/
+---
+<section class="page-section">
+{% assign items = site.visual | sort: "year" | reverse %}
+<div class="card-grid archive-grid">
+{% for item in items %}
+  {% include card.html item=item index=forloop.index %}
+{% endfor %}
+</div>
+
+</section>

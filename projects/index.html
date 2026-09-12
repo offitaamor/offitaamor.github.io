@@ -1,0 +1,16 @@
+---
+layout: page
+title: Projects
+kicker: ART / LOCAL / COLLABORATION / EXTERNAL
+intro: 예술기획, 로컬 프로젝트, 협업과 대외활동 중 주요 프로젝트를 정리합니다.
+permalink: /projects/
+---
+<section class="page-section">
+{% assign items = site.projects | sort: "year" | reverse %}
+<div class="card-grid archive-grid">
+{% for item in items %}
+  {% include card.html item=item index=forloop.index %}
+{% endfor %}
+</div>
+
+</section>

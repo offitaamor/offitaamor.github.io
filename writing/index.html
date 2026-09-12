@@ -1,0 +1,20 @@
+---
+layout: page
+title: Writing
+kicker: COLUMN / ARTIST NOTE / ESSAY / RESEARCH
+intro: 예술, 음악, 로컬, 작업 과정에 관한 글과 작가노트를 기록합니다.
+permalink: /writing/
+---
+<section class="page-section">
+{% assign items = site.writing | sort: "date" | reverse %}
+<div class="writing-index">
+{% for item in items %}
+  <a class="writing-row" href="{{ item.url | relative_url }}">
+    <div><span>{{ item.category }}</span>{% if item.date %}<span>{{ item.date | date: "%Y.%m.%d" }}</span>{% endif %}</div>
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.summary }}</p>
+  </a>
+{% endfor %}
+</div>
+
+</section>
