@@ -1,0 +1,227 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  rename: safe
+  categories: [image]
+
+content:
+  - name: site
+    label: Site Settings
+    type: file
+    path: _data/site.yml
+    format: yaml
+    fields:
+      - name: brand
+        label: Brand
+        type: string
+      - name: tagline_en
+        label: English Tagline
+        type: string
+      - name: tagline_ko
+        label: Korean Tagline
+        type: text
+      - name: location
+        label: Location
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: instagram
+        label: Instagram URL
+        type: string
+      - name: youtube
+        label: YouTube URL
+        type: string
+      - name: music_link
+        label: Main Music URL
+        type: string
+
+  - name: about
+    label: About
+    type: file
+    path: _data/about.yml
+    format: yaml
+    fields:
+      - name: heading
+        label: Main Heading
+        type: string
+      - name: bio_short
+        label: Short Bio
+        type: text
+      - name: bio_long
+        label: Long Bio
+        type: text
+      - name: statement
+        label: Artist Statement
+        type: text
+
+  - name: music
+    label: Music
+    type: collection
+    path: _music
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      sort: year
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: medium
+        label: Medium
+        type: string
+      - name: summary
+        label: Summary
+        type: text
+      - name: cover
+        label: Cover Image
+        type: image
+      - name: featured
+        label: Featured on Home
+        type: boolean
+      - name: external_url
+        label: External Link
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+
+  - name: visual
+    label: Visual
+    type: collection
+    path: _visual
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      sort: year
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: medium
+        label: Medium
+        type: string
+      - name: summary
+        label: Summary
+        type: text
+      - name: cover
+        label: Cover Image
+        type: image
+      - name: featured
+        label: Featured on Home
+        type: boolean
+      - name: external_url
+        label: External Link
+        type: string
+      - name: body
+        label: Artist Note / Description
+        type: rich-text
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: _projects
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      sort: year
+      order: desc
+    fields:
+      - name: title
+        label: Project Title
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: medium
+        label: Format / Medium
+        type: string
+      - name: client
+        label: Institution / Collaborator
+        type: string
+      - name: summary
+        label: Summary
+        type: text
+      - name: cover
+        label: Cover Image
+        type: image
+      - name: featured
+        label: Featured on Home
+        type: boolean
+      - name: external_url
+        label: External Link
+        type: string
+      - name: body
+        label: Project Description
+        type: rich-text
+
+  - name: writing
+    label: Writing
+    type: collection
+    path: _writing
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: string
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: summary
+        label: Summary
+        type: text
+      - name: cover
+        label: Cover Image
+        type: image
+      - name: featured
+        label: Featured
+        type: boolean
+      - name: body
+        label: Body
+        type: rich-text
