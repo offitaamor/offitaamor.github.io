@@ -3,7 +3,9 @@
     {% if include.item.cover %}
       <img src="{{ include.item.cover | relative_url }}" alt="{{ include.item.title }}">
     {% else %}
-      <div class="placeholder">{{ include.index | default: "•" }}</div>
+      <div class="placeholder">
+        <img src="{{ '/assets/images/brand/offita-emblem.svg' | relative_url }}" alt="">
+      </div>
     {% endif %}
   </div>
   <div class="card-meta">

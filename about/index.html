@@ -2,11 +2,14 @@
 layout: page
 title: About
 kicker: PROFILE / ARTIST STATEMENT / CV / PRESS
-intro: OFFITA AMOR의 작업 세계와 활동 이력을 정리합니다.
+intro: OFFITA AMON의 작업 세계와 활동 이력을 정리합니다.
 permalink: /about/
 ---
-<section class="page-section two-col">
-  <h2>{{ site.data.about.heading }}</h2>
+<section class="page-section two-col about-intro">
+  <div>
+    <img src="{{ '/assets/images/brand/offita-korean.svg' | relative_url }}" alt="오피타" class="about-korean-mark">
+    <h2>{{ site.data.about.heading }}</h2>
+  </div>
   <div class="prose">
     <p class="lead">{{ site.data.about.bio_short }}</p>
     {{ site.data.about.bio_long | newline_to_br }}

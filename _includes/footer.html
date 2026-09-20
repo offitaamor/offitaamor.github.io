@@ -1,4 +1,13 @@
 <footer class="site-footer">
-  <span>© <span id="year"></span> {{ site.data.site.brand }}</span>
-  <span>{{ site.data.site.location }}</span>
+  <div class="footer-brand">
+    <img src="{{ '/assets/images/brand/offita-emblem.svg' | relative_url }}" alt="" class="footer-emblem">
+    <div>
+      <strong>OFFITA</strong>
+      <span>© <span id="year"></span> {{ site.data.site.brand }}</span>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>{{ site.data.site.location }}</span>
+    <a href="{{ '/contact/' | relative_url }}">CONTACT →</a>
+  </div>
 </footer>
