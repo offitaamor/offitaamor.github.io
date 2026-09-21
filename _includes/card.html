@@ -2,6 +2,8 @@
   <div class="card-image">
     {% if include.item.cover %}
       <img src="{{ include.item.cover | relative_url }}" alt="{{ include.item.title }}">
+    {% elsif include.item.remote_cover %}
+      <img src="{{ include.item.remote_cover }}" alt="{{ include.item.title }}" loading="lazy" decoding="async">
     {% else %}
       <div class="placeholder">
         <img src="{{ '/assets/images/brand/offita-emblem.svg' | relative_url }}" alt="">

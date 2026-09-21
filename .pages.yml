@@ -55,6 +55,49 @@ content:
         label: Artist Statement
         type: text
 
+  - name: visual_intro
+    label: Visual Intro
+    type: file
+    path: _data/visual.yml
+    format: yaml
+    fields:
+      - name: hero_statement
+        label: Main Visual Statement
+        type: text
+      - name: intro
+        label: Short Introduction
+        type: text
+      - name: practice
+        label: Visual Practice
+        type: text
+      - name: method
+        label: Method
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{code} {en} — {ko}"
+        fields:
+          - name: code
+            label: Number
+            type: string
+          - name: en
+            label: English
+            type: string
+          - name: ko
+            label: Korean
+            type: string
+          - name: description
+            label: Description
+            type: text
+      - name: language_intro
+        label: Visual Language Introduction
+        type: text
+      - name: language
+        label: Visual Language Keywords
+        type: string
+        list: true
+
   - name: music
     label: Music
     type: collection
@@ -106,13 +149,20 @@ content:
     filename: "{primary}.md"
     view:
       primary: title
-      sort: year
-      order: desc
+      sort: order
+      order: asc
     fields:
       - name: title
         label: Title
         type: string
         required: true
+      - name: visual_type
+        label: Visual Type
+        type: string
+        description: "Series pages use: series"
+      - name: order
+        label: Display Order
+        type: number
       - name: category
         label: Category
         type: string
@@ -129,8 +179,38 @@ content:
         label: Summary
         type: text
       - name: cover
-        label: Cover Image
+        label: Uploaded Cover Image
         type: image
+      - name: remote_cover
+        label: External Cover Image URL
+        type: string
+        description: "Used for current Google Drive artwork. Uploaded cover takes priority."
+      - name: gallery
+        label: Artwork Gallery
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} — {group}"
+        fields:
+          - name: title
+            label: Artwork Title
+            type: string
+          - name: group
+            label: Gallery Group
+            type: string
+          - name: image
+            label: Uploaded Image
+            type: image
+          - name: remote_image
+            label: External Image URL
+            type: string
+          - name: drive_url
+            label: Original / External Link
+            type: string
+          - name: note
+            label: Artist Note
+            type: text
       - name: featured
         label: Featured on Home
         type: boolean
@@ -138,7 +218,7 @@ content:
         label: External Link
         type: string
       - name: body
-        label: Artist Note / Description
+        label: Series Statement / Artist Note
         type: rich-text
 
   - name: projects

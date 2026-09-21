@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<article class="visual-series-page">
+  <header class="visual-series-hero">
+    <a class="back-link" href="{{ '/visual/' | relative_url }}">← VISUAL</a>
+    <p class="eyebrow">{{ page.category }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="detail-summary">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  {% if page.cover or page.remote_cover %}
+  <figure class="visual-series-cover">
+    {% if page.cover %}
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
+    {% else %}
+      <img src="{{ page.remote_cover }}" alt="{{ page.title }}">
+    {% endif %}
+  </figure>
+  {% endif %}
+
+  <section class="visual-series-statement">
+    <aside class="detail-facts">
+      {% if page.year %}<div><span>YEAR</span><strong>{{ page.year }}</strong></div>{% endif %}
+      {% if page.role %}<div><span>ROLE</span><strong>{{ page.role }}</strong></div>{% endif %}
+      {% if page.medium %}<div><span>MEDIUM</span><strong>{{ page.medium }}</strong></div>{% endif %}
+    </aside>
+    <div class="prose">{{ content }}</div>
+  </section>
+
+  {% if page.gallery %}
+    {% assign grouped_gallery = page.gallery | group_by: "group" %}
+    {% for gallery_group in grouped_gallery %}
+    <section class="series-gallery-section">
+      <header class="series-gallery-head">
+        <p class="eyebrow">ARTWORKS</p>
+        <h2>{{ gallery_group.name }}</h2>
+        <span>{{ gallery_group.items | size }} WORKS</span>
+      </header>
+      <div class="artwork-grid">
+        {% for artwork in gallery_group.items %}
+        <figure class="artwork-card">
+          {% assign artwork_src = artwork.remote_image %}
+          {% if artwork.image %}{% assign artwork_src = artwork.image | relative_url %}{% endif %}
+          {% if artwork.drive_url %}<a class="artwork-image-link" href="{{ artwork.drive_url }}" target="_blank" rel="noopener">{% endif %}
+            <div class="artwork-image-wrap">
+              <img src="{{ artwork_src }}" alt="{{ artwork.title }}" loading="lazy" decoding="async">
+            </div>
+          {% if artwork.drive_url %}</a>{% endif %}
+          <figcaption>
+            <div class="artwork-title-row">
+              <h3>{{ artwork.title }}</h3>
+              {% if artwork.drive_url %}<a href="{{ artwork.drive_url }}" target="_blank" rel="noopener" aria-label="{{ artwork.title }} 원본 보기">↗</a>{% endif %}
+            </div>
+            {% if artwork.note %}<p>{{ artwork.note }}</p>{% endif %}
+          </figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+  {% endif %}
+</article>

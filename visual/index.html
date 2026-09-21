@@ -1,16 +1,81 @@
 ---
-layout: page
+layout: default
 title: Visual
-kicker: WORKS / SERIES / VISUAL PRACTICE
-intro: 시각 작업과 시리즈, 작품별 작가노트를 기록합니다.
 permalink: /visual/
 ---
-<section class="page-section">
-{% assign items = site.visual | sort: "year" | reverse %}
-<div class="card-grid archive-grid">
-{% for item in items %}
-  {% include card.html item=item index=forloop.index %}
-{% endfor %}
-</div>
+<section class="page-hero visual-page-hero">
+  <p class="eyebrow">VISUAL PRACTICE / IMAGE / MEMORY / NARRATIVE</p>
+  <h1>Visual</h1>
+  <p class="visual-manifesto">{{ site.data.visual.hero_statement }}</p>
+  <p class="visual-intro">{{ site.data.visual.intro }}</p>
+</section>
 
+<section class="page-section visual-practice-section">
+  <div class="two-col">
+    <div>
+      <p class="eyebrow">01 / VISUAL PRACTICE</p>
+      <h2>To see,<br>then reframe.</h2>
+    </div>
+    <div class="prose visual-practice-copy">{{ site.data.visual.practice | newline_to_br }}</div>
+  </div>
+</section>
+
+<section class="page-section visual-method-section">
+  <div class="block-head">
+    <span>02</span><h2>Method</h2><span>DISCOVER → PRESENT</span>
+  </div>
+  <div class="visual-method-grid">
+    {% for step in site.data.visual.method %}
+    <article class="visual-method-item">
+      <span>{{ step.code }}</span>
+      <h3>{{ step.en }}</h3>
+      <strong>{{ step.ko }}</strong>
+      <p>{{ step.description }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section visual-language-section">
+  <div class="two-col">
+    <div>
+      <p class="eyebrow">03 / VISUAL LANGUAGE</p>
+      <h2>Hand-Traced<br>Analog Narrative</h2>
+    </div>
+    <div>
+      <p class="visual-language-copy">{{ site.data.visual.language_intro }}</p>
+      <div class="visual-language-list">
+        {% for item in site.data.visual.language %}<span>{{ item }}</span>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section visual-series-section">
+  <div class="block-head">
+    <span>04</span><h2>Series</h2><span>SELECTED VISUAL ARCHIVE</span>
+  </div>
+  {% assign series_items = site.visual | where: "visual_type", "series" | sort: "order" %}
+  <div class="visual-series-grid">
+    {% for item in series_items %}
+      <a class="visual-series-card" href="{{ item.url | relative_url }}">
+        <div class="visual-series-image">
+          {% if item.cover %}
+            <img src="{{ item.cover | relative_url }}" alt="{{ item.title }}">
+          {% elsif item.remote_cover %}
+            <img src="{{ item.remote_cover }}" alt="{{ item.title }}" loading="lazy" decoding="async">
+          {% endif %}
+        </div>
+        <div class="visual-series-meta">
+          <span>{{ forloop.index | prepend: '0' }}</span>
+          <div>
+            <p>{{ item.category }}</p>
+            <h3>{{ item.title }}</h3>
+            <p class="summary">{{ item.summary }}</p>
+          </div>
+          <em>→</em>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
 </section>
