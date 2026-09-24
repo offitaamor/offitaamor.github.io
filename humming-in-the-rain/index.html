@@ -1,0 +1,304 @@
+---
+layout: null
+permalink: /humming-in-the-rain/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#587683">
+  <meta name="description" content="OFFITA — Humming in the rain. Listen on your preferred music platform.">
+  <meta property="og:title" content="Humming in the rain — OFFITA">
+  <meta property="og:description" content="A quiet song about the relief after hearing ‘I love you too.’">
+  <meta property="og:type" content="music.song">
+  <meta property="og:url" content="https://offitaamor.github.io/humming-in-the-rain/">
+  <title>Humming in the rain — OFFITA</title>
+  <link rel="icon" href="{{ '/assets/images/brand/offita-emblem.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --rain:#587683;
+      --rain-deep:#425f69;
+      --paper:#eee3cf;
+      --paper-soft:#e6dcc8;
+      --ink:#1f2a29;
+      --line:rgba(238,227,207,.42);
+      --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+      --sans:"Noto Sans KR",Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--rain);scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 20% 0%,rgba(255,255,255,.06),transparent 34rem),
+        var(--rain);
+      color:var(--paper);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .page{
+      width:min(100%,620px);
+      margin:0 auto;
+      padding:28px 22px calc(38px + env(safe-area-inset-bottom));
+    }
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:42px;
+      margin-bottom:22px;
+    }
+    .brand{
+      width:116px;
+      filter:brightness(0) invert(1);
+      opacity:.9;
+    }
+    .edition{
+      font-size:9px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.72;
+      white-space:nowrap;
+    }
+    .cover{
+      position:relative;
+      width:100%;
+      aspect-ratio:1;
+      overflow:hidden;
+      border:1px solid rgba(238,227,207,.42);
+      background:var(--rain-deep);
+      box-shadow:0 22px 58px rgba(18,36,42,.18);
+    }
+    .cover.has-image{
+      background-image:url("{{ '/assets/images/music/humming-in-the-rain.jpg' | relative_url }}");
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
+    }
+    .cover-fallback{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      padding:12%;
+      text-align:center;
+      background:
+        radial-gradient(circle at 32% 27%,transparent 0 7%,rgba(238,227,207,.13) 7.3% 7.8%,transparent 8.1%),
+        radial-gradient(circle at 68% 69%,transparent 0 9%,rgba(238,227,207,.12) 9.3% 9.8%,transparent 10.1%),
+        linear-gradient(155deg,#5d7c86,#4b6974);
+    }
+    .cover.has-image .cover-fallback{display:none}
+    .fallback-title{
+      font-family:var(--serif);
+      font-size:clamp(42px,12vw,72px);
+      line-height:.82;
+      letter-spacing:-.045em;
+      font-weight:500;
+    }
+    .intro{
+      padding:29px 2px 24px;
+      border-bottom:1px solid var(--line);
+    }
+    h1{
+      margin:0;
+      font-family:var(--serif);
+      font-size:clamp(46px,12vw,72px);
+      line-height:.88;
+      letter-spacing:-.045em;
+      font-weight:500;
+    }
+    .artist{
+      margin:12px 0 0;
+      font-size:11px;
+      letter-spacing:.2em;
+      font-weight:500;
+    }
+    .release{
+      margin:16px 0 0;
+      font-family:var(--serif);
+      font-size:20px;
+      line-height:1.25;
+      color:var(--paper-soft);
+    }
+    .note{
+      margin:9px 0 0;
+      max-width:480px;
+      font-size:12px;
+      line-height:1.7;
+      color:rgba(238,227,207,.78);
+    }
+    .listen{
+      padding:26px 0 4px;
+    }
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      margin-bottom:14px;
+    }
+    .section-head h2{
+      margin:0;
+      font-family:var(--serif);
+      font-size:29px;
+      line-height:1;
+      font-weight:500;
+      letter-spacing:-.02em;
+    }
+    .section-head span{
+      font-size:9px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      opacity:.62;
+    }
+    .platforms{
+      display:grid;
+      gap:8px;
+    }
+    .platform{
+      min-height:52px;
+      border:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 16px;
+      font-size:11px;
+      letter-spacing:.08em;
+      transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
+    }
+    .platform.active:hover{
+      background:var(--paper);
+      color:var(--ink);
+      border-color:var(--paper);
+      transform:translateY(-1px);
+    }
+    .platform.disabled{
+      opacity:.35;
+      cursor:default;
+      pointer-events:none;
+    }
+    .arrow{font-family:var(--serif);font-size:20px}
+    .status{
+      margin:15px 0 0;
+      font-size:10px;
+      line-height:1.65;
+      color:rgba(238,227,207,.64);
+    }
+    footer{
+      margin-top:36px;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+    }
+    footer a{
+      font-size:10px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      border-bottom:1px solid transparent;
+      padding-bottom:3px;
+    }
+    footer a:hover{border-color:currentColor}
+    .footer-mark{
+      width:38px;
+      opacity:.78;
+      filter:brightness(0) invert(1);
+    }
+    @media (min-width:760px){
+      .page{padding-top:44px;padding-bottom:54px}
+      .top{margin-bottom:28px}
+      .intro{padding-top:34px}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="top">
+      <a href="{{ '/' | relative_url }}" aria-label="OFFITA home">
+        <img class="brand" src="{{ '/assets/images/brand/offita-lockup.svg' | relative_url }}" alt="OFFITA">
+      </a>
+      <span class="edition">RAIN EDITION · 2026</span>
+    </header>
+
+    <div class="cover" id="cover">
+      <div class="cover-fallback" aria-hidden="true">
+        <div class="fallback-title">Humming<br>in the rain</div>
+      </div>
+    </div>
+
+    <section class="intro">
+      <h1>Humming in the rain</h1>
+      <p class="artist">OFFITA</p>
+      <p class="release">25 SEP 2026</p>
+      <p class="note">A quiet song about the relief that arrives after hearing “I love you too.”</p>
+    </section>
+
+    <section class="listen" aria-labelledby="listen-title">
+      <div class="section-head">
+        <h2 id="listen-title">Listen</h2>
+        <span>Choose your platform</span>
+      </div>
+      <div class="platforms" id="platforms"></div>
+      <p class="status" id="status">Available 25 SEP 2026. Streaming links will appear here after release.</p>
+    </section>
+
+    <footer>
+      <a href="{{ '/' | relative_url }}">OFFITA — WEBSITE</a>
+      <img class="footer-mark" src="{{ '/assets/images/brand/offita-emblem.svg' | relative_url }}" alt="">
+    </footer>
+  </main>
+
+  <script>
+    /*
+      RELEASE-DAY EDIT:
+      Paste each direct song URL between the quotes below.
+      Blank URLs stay visually disabled and cannot be clicked.
+    */
+    const STREAMING_LINKS = [
+      ["Spotify", ""],
+      ["Apple Music", ""],
+      ["YouTube Music", ""],
+      ["Melon", ""],
+      ["Genie", ""],
+      ["Bugs", ""],
+      ["FLO", ""],
+      ["VIBE", ""]
+    ];
+
+    const platformWrap = document.getElementById("platforms");
+    const activeCount = STREAMING_LINKS.filter(([, url]) => url.trim()).length;
+
+    STREAMING_LINKS.forEach(([name, url]) => {
+      const link = document.createElement("a");
+      link.className = "platform " + (url.trim() ? "active" : "disabled");
+      link.href = url.trim() || "#";
+      if (url.trim()) {
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.setAttribute("aria-label", name + "에서 Humming in the rain 듣기");
+      } else {
+        link.setAttribute("aria-disabled", "true");
+        link.tabIndex = -1;
+      }
+      link.innerHTML = "<span>" + name + "</span><span class=\"arrow\">↗</span>";
+      platformWrap.appendChild(link);
+    });
+
+    if (activeCount > 0) {
+      document.getElementById("status").textContent = "Now available. Choose the service you use.";
+    }
+
+    const cover = document.getElementById("cover");
+    const coverImage = new Image();
+    coverImage.onload = () => cover.classList.add("has-image");
+    coverImage.src = "{{ '/assets/images/music/humming-in-the-rain.jpg' | relative_url }}";
+  </script>
+</body>
+</html>
