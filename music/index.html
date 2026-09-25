@@ -68,9 +68,28 @@ permalink: /music/
   </div>
 </section>
 
+<section class="page-section music-discography-section">
+  <div class="block-head">
+    <span>05</span><h2>Discography</h2><a href="{{ site.data.music.melon_artist_url }}" target="_blank" rel="noopener">VIEW ON MELON ↗</a>
+  </div>
+  <div class="music-discography">
+    {% for release in site.data.music.discography %}
+      <a class="music-discography-row" href="{{ site.data.music.melon_artist_url }}" target="_blank" rel="noopener">
+        <span>{{ release.date }}</span>
+        <div>
+          <em>{{ release.type }}</em>
+          <strong>{{ release.title }}</strong>
+        </div>
+        <span>{{ release.tracks }}</span>
+        <b>↗</b>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="page-section music-releases-section">
   <div class="block-head">
-    <span>05</span><h2>Releases</h2><span>SELECTED MUSIC ARCHIVE</span>
+    <span>06</span><h2>Music Works</h2><span>SELECTED MUSIC ARCHIVE</span>
   </div>
   {% assign items = site.music | sort: "year" | reverse %}
   <div class="card-grid archive-grid">

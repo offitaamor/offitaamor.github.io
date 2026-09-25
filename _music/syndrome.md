@@ -1,14 +1,14 @@
 ---
-title: "SYNDROME"
+title: "오피타 증후군 TOPIC. 드라이브"
 category: "ALBUM"
-year: "2026"
-role: "Artist / Songwriting / Vocal / Production"
-medium: "Album"
-summary: "OFFITA의 음악적 정체성을 보여주는 개인 앨범 프로젝트."
+year: "2024"
+role: "Artist"
+medium: "Full-Length Album"
+summary: "2024년 4월 11일 발매된 9트랙 정규 앨범."
 cover: ""
 featured: false
-external_url: ""
+external_url: "https://www.melon.com/artist/album.htm?artistId=2856765"
 ---
 ## Overview
 
-앨범 소개, 트랙리스트, 제작 과정과 크레딧을 기록할 수 있습니다.
+OFFITA의 2024년 정규 앨범. Melon 아티스트 채널의 공식 디스코그래피를 기준으로 2024년 4월 11일 발매되었으며 총 9곡이 수록되어 있습니다.

@@ -26,8 +26,14 @@ content:
       - name: email
         label: Email
         type: string
+      - name: kakao
+        label: Kakao Open Chat URL
+        type: string
       - name: instagram
         label: Instagram URL
+        type: string
+      - name: facebook
+        label: Facebook URL
         type: string
       - name: youtube
         label: YouTube URL
