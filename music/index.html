@@ -1,16 +1,81 @@
 ---
-layout: page
+layout: default
 title: Music
-kicker: DISCOGRAPHY / COMPOSITION / PRODUCTION
-intro: 음악 발매작, 작곡·편곡, 협업 및 사운드 작업을 모아봅니다.
 permalink: /music/
 ---
-<section class="page-section">
-{% assign items = site.music | sort: "year" | reverse %}
-<div class="card-grid archive-grid">
-{% for item in items %}
-  {% include card.html item=item index=forloop.index %}
-{% endfor %}
-</div>
+<section class="page-hero music-page-hero">
+  <p class="eyebrow">SOUND PRACTICE / GENRE / COMPOSITION / PRODUCTION</p>
+  <h1>Music</h1>
+  <p class="music-manifesto">{{ site.data.music.hero_statement }}</p>
+  <p class="music-intro">{{ site.data.music.intro }}</p>
+</section>
 
+<section class="page-section music-practice-section">
+  <div class="two-col">
+    <div>
+      <p class="eyebrow">01 / SOUND PRACTICE</p>
+      <h2>Sound as<br>Expression.</h2>
+    </div>
+    <div class="prose music-practice-copy">{{ site.data.music.practice | newline_to_br }}</div>
+  </div>
+</section>
+
+<section class="page-section music-characteristics-section">
+  <div class="block-head">
+    <span>02</span><h2>Musical Characteristics</h2><span>LANGUAGE / METHOD / SOUND</span>
+  </div>
+  <div class="music-characteristics-grid">
+    {% for item in site.data.music.characteristics %}
+    <article class="music-characteristic-item">
+      <div class="music-characteristic-head">
+        <span>{{ item.code }}</span>
+        <em>{{ item.en }}</em>
+      </div>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section music-role-section">
+  <div class="two-col">
+    <div>
+      <p class="eyebrow">03 / PRACTICE</p>
+      <h2>One work,<br>many means.</h2>
+    </div>
+    <div>
+      <p class="music-role-copy">{{ site.data.music.practice_intro }}</p>
+      <div class="music-role-list">
+        {% for role in site.data.music.roles %}<span>{{ role }}</span>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section music-aesthetic-section">
+  <div class="two-col">
+    <div>
+      <p class="eyebrow">04 / PERSONAL AESTHETIC</p>
+      <h2>Dreamy,<br>quiet, deep.</h2>
+    </div>
+    <div>
+      <div class="prose music-aesthetic-copy">{{ site.data.music.aesthetic | newline_to_br }}</div>
+      <div class="music-keywords">
+        {% for keyword in site.data.music.aesthetic_keywords %}<span>{{ keyword }}</span>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section music-releases-section">
+  <div class="block-head">
+    <span>05</span><h2>Releases</h2><span>SELECTED MUSIC ARCHIVE</span>
+  </div>
+  {% assign items = site.music | sort: "year" | reverse %}
+  <div class="card-grid archive-grid">
+    {% for item in items %}
+      {% include card.html item=item index=forloop.index %}
+    {% endfor %}
+  </div>
 </section>
