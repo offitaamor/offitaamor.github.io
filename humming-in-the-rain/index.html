@@ -217,6 +217,27 @@ permalink: /humming-in-the-rain/
       .intro{padding-top:34px}
     }
   </style>
+
+  <!-- OFFITA analytics: add the GA4 Measurement ID (G-XXXXXXXXXX) below to activate. -->
+  <script>
+    const OFFITA_GA4_ID = "";
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    if (/^G-[A-Z0-9]+$/i.test(OFFITA_GA4_ID)) {
+      const gaScript = document.createElement("script");
+      gaScript.async = true;
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(OFFITA_GA4_ID);
+      document.head.appendChild(gaScript);
+
+      gtag("js", new Date());
+      gtag("config", OFFITA_GA4_ID, {
+        send_page_view: true
+      });
+    }
+  </script>
+
 </head>
 <body>
   <main class="page">
@@ -272,6 +293,29 @@ permalink: /humming-in-the-rain/
       ["VIBE", "https://vibe.naver.com/track/108036873"]
     ];
 
+
+    const campaignParams = (() => {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        utm_source: params.get("utm_source") || "(direct)",
+        utm_medium: params.get("utm_medium") || "(none)",
+        utm_campaign: params.get("utm_campaign") || "(not set)",
+        utm_content: params.get("utm_content") || "(not set)"
+      };
+    })();
+
+    function trackStreamingClick(platform, destination) {
+      if (typeof gtag !== "function" || !/^G-[A-Z0-9]+$/i.test(OFFITA_GA4_ID)) return;
+      gtag("event", "streaming_click", {
+        platform_name: platform,
+        outbound_url: destination,
+        link_domain: (() => {
+          try { return new URL(destination).hostname; } catch (_) { return ""; }
+        })(),
+        ...campaignParams
+      });
+    }
+
     const platformWrap = document.getElementById("platforms");
     const activeCount = STREAMING_LINKS.filter(([, url]) => url.trim()).length;
 
@@ -283,6 +327,7 @@ permalink: /humming-in-the-rain/
         link.target = "_blank";
         link.rel = "noopener";
         link.setAttribute("aria-label", name + "에서 Humming in the rain 듣기");
+        link.addEventListener("click", () => trackStreamingClick(name, url));
       } else {
         link.setAttribute("aria-disabled", "true");
         link.tabIndex = -1;
