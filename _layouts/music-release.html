@@ -1,0 +1,71 @@
+---
+layout: default
+---
+<article class="music-release-page">
+  <header class="music-release-hero">
+    <a class="back-link" href="{{ '/music/' | relative_url }}">← MUSIC</a>
+    <p class="eyebrow">{{ page.release_type }} / {{ page.release_date }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="music-release-summary">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  {% if page.cover or page.remote_cover %}
+  <figure class="music-release-cover">
+    {% if page.cover %}
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
+    {% else %}
+      <img src="{{ page.remote_cover }}" alt="{{ page.title }}">
+    {% endif %}
+  </figure>
+  {% endif %}
+
+  <section class="music-release-overview">
+    <aside class="music-release-facts">
+      <div><span>RELEASE</span><strong>{{ page.release_date }}</strong></div>
+      <div><span>TYPE</span><strong>{{ page.release_type }}</strong></div>
+      <div><span>TRACKS</span><strong>{{ page.track_count }}</strong></div>
+      <div><span>ARTIST</span><strong>OFFITA</strong></div>
+    </aside>
+
+    <div class="music-release-main">
+      {% if page.listen_links %}
+      <section class="music-listen-block">
+        <p class="eyebrow">LISTEN</p>
+        <div class="music-listen-links">
+          {% for link in page.listen_links %}
+          <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.name }} <span>↗</span></a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      <div class="prose music-release-prose">{{ content }}</div>
+
+      {% if page.tracklist %}
+      <section class="music-tracklist">
+        <div class="music-release-section-head">
+          <span>TRACKLIST</span><strong>{{ page.track_count }} TRACK{% if page.track_count > 1 %}S{% endif %}</strong>
+        </div>
+        <ol>
+          {% for track in page.tracklist %}
+          <li><span>{{ forloop.index | prepend: '0' }}</span><strong>{{ track }}</strong></li>
+          {% endfor %}
+        </ol>
+      </section>
+      {% endif %}
+
+      {% if page.credits %}
+      <section class="music-credits">
+        <div class="music-release-section-head">
+          <span>CREDITS</span><strong>OFFITA</strong>
+        </div>
+        <div class="music-credit-list">
+          {% for credit in page.credits %}
+          <div><span>{{ credit.role }}</span><strong>{{ credit.name }}</strong></div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+    </div>
+  </section>
+</article>
