@@ -91,7 +91,7 @@ permalink: /music/
   <div class="block-head">
     <span>06</span><h2>Music Works</h2><span>SELECTED MUSIC ARCHIVE</span>
   </div>
-  {% assign items = site.music | sort: "year" | reverse %}
+  {% assign items = site.music | where: "music_type", "release" | sort: "date" | reverse %}
   <div class="card-grid archive-grid">
     {% for item in items %}
       {% include card.html item=item index=forloop.index %}
