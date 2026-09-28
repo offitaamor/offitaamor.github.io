@@ -68,12 +68,13 @@ permalink: /humming-in-the-rain/
     }
     .cover{
       position:relative;
-      width:100%;
+      width:min(72vw,280px);
       aspect-ratio:1;
+      margin:0 auto;
       overflow:hidden;
       border:1px solid rgba(238,227,207,.42);
       background:var(--rain-deep);
-      box-shadow:0 22px 58px rgba(18,36,42,.18);
+      box-shadow:0 18px 46px rgba(18,36,42,.18);
     }
     .cover.has-image{
       background-image:url("{{ '/assets/images/music/humming-in-the-rain.jpg' | relative_url }}");
@@ -102,14 +103,14 @@ permalink: /humming-in-the-rain/
       font-weight:500;
     }
     .intro{
-      padding:29px 2px 24px;
-      border-bottom:1px solid var(--line);
+      padding:20px 2px 14px;
+      text-align:center;
     }
     h1{
       margin:0;
       font-family:var(--serif);
-      font-size:clamp(46px,12vw,72px);
-      line-height:.88;
+      font-size:clamp(40px,10.5vw,64px);
+      line-height:.9;
       letter-spacing:-.045em;
       font-weight:500;
     }
@@ -120,21 +121,30 @@ permalink: /humming-in-the-rain/
       font-weight:500;
     }
     .release{
-      margin:16px 0 0;
+      margin:10px 0 0;
       font-family:var(--serif);
-      font-size:20px;
+      font-size:18px;
       line-height:1.25;
       color:var(--paper-soft);
     }
     .note{
-      margin:9px 0 0;
+      margin:18px auto 0;
       max-width:480px;
       font-size:12px;
       line-height:1.7;
+      text-align:center;
       color:rgba(238,227,207,.78);
     }
     .listen{
-      padding:26px 0 4px;
+      padding:10px 0 4px;
+    }
+    .cta-copy{
+      margin:0 0 12px;
+      text-align:center;
+      font-size:12px;
+      line-height:1.6;
+      font-weight:500;
+      color:var(--paper);
     }
     .section-head{
       display:flex;
@@ -177,6 +187,35 @@ permalink: /humming-in-the-rain/
       border-color:var(--paper);
       transform:translateY(-1px);
     }
+    .platform.primary-choice{
+      background:var(--paper);
+      color:var(--ink);
+      border-color:var(--paper);
+      font-weight:600;
+    }
+    .platform.primary-choice:hover{
+      background:var(--paper-soft);
+      border-color:var(--paper-soft);
+    }
+    .more-toggle{
+      width:100%;
+      margin-top:9px;
+      min-height:44px;
+      border:0;
+      border-bottom:1px solid var(--line);
+      background:transparent;
+      color:rgba(238,227,207,.78);
+      font-family:var(--sans);
+      font-size:10px;
+      letter-spacing:.08em;
+      cursor:pointer;
+    }
+    .secondary-platforms{
+      margin-top:9px;
+    }
+    .secondary-platforms[hidden]{
+      display:none;
+    }
     .platform.disabled{
       opacity:.35;
       cursor:default;
@@ -214,7 +253,8 @@ permalink: /humming-in-the-rain/
     @media (min-width:760px){
       .page{padding-top:44px;padding-bottom:54px}
       .top{margin-bottom:28px}
-      .intro{padding-top:34px}
+      .cover{width:100%;margin:0}
+      .intro{padding-top:30px}
     }
   </style>
 
@@ -258,17 +298,17 @@ permalink: /humming-in-the-rain/
       <h1>Humming in the rain</h1>
       <p class="artist">OFFITA</p>
       <p class="release">25 SEP 2026</p>
-      <p class="note">A quiet song about the relief that arrives after hearing “I love you too.”</p>
     </section>
 
     <section class="listen" aria-labelledby="listen-title">
-      <div class="section-head">
-        <h2 id="listen-title">Listen</h2>
-        <span>Choose your platform</span>
-      </div>
-      <div class="platforms" id="platforms"></div>
-      <p class="status" id="status">Now available. Choose the service you use.</p>
+      <p class="cta-copy">원하는 플랫폼에서 바로 듣기</p>
+      <div class="platforms" id="primary-platforms"></div>
+      <button class="more-toggle" id="more-toggle" type="button" aria-expanded="false" aria-controls="secondary-platforms">다른 플랫폼 보기 +</button>
+      <div class="platforms secondary-platforms" id="secondary-platforms" hidden></div>
+      <p class="status" id="status">Now available.</p>
     </section>
+
+    <p class="note">A quiet song about the relief that arrives after hearing “I love you too.”</p>
 
     <footer>
       <a href="{{ '/' | relative_url }}">OFFITA — WEBSITE</a>
@@ -306,22 +346,38 @@ permalink: /humming-in-the-rain/
 
     function trackStreamingClick(platform, destination) {
       if (typeof gtag !== "function" || !/^G-[A-Z0-9]+$/i.test(OFFITA_GA4_ID)) return;
-      gtag("event", "streaming_click", {
+      const linkDomain = (() => {
+        try { return new URL(destination).hostname; } catch (_) { return ""; }
+      })();
+      const eventParams = {
         platform_name: platform,
         outbound_url: destination,
-        link_domain: (() => {
-          try { return new URL(destination).hostname; } catch (_) { return ""; }
-        })(),
+        link_domain: linkDomain,
+        transport_type: "beacon",
+        ...campaignParams
+      };
+      gtag("event", "streaming_click", eventParams);
+
+      const platformEvent = "platform_click_" + platform
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "_")
+        .replace(/^_+|_+$/g, "");
+      gtag("event", platformEvent, {
+        link_domain: linkDomain,
+        transport_type: "beacon",
         ...campaignParams
       });
     }
 
-    const platformWrap = document.getElementById("platforms");
+    const primaryWrap = document.getElementById("primary-platforms");
+    const secondaryWrap = document.getElementById("secondary-platforms");
+    const moreToggle = document.getElementById("more-toggle");
+    const PRIMARY_ORDER = ["Melon", "YouTube Music", "Spotify"];
     const activeCount = STREAMING_LINKS.filter(([, url]) => url.trim()).length;
 
-    STREAMING_LINKS.forEach(([name, url]) => {
+    function makePlatformLink(name, url, isPrimary) {
       const link = document.createElement("a");
-      link.className = "platform " + (url.trim() ? "active" : "disabled");
+      link.className = "platform " + (url.trim() ? "active" : "disabled") + (isPrimary ? " primary-choice" : "");
       link.href = url.trim() || "#";
       if (url.trim()) {
         link.target = "_blank";
@@ -333,11 +389,30 @@ permalink: /humming-in-the-rain/
         link.tabIndex = -1;
       }
       link.innerHTML = "<span>" + name + "</span><span class=\"arrow\">↗</span>";
-      platformWrap.appendChild(link);
+      return link;
+    }
+
+    PRIMARY_ORDER.forEach((name) => {
+      const item = STREAMING_LINKS.find(([platform]) => platform === name);
+      if (item) primaryWrap.appendChild(makePlatformLink(item[0], item[1], true));
+    });
+
+    STREAMING_LINKS
+      .filter(([name]) => !PRIMARY_ORDER.includes(name))
+      .forEach(([name, url]) => secondaryWrap.appendChild(makePlatformLink(name, url, false)));
+
+    moreToggle.addEventListener("click", () => {
+      const expanded = moreToggle.getAttribute("aria-expanded") === "true";
+      moreToggle.setAttribute("aria-expanded", String(!expanded));
+      secondaryWrap.hidden = expanded;
+      moreToggle.textContent = expanded ? "다른 플랫폼 보기 +" : "다른 플랫폼 접기 −";
+      if (!expanded && typeof gtag === "function") {
+        gtag("event", "platform_list_expand", { transport_type: "beacon" });
+      }
     });
 
     if (activeCount > 0) {
-      document.getElementById("status").textContent = "Now available. Choose the service you use.";
+      document.getElementById("status").textContent = "Now available.";
     }
 
     const cover = document.getElementById("cover");
