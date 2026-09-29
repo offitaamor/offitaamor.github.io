@@ -263,8 +263,15 @@ content:
       - name: cover
         label: Cover Image
         type: image
+      - name: remote_cover
+        label: External Cover Image URL
+        type: string
+        description: "Use for externally hosted project images. Uploaded cover takes priority."
       - name: featured
         label: Featured on Home
+        type: boolean
+      - name: case_study
+        label: Long-form Case Study
         type: boolean
       - name: external_url
         label: External Link
