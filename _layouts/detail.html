@@ -9,11 +9,11 @@ layout: default
     {% if page.summary %}<p class="detail-summary">{{ page.summary }}</p>{% endif %}
   </header>
 
-  {% if page.cover != blank %}
+  {% if page.cover and page.cover != "" %}
   <figure class="detail-cover">
     <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
   </figure>
-  {% elsif page.remote_cover != blank %}
+  {% elsif page.remote_cover and page.remote_cover != "" %}
   <figure class="detail-cover">
     <img src="{{ page.remote_cover }}" alt="{{ page.title }}">
   </figure>
