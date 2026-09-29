@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="detail-page">
+<article class="detail-page{% if page.case_study %} case-study{% endif %}">
   <header class="detail-hero">
     <a class="back-link" href="/{{ page.section | downcase }}/">← {{ page.section }}</a>
     <p class="eyebrow">{{ page.category }}</p>
@@ -12,6 +12,10 @@ layout: default
   {% if page.cover %}
   <figure class="detail-cover">
     <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
+  </figure>
+  {% elsif page.remote_cover %}
+  <figure class="detail-cover">
+    <img src="{{ page.remote_cover }}" alt="{{ page.title }}">
   </figure>
   {% endif %}
 
