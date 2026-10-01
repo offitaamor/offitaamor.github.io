@@ -55,9 +55,9 @@ permalink: /humming-in-the-rain/
       margin-bottom:10px;
     }
     .brand{
-      width:68px;
+      width:58px;
       filter:brightness(0) invert(1);
-      opacity:.78;
+      opacity:.74;
     }
     .edition{
       font-size:8px;
@@ -68,30 +68,30 @@ permalink: /humming-in-the-rain/
     }
     .listen-hero{
       margin:0 0 12px;
-      padding:14px 14px 13px;
+      padding:11px 13px 10px;
       background:var(--paper);
       color:var(--ink);
       text-align:center;
       border:1px solid var(--paper);
-      box-shadow:0 12px 30px rgba(18,36,42,.12);
+      box-shadow:0 10px 24px rgba(18,36,42,.11);
     }
     .listen-hero h2{
       margin:0;
       font-family:var(--serif);
-      font-size:clamp(44px,12vw,52px);
-      line-height:.86;
+      font-size:clamp(40px,10.8vw,48px);
+      line-height:.88;
       font-weight:600;
-      letter-spacing:-.03em;
+      letter-spacing:-.028em;
     }
     .listen-hero .cta-copy{
-      margin-top:9px;
+      margin-top:7px;
       color:var(--ink);
-      font-size:14px;
+      font-size:13px;
       font-weight:600;
     }
     .listen-hero .cta-helper{
-      margin-top:4px;
-      color:rgba(31,42,41,.66);
+      margin-top:3px;
+      color:rgba(31,42,41,.64);
       font-size:9px;
     }
     .track-card{
@@ -200,41 +200,45 @@ permalink: /humming-in-the-rain/
     }
     .platform{
       min-height:58px;
-      border:1px solid var(--line);
+      border:1px solid var(--paper);
+      background:rgba(238,227,207,.96);
+      color:var(--ink);
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:8px;
-      padding:0 13px;
+      padding:0 12px;
       font-size:12.5px;
-      font-weight:500;
-      letter-spacing:.005em;
-      transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
+      font-weight:600;
+      letter-spacing:0;
+      box-shadow:0 5px 14px rgba(18,36,42,.07);
+      transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+    }
+    .platform-main{
+      min-width:0;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      white-space:nowrap;
+    }
+    .platform-icon{
+      width:21px;
+      height:21px;
+      flex:0 0 21px;
+      object-fit:contain;
+      border-radius:5px;
     }
     .platform-action{
       display:flex;
       align-items:center;
-      gap:4px;
-      font-size:10px;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      opacity:.72;
+      flex:0 0 auto;
+      opacity:.58;
     }
     .platform.active:hover{
-      background:var(--paper);
-      color:var(--ink);
-      border-color:var(--paper);
-      transform:translateY(-1px);
-    }
-    .platform.primary-choice{
-      background:var(--paper);
-      color:var(--ink);
-      border-color:var(--paper);
-      font-weight:600;
-    }
-    .platform.primary-choice:hover{
       background:var(--paper-soft);
       border-color:var(--paper-soft);
+      transform:translateY(-1px);
+      box-shadow:0 7px 18px rgba(18,36,42,.1);
     }
         .platform.disabled{
       opacity:.35;
@@ -276,12 +280,12 @@ permalink: /humming-in-the-rain/
     @media (min-width:760px){
       .page{padding-top:40px;padding-bottom:54px}
       .top{margin-bottom:18px}
-      .brand{width:82px}
+      .brand{width:72px}
       .listen-hero{
         margin-bottom:16px;
-        padding:18px 18px 16px;
+        padding:14px 16px 13px;
       }
-      .listen-hero h2{font-size:52px}
+      .listen-hero h2{font-size:48px}
       .track-card{padding:14px;gap:18px}
       .cover{width:110px;min-width:110px}
       h1{font-size:38px}
@@ -406,13 +410,22 @@ permalink: /humming-in-the-rain/
     }
 
     const platformWrap = document.getElementById("platforms");
-    const PRIMARY_ORDER = ["Melon", "YouTube Music", "Spotify"];
     const DISPLAY_ORDER = ["Melon", "YouTube Music", "Spotify", "Apple Music", "Genie", "Bugs", "FLO", "VIBE"];
+    const PLATFORM_ICON_DOMAINS = {
+      "Melon": "www.melon.com",
+      "YouTube Music": "music.youtube.com",
+      "Spotify": "open.spotify.com",
+      "Apple Music": "music.apple.com",
+      "Genie": "www.genie.co.kr",
+      "Bugs": "music.bugs.co.kr",
+      "FLO": "www.music-flo.com",
+      "VIBE": "vibe.naver.com"
+    };
     const activeCount = STREAMING_LINKS.filter(([, url]) => url.trim()).length;
 
-    function makePlatformLink(name, url, isPrimary) {
+    function makePlatformLink(name, url) {
       const link = document.createElement("a");
-      link.className = "platform " + (url.trim() ? "active" : "disabled") + (isPrimary ? " primary-choice" : "");
+      link.className = "platform " + (url.trim() ? "active" : "disabled");
       link.href = url.trim() || "#";
       if (url.trim()) {
         link.target = "_blank";
@@ -423,13 +436,24 @@ permalink: /humming-in-the-rain/
         link.setAttribute("aria-disabled", "true");
         link.tabIndex = -1;
       }
-      link.innerHTML = "<span>" + name + "</span><span class=\"platform-action\"><span class=\"arrow\">↗</span></span>";
+
+      const iconDomain = PLATFORM_ICON_DOMAINS[name] || "";
+      const iconUrl = iconDomain
+        ? "https://www.google.com/s2/favicons?domain=" + encodeURIComponent(iconDomain) + "&sz=64"
+        : "";
+
+      link.innerHTML =
+        "<span class=\"platform-main\">" +
+          (iconUrl ? "<img class=\"platform-icon\" src=\"" + iconUrl + "\" alt=\"\" aria-hidden=\"true\" loading=\"eager\" decoding=\"async\" onerror=\"this.style.display='none'\">" : "") +
+          "<span>" + name + "</span>" +
+        "</span>" +
+        "<span class=\"platform-action\" aria-hidden=\"true\"><span class=\"arrow\">↗</span></span>";
       return link;
     }
 
     DISPLAY_ORDER.forEach((name) => {
       const item = STREAMING_LINKS.find(([platform]) => platform === name);
-      if (item) platformWrap.appendChild(makePlatformLink(item[0], item[1], PRIMARY_ORDER.includes(name)));
+      if (item) platformWrap.appendChild(makePlatformLink(item[0], item[1]));
     });
 
     if (activeCount > 0) {
