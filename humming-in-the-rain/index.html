@@ -55,16 +55,44 @@ permalink: /humming-in-the-rain/
       margin-bottom:14px;
     }
     .brand{
-      width:116px;
+      width:78px;
       filter:brightness(0) invert(1);
-      opacity:.9;
+      opacity:.82;
     }
     .edition{
-      font-size:9px;
-      letter-spacing:.18em;
+      font-size:8px;
+      letter-spacing:.16em;
       text-transform:uppercase;
-      opacity:.72;
+      opacity:.58;
       white-space:nowrap;
+    }
+    .listen-hero{
+      margin:2px 0 18px;
+      padding:18px 16px 16px;
+      background:var(--paper);
+      color:var(--ink);
+      text-align:center;
+      border:1px solid var(--paper);
+      box-shadow:0 14px 36px rgba(18,36,42,.14);
+    }
+    .listen-hero h2{
+      margin:0;
+      font-family:var(--serif);
+      font-size:clamp(48px,14vw,70px);
+      line-height:.82;
+      font-weight:600;
+      letter-spacing:-.035em;
+    }
+    .listen-hero .cta-copy{
+      margin-top:12px;
+      color:var(--ink);
+      font-size:14px;
+      font-weight:600;
+    }
+    .listen-hero .cta-helper{
+      margin-top:5px;
+      color:rgba(31,42,41,.68);
+      font-size:10px;
     }
     .cover{
       position:relative;
@@ -115,10 +143,11 @@ permalink: /humming-in-the-rain/
       font-weight:500;
     }
     .artist{
-      margin:9px 0 0;
-      font-size:11px;
-      letter-spacing:.2em;
+      margin:8px 0 0;
+      font-size:9px;
+      letter-spacing:.24em;
       font-weight:500;
+      opacity:.78;
     }
     .release{
       margin:7px 0 0;
@@ -137,20 +166,8 @@ permalink: /humming-in-the-rain/
     }
     .listen{
       margin-top:6px;
-      padding:20px 0 4px;
+      padding:18px 0 4px;
       border-top:1px solid var(--line);
-    }
-    .listen-heading{
-      margin-bottom:15px;
-      text-align:center;
-    }
-    .listen-heading h2{
-      margin:0;
-      font-family:var(--serif);
-      font-size:clamp(34px,9vw,46px);
-      line-height:.95;
-      font-weight:600;
-      letter-spacing:-.025em;
     }
     .cta-copy{
       margin:8px 0 0;
@@ -245,7 +262,13 @@ permalink: /humming-in-the-rain/
     }
     @media (min-width:760px){
       .page{padding-top:44px;padding-bottom:54px}
-      .top{margin-bottom:28px}
+      .top{margin-bottom:24px}
+      .brand{width:96px}
+      .listen-hero{
+        margin-bottom:24px;
+        padding:22px 20px 20px;
+      }
+      .listen-hero h2{font-size:58px}
       .cover{width:100%;margin:0}
       .intro{padding-top:30px}
       .listen{padding-top:26px}
@@ -283,6 +306,12 @@ permalink: /humming-in-the-rain/
       <span class="edition">RAIN EDITION · 2026</span>
     </header>
 
+    <section class="listen-hero" aria-labelledby="listen-title">
+      <h2 id="listen-title">LISTEN NOW</h2>
+      <p class="cta-copy">사용 중인 음원 플랫폼을 선택하세요</p>
+      <p class="cta-helper">아래 버튼을 누르면 해당 음원 앱 또는 페이지로 이동합니다.</p>
+    </section>
+
     <div class="cover" id="cover">
       <div class="cover-fallback" aria-hidden="true">
         <div class="fallback-title">Humming<br>in the rain</div>
@@ -295,12 +324,7 @@ permalink: /humming-in-the-rain/
       <p class="release">25 SEP 2026</p>
     </section>
 
-    <section class="listen" aria-labelledby="listen-title">
-      <div class="listen-heading">
-        <h2 id="listen-title">LISTEN NOW</h2>
-        <p class="cta-copy">사용 중인 음원 플랫폼을 선택하세요</p>
-        <p class="cta-helper">버튼을 누르면 해당 음원 앱 또는 페이지로 이동합니다.</p>
-      </div>
+    <section class="listen" aria-label="Streaming platforms">
       <div class="platforms" id="platforms"></div>
       <p class="status" id="status">Available on 8 platforms.</p>
     </section>
