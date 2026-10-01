@@ -51,8 +51,8 @@ permalink: /humming-in-the-rain/
       display:flex;
       align-items:center;
       justify-content:space-between;
-      min-height:42px;
-      margin-bottom:22px;
+      min-height:38px;
+      margin-bottom:14px;
     }
     .brand{
       width:116px;
@@ -68,13 +68,13 @@ permalink: /humming-in-the-rain/
     }
     .cover{
       position:relative;
-      width:min(72vw,280px);
+      width:min(48vw,198px);
       aspect-ratio:1;
       margin:0 auto;
       overflow:hidden;
       border:1px solid rgba(238,227,207,.42);
       background:var(--rain-deep);
-      box-shadow:0 18px 46px rgba(18,36,42,.18);
+      box-shadow:0 16px 38px rgba(18,36,42,.18);
     }
     .cover.has-image{
       background-image:url("{{ '/assets/images/music/humming-in-the-rain.jpg' | relative_url }}");
@@ -103,27 +103,27 @@ permalink: /humming-in-the-rain/
       font-weight:500;
     }
     .intro{
-      padding:20px 2px 14px;
+      padding:14px 2px 10px;
       text-align:center;
     }
     h1{
       margin:0;
       font-family:var(--serif);
-      font-size:clamp(40px,10.5vw,64px);
-      line-height:.9;
+      font-size:clamp(36px,9.5vw,58px);
+      line-height:.92;
       letter-spacing:-.045em;
       font-weight:500;
     }
     .artist{
-      margin:12px 0 0;
+      margin:9px 0 0;
       font-size:11px;
       letter-spacing:.2em;
       font-weight:500;
     }
     .release{
-      margin:10px 0 0;
+      margin:7px 0 0;
       font-family:var(--serif);
-      font-size:18px;
+      font-size:16px;
       line-height:1.25;
       color:var(--paper-soft);
     }
@@ -136,50 +136,61 @@ permalink: /humming-in-the-rain/
       color:rgba(238,227,207,.78);
     }
     .listen{
-      padding:10px 0 4px;
+      margin-top:6px;
+      padding:20px 0 4px;
+      border-top:1px solid var(--line);
+    }
+    .listen-heading{
+      margin-bottom:15px;
+      text-align:center;
+    }
+    .listen-heading h2{
+      margin:0;
+      font-family:var(--serif);
+      font-size:clamp(34px,9vw,46px);
+      line-height:.95;
+      font-weight:600;
+      letter-spacing:-.025em;
     }
     .cta-copy{
-      margin:0 0 12px;
+      margin:8px 0 0;
       text-align:center;
-      font-size:12px;
-      line-height:1.6;
+      font-size:13px;
+      line-height:1.55;
       font-weight:500;
       color:var(--paper);
     }
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      margin-bottom:14px;
-    }
-    .section-head h2{
-      margin:0;
-      font-family:var(--serif);
-      font-size:29px;
-      line-height:1;
-      font-weight:500;
-      letter-spacing:-.02em;
-    }
-    .section-head span{
-      font-size:9px;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-      opacity:.62;
+    .cta-helper{
+      margin:4px 0 0;
+      text-align:center;
+      font-size:10px;
+      line-height:1.55;
+      color:rgba(238,227,207,.62);
     }
     .platforms{
       display:grid;
       gap:8px;
     }
     .platform{
-      min-height:52px;
+      min-height:62px;
       border:1px solid var(--line);
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:0 16px;
+      padding:0 18px;
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:.015em;
+      transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
+    }
+    .platform-action{
+      display:flex;
+      align-items:center;
+      gap:8px;
       font-size:11px;
       letter-spacing:.08em;
-      transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
+      text-transform:uppercase;
+      opacity:.78;
     }
     .platform.active:hover{
       background:var(--paper);
@@ -197,33 +208,15 @@ permalink: /humming-in-the-rain/
       background:var(--paper-soft);
       border-color:var(--paper-soft);
     }
-    .more-toggle{
-      width:100%;
-      margin-top:9px;
-      min-height:44px;
-      border:0;
-      border-bottom:1px solid var(--line);
-      background:transparent;
-      color:rgba(238,227,207,.78);
-      font-family:var(--sans);
-      font-size:10px;
-      letter-spacing:.08em;
-      cursor:pointer;
-    }
-    .secondary-platforms{
-      margin-top:9px;
-    }
-    .secondary-platforms[hidden]{
-      display:none;
-    }
-    .platform.disabled{
+        .platform.disabled{
       opacity:.35;
       cursor:default;
       pointer-events:none;
     }
     .arrow{font-family:var(--serif);font-size:20px}
     .status{
-      margin:15px 0 0;
+      margin:13px 0 0;
+      text-align:center;
       font-size:10px;
       line-height:1.65;
       color:rgba(238,227,207,.64);
@@ -255,6 +248,8 @@ permalink: /humming-in-the-rain/
       .top{margin-bottom:28px}
       .cover{width:100%;margin:0}
       .intro{padding-top:30px}
+      .listen{padding-top:26px}
+      .platform{min-height:58px}
     }
   </style>
 
@@ -301,11 +296,13 @@ permalink: /humming-in-the-rain/
     </section>
 
     <section class="listen" aria-labelledby="listen-title">
-      <p class="cta-copy">원하는 플랫폼에서 바로 듣기</p>
-      <div class="platforms" id="primary-platforms"></div>
-      <button class="more-toggle" id="more-toggle" type="button" aria-expanded="false" aria-controls="secondary-platforms">다른 플랫폼 보기 +</button>
-      <div class="platforms secondary-platforms" id="secondary-platforms" hidden></div>
-      <p class="status" id="status">Now available.</p>
+      <div class="listen-heading">
+        <h2 id="listen-title">LISTEN NOW</h2>
+        <p class="cta-copy">사용 중인 음원 플랫폼을 선택하세요</p>
+        <p class="cta-helper">버튼을 누르면 해당 음원 앱 또는 페이지로 이동합니다.</p>
+      </div>
+      <div class="platforms" id="platforms"></div>
+      <p class="status" id="status">Available on 8 platforms.</p>
     </section>
 
     <p class="note">A quiet song about the relief that arrives after hearing “I love you too.”</p>
@@ -369,10 +366,9 @@ permalink: /humming-in-the-rain/
       });
     }
 
-    const primaryWrap = document.getElementById("primary-platforms");
-    const secondaryWrap = document.getElementById("secondary-platforms");
-    const moreToggle = document.getElementById("more-toggle");
+    const platformWrap = document.getElementById("platforms");
     const PRIMARY_ORDER = ["Melon", "YouTube Music", "Spotify"];
+    const DISPLAY_ORDER = ["Melon", "YouTube Music", "Spotify", "Apple Music", "Genie", "Bugs", "FLO", "VIBE"];
     const activeCount = STREAMING_LINKS.filter(([, url]) => url.trim()).length;
 
     function makePlatformLink(name, url, isPrimary) {
@@ -388,31 +384,17 @@ permalink: /humming-in-the-rain/
         link.setAttribute("aria-disabled", "true");
         link.tabIndex = -1;
       }
-      link.innerHTML = "<span>" + name + "</span><span class=\"arrow\">↗</span>";
+      link.innerHTML = "<span>" + name + "</span><span class=\"platform-action\">듣기 <span class=\"arrow\">↗</span></span>";
       return link;
     }
 
-    PRIMARY_ORDER.forEach((name) => {
+    DISPLAY_ORDER.forEach((name) => {
       const item = STREAMING_LINKS.find(([platform]) => platform === name);
-      if (item) primaryWrap.appendChild(makePlatformLink(item[0], item[1], true));
-    });
-
-    STREAMING_LINKS
-      .filter(([name]) => !PRIMARY_ORDER.includes(name))
-      .forEach(([name, url]) => secondaryWrap.appendChild(makePlatformLink(name, url, false)));
-
-    moreToggle.addEventListener("click", () => {
-      const expanded = moreToggle.getAttribute("aria-expanded") === "true";
-      moreToggle.setAttribute("aria-expanded", String(!expanded));
-      secondaryWrap.hidden = expanded;
-      moreToggle.textContent = expanded ? "다른 플랫폼 보기 +" : "다른 플랫폼 접기 −";
-      if (!expanded && typeof gtag === "function") {
-        gtag("event", "platform_list_expand", { transport_type: "beacon" });
-      }
+      if (item) platformWrap.appendChild(makePlatformLink(item[0], item[1], PRIMARY_ORDER.includes(name)));
     });
 
     if (activeCount > 0) {
-      document.getElementById("status").textContent = "Now available.";
+      document.getElementById("status").textContent = "Available on " + activeCount + " platforms.";
     }
 
     const cover = document.getElementById("cover");
