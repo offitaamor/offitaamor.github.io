@@ -45,19 +45,19 @@ permalink: /humming-in-the-rain/
     .page{
       width:min(100%,620px);
       margin:0 auto;
-      padding:28px 22px calc(38px + env(safe-area-inset-bottom));
+      padding:22px 18px calc(34px + env(safe-area-inset-bottom));
     }
     .top{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      min-height:38px;
-      margin-bottom:14px;
+      min-height:34px;
+      margin-bottom:10px;
     }
     .brand{
-      width:78px;
+      width:68px;
       filter:brightness(0) invert(1);
-      opacity:.82;
+      opacity:.78;
     }
     .edition{
       font-size:8px;
@@ -67,42 +67,51 @@ permalink: /humming-in-the-rain/
       white-space:nowrap;
     }
     .listen-hero{
-      margin:2px 0 18px;
-      padding:18px 16px 16px;
+      margin:0 0 12px;
+      padding:14px 14px 13px;
       background:var(--paper);
       color:var(--ink);
       text-align:center;
       border:1px solid var(--paper);
-      box-shadow:0 14px 36px rgba(18,36,42,.14);
+      box-shadow:0 12px 30px rgba(18,36,42,.12);
     }
     .listen-hero h2{
       margin:0;
       font-family:var(--serif);
-      font-size:clamp(48px,14vw,70px);
-      line-height:.82;
+      font-size:clamp(44px,12vw,52px);
+      line-height:.86;
       font-weight:600;
-      letter-spacing:-.035em;
+      letter-spacing:-.03em;
     }
     .listen-hero .cta-copy{
-      margin-top:12px;
+      margin-top:9px;
       color:var(--ink);
       font-size:14px;
       font-weight:600;
     }
     .listen-hero .cta-helper{
-      margin-top:5px;
-      color:rgba(31,42,41,.68);
-      font-size:10px;
+      margin-top:4px;
+      color:rgba(31,42,41,.66);
+      font-size:9px;
+    }
+    .track-card{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:12px;
+      border:1px solid var(--line);
+      background:rgba(238,227,207,.055);
     }
     .cover{
       position:relative;
-      width:min(48vw,198px);
+      width:96px;
+      min-width:96px;
       aspect-ratio:1;
-      margin:0 auto;
+      margin:0;
       overflow:hidden;
       border:1px solid rgba(238,227,207,.42);
       background:var(--rain-deep);
-      box-shadow:0 16px 38px rgba(18,36,42,.18);
+      box-shadow:0 10px 26px rgba(18,36,42,.14);
     }
     .cover.has-image{
       background-image:url("{{ '/assets/images/music/humming-in-the-rain.jpg' | relative_url }}");
@@ -131,43 +140,43 @@ permalink: /humming-in-the-rain/
       font-weight:500;
     }
     .intro{
-      padding:14px 2px 10px;
-      text-align:center;
+      min-width:0;
+      padding:0;
+      text-align:left;
     }
     h1{
       margin:0;
       font-family:var(--serif);
-      font-size:clamp(36px,9.5vw,58px);
+      font-size:clamp(28px,7.6vw,36px);
       line-height:.92;
-      letter-spacing:-.045em;
+      letter-spacing:-.035em;
       font-weight:500;
     }
     .artist{
-      margin:8px 0 0;
+      margin:7px 0 0;
       font-size:9px;
-      letter-spacing:.24em;
+      letter-spacing:.22em;
       font-weight:500;
       opacity:.78;
     }
     .release{
-      margin:7px 0 0;
+      margin:6px 0 0;
       font-family:var(--serif);
-      font-size:16px;
+      font-size:13px;
       line-height:1.25;
       color:var(--paper-soft);
     }
     .note{
       margin:18px auto 0;
       max-width:480px;
-      font-size:12px;
+      font-size:11px;
       line-height:1.7;
       text-align:center;
-      color:rgba(238,227,207,.78);
+      color:rgba(238,227,207,.72);
     }
     .listen{
-      margin-top:6px;
-      padding:18px 0 4px;
-      border-top:1px solid var(--line);
+      margin-top:10px;
+      padding:0;
     }
     .cta-copy{
       margin:8px 0 0;
@@ -186,28 +195,30 @@ permalink: /humming-in-the-rain/
     }
     .platforms{
       display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:8px;
     }
     .platform{
-      min-height:62px;
+      min-height:58px;
       border:1px solid var(--line);
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:0 18px;
-      font-size:14px;
+      gap:8px;
+      padding:0 13px;
+      font-size:12.5px;
       font-weight:500;
-      letter-spacing:.015em;
+      letter-spacing:.005em;
       transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
     }
     .platform-action{
       display:flex;
       align-items:center;
-      gap:8px;
-      font-size:11px;
-      letter-spacing:.08em;
+      gap:4px;
+      font-size:10px;
+      letter-spacing:.04em;
       text-transform:uppercase;
-      opacity:.78;
+      opacity:.72;
     }
     .platform.active:hover{
       background:var(--paper);
@@ -231,13 +242,7 @@ permalink: /humming-in-the-rain/
       pointer-events:none;
     }
     .arrow{font-family:var(--serif);font-size:20px}
-    .status{
-      margin:13px 0 0;
-      text-align:center;
-      font-size:10px;
-      line-height:1.65;
-      color:rgba(238,227,207,.64);
-    }
+    .status{display:none}
     footer{
       margin-top:36px;
       padding-top:22px;
@@ -256,23 +261,31 @@ permalink: /humming-in-the-rain/
     }
     footer a:hover{border-color:currentColor}
     .footer-mark{
-      width:38px;
-      opacity:.78;
+      width:28px;
+      opacity:.68;
       filter:brightness(0) invert(1);
     }
-    @media (min-width:760px){
-      .page{padding-top:44px;padding-bottom:54px}
-      .top{margin-bottom:24px}
-      .brand{width:96px}
-      .listen-hero{
-        margin-bottom:24px;
-        padding:22px 20px 20px;
+    @media (max-width:340px){
+      .platform{
+        min-height:54px;
+        padding:0 10px;
+        font-size:11.5px;
       }
-      .listen-hero h2{font-size:58px}
-      .cover{width:100%;margin:0}
-      .intro{padding-top:30px}
-      .listen{padding-top:26px}
-      .platform{min-height:58px}
+      .platform-action{font-size:9px}
+    }
+    @media (min-width:760px){
+      .page{padding-top:40px;padding-bottom:54px}
+      .top{margin-bottom:18px}
+      .brand{width:82px}
+      .listen-hero{
+        margin-bottom:16px;
+        padding:18px 18px 16px;
+      }
+      .listen-hero h2{font-size:52px}
+      .track-card{padding:14px;gap:18px}
+      .cover{width:110px;min-width:110px}
+      h1{font-size:38px}
+      .platform{min-height:60px;font-size:13px}
     }
   </style>
 
@@ -312,16 +325,18 @@ permalink: /humming-in-the-rain/
       <p class="cta-helper">아래 버튼을 누르면 해당 음원 앱 또는 페이지로 이동합니다.</p>
     </section>
 
-    <div class="cover" id="cover">
-      <div class="cover-fallback" aria-hidden="true">
-        <div class="fallback-title">Humming<br>in the rain</div>
+    <section class="track-card" aria-label="Track information">
+      <div class="cover" id="cover">
+        <div class="cover-fallback" aria-hidden="true">
+          <div class="fallback-title">Humming<br>in the rain</div>
+        </div>
       </div>
-    </div>
 
-    <section class="intro">
-      <h1>Humming in the rain</h1>
-      <p class="artist">OFFITA</p>
-      <p class="release">25 SEP 2026</p>
+      <div class="intro">
+        <h1>Humming in the rain</h1>
+        <p class="artist">OFFITA</p>
+        <p class="release">25 SEP 2026</p>
+      </div>
     </section>
 
     <section class="listen" aria-label="Streaming platforms">
@@ -408,7 +423,7 @@ permalink: /humming-in-the-rain/
         link.setAttribute("aria-disabled", "true");
         link.tabIndex = -1;
       }
-      link.innerHTML = "<span>" + name + "</span><span class=\"platform-action\">듣기 <span class=\"arrow\">↗</span></span>";
+      link.innerHTML = "<span>" + name + "</span><span class=\"platform-action\"><span class=\"arrow\">↗</span></span>";
       return link;
     }
 
