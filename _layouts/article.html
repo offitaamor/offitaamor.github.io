@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="article-page">
+<article class="article-page{% if page.article_class %} {{ page.article_class }}{% endif %}">
   <header class="article-header">
     <a class="back-link" href="/writing/">← WRITING</a>
     <p class="eyebrow">{{ page.category }}</p>
