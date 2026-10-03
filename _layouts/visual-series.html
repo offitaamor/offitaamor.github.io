@@ -39,7 +39,7 @@ layout: default
       </header>
       <div class="artwork-grid">
         {% for artwork in gallery_group.items %}
-        <figure class="artwork-card">
+        <figure class="artwork-card"{% if artwork.anchor %} id="{{ artwork.anchor }}"{% endif %}>
           {% assign artwork_src = artwork.remote_image %}
           {% if artwork.image %}{% assign artwork_src = artwork.image | relative_url %}{% endif %}
           {% if artwork.drive_url %}<a class="artwork-image-link" href="{{ artwork.drive_url }}" target="_blank" rel="noopener">{% endif %}
