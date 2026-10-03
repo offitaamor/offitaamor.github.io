@@ -164,8 +164,8 @@ external_url: "https://goseongcf.or.kr/archive_art/93"
   </div>
 
   <figure class="case-media case-media--publication">
-    <img src="https://drive.google.com/thumbnail?id=1asvzCe5BFmiz2Jeg6Bt7ENacbJN9lquF&sz=w1500" alt="지금 우리가 만난 명파 전시와 연결된 인쇄 기록물" loading="lazy" decoding="async">
-    <figcaption>Publication — 전시 경험을 다시 기록으로 남긴 인쇄물</figcaption>
+    <img src="https://goseongcf.or.kr/data/editor/2606/20260604094259_a9d57210319fbb5156cd7b3167971edc_nok8.png" alt="고성문화재단 주민취향전시 지금 우리가 만난 명파 공식 포스터" loading="lazy" decoding="async">
+    <figcaption>Official Poster — 《지금, 우리가 만난 명파》 공식 포스터</figcaption>
   </figure>
 
   <div class="case-note">
