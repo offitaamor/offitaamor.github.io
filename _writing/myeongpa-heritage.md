@@ -10,6 +10,7 @@ tags:
 summary: "몇 달간 명파 마을에 머무르며 주민들에게 직접 이야기를 듣고, 실제 현장을 찾아가 확인한 지역 문화 리서치 기록."
 cover: ""
 featured: true
+article_class: "research-archive-page"
 ---
 
 <div class="research-archive-intro">
