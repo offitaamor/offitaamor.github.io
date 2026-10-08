@@ -60,6 +60,34 @@ content:
       - name: statement
         label: Artist Statement
         type: text
+      - name: cv
+        label: Selected CV
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{year} — {item}"
+        fields:
+          - name: year
+            label: Year
+            type: string
+          - name: item
+            label: Activity / Role
+            type: string
+      - name: press
+        label: Press Archive
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Article / Interview
+            type: string
+          - name: url
+            label: Source URL
+            type: string
 
   - name: visual_intro
     label: Visual Intro
@@ -104,6 +132,79 @@ content:
         type: string
         list: true
 
+  - name: music_practice
+    label: Music Practice & Philosophy
+    type: file
+    path: _data/music.yml
+    format: yaml
+    fields:
+      - name: hero_statement
+        label: Main Music Statement
+        type: text
+      - name: intro
+        label: Short Introduction
+        type: text
+      - name: practice
+        label: Sound Practice
+        type: text
+      - name: characteristics
+        label: Musical Characteristics
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{code} — {title}"
+        fields:
+          - name: code
+            label: Number
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: en
+            label: English Keyword
+            type: string
+          - name: description
+            label: Description
+            type: text
+      - name: practice_intro
+        label: Production Practice
+        type: text
+      - name: roles
+        label: Creative Roles
+        type: string
+        list: true
+      - name: aesthetic
+        label: Personal Aesthetic
+        type: text
+      - name: aesthetic_keywords
+        label: Aesthetic Keywords
+        type: string
+        list: true
+      - name: melon_artist_url
+        label: Melon Artist URL
+        type: string
+      - name: discography
+        label: Discography
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{date} {title}"
+        fields:
+          - name: title
+            label: Release Title
+            type: string
+          - name: type
+            label: Release Type
+            type: string
+          - name: date
+            label: Release Date (YYYY.MM.DD)
+            type: string
+          - name: tracks
+            label: Track Count Text
+            type: string
+
   - name: music
     label: Music
     type: collection
@@ -122,6 +223,24 @@ content:
       - name: category
         label: Category
         type: string
+      - name: music_type
+        label: Music Entry Type (release)
+        type: string
+      - name: layout
+        label: Detail Layout (music-release)
+        type: string
+      - name: release_type
+        label: Album / Single / EP
+        type: string
+      - name: date
+        label: Sort Date
+        type: date
+      - name: release_date
+        label: Display Release Date
+        type: string
+      - name: track_count
+        label: Track Count
+        type: number
       - name: year
         label: Year
         type: string
@@ -137,6 +256,41 @@ content:
       - name: cover
         label: Cover Image
         type: image
+      - name: remote_cover
+        label: External Cover Image URL
+        type: string
+      - name: tracklist
+        label: Tracklist
+        type: string
+        list: true
+      - name: listen_links
+        label: Listening Links
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Platform Name
+            type: string
+          - name: url
+            label: URL
+            type: string
+      - name: credits
+        label: Credits
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{role} — {name}"
+        fields:
+          - name: role
+            label: Role
+            type: string
+          - name: name
+            label: Name
+            type: string
       - name: featured
         label: Featured on Home
         type: boolean
@@ -204,6 +358,9 @@ content:
             type: string
           - name: group
             label: Gallery Group
+            type: string
+          - name: anchor
+            label: Direct Link Anchor (optional)
             type: string
           - name: image
             label: Uploaded Image
