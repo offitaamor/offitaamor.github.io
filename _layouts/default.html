@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% assign seo_description = page.summary | default: page.intro | default: site.description %}
+  {% assign seo_description = page.description | default: page.summary | default: page.intro | default: site.description %}
   {% assign seo_image = page.cover | default: '/assets/images/profile/offita-profile.webp' %}
   <meta name="description" content="{{ seo_description | strip_html | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
