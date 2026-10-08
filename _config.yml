@@ -5,6 +5,8 @@ baseurl: ""
 lang: "ko"
 timezone: "Asia/Seoul"
 markdown: kramdown
+plugins:
+  - jekyll-sitemap
 
 collections:
   music:
