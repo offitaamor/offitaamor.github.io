@@ -3,14 +3,14 @@
     <img src="{{ '/assets/images/brand/offita-wordmark.svg' | relative_url }}" alt="OFFITA" class="brand-wordmark">
   </a>
 
-  <button class="menu-button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+  <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav">MENU</button>
 
   <nav id="site-nav" class="site-nav" aria-label="Primary">
-    <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}class="active"{% endif %}>ABOUT</a>
-    <a href="{{ '/music/' | relative_url }}" {% if page.url contains '/music/' %}class="active"{% endif %}>MUSIC</a>
-    <a href="{{ '/visual/' | relative_url }}" {% if page.url contains '/visual/' %}class="active"{% endif %}>VISUAL</a>
-    <a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects/' %}class="active"{% endif %}>PROJECTS</a>
-    <a href="{{ '/writing/' | relative_url }}" {% if page.url contains '/writing/' %}class="active"{% endif %}>WRITING</a>
-    <a href="{{ '/contact/' | relative_url }}" {% if page.url contains '/contact/' %}class="active"{% endif %}>CONTACT</a>
+    <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about/' %}class="active" aria-current="page"{% endif %}>ABOUT</a>
+    <a href="{{ '/music/' | relative_url }}" {% if page.url contains '/music/' %}class="active" aria-current="page"{% endif %}>MUSIC</a>
+    <a href="{{ '/visual/' | relative_url }}" {% if page.url contains '/visual/' %}class="active" aria-current="page"{% endif %}>VISUAL</a>
+    <a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects/' %}class="active" aria-current="page"{% endif %}>PROJECTS</a>
+    <a href="{{ '/writing/' | relative_url }}" {% if page.url contains '/writing/' %}class="active" aria-current="page"{% endif %}>WRITING</a>
+    <a href="{{ '/contact/' | relative_url }}" {% if page.url contains '/contact/' %}class="active" aria-current="page"{% endif %}>CONTACT</a>
   </nav>
 </header>
