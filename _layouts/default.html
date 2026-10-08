@@ -3,19 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ page.summary | default: site.description | escape }}">
+  {% assign seo_description = page.summary | default: page.intro | default: site.description %}
+  {% assign seo_image = page.cover | default: '/assets/images/profile/offita-profile.webp' %}
+  <meta name="description" content="{{ seo_description | strip_html | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta name="theme-color" content="#EAE4DA">
+  <meta property="og:site_name" content="OFFITA">
+  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} — {% endif %}OFFITA">
+  <meta property="og:description" content="{{ seo_description | strip_html | escape }}">
+  <meta property="og:type" content="{% if page.collection == 'writing' %}article{% else %}website{% endif %}">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ seo_image | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }} — {% endif %}OFFITA">
+  <meta name="twitter:description" content="{{ seo_description | strip_html | escape }}">
+  <meta name="twitter:image" content="{{ seo_image | absolute_url }}">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.data.site.brand }}</title>
   <link rel="icon" href="{{ '/assets/images/brand/offita-emblem.svg' | relative_url }}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/visual.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/music.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/refinements.css' | relative_url }}">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
   {% include header.html %}
-  <main>{{ content }}</main>
+  <main id="main-content">{{ content }}</main>
   {% include footer.html %}
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
