@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-kicker: PROFILE / ARTIST STATEMENT / CV / PRESS
+kicker: PROFILE / ARTIST STATEMENT / SELECTED CV
 intro: OFFITA의 작업 세계와 활동 이력을 정리합니다.
 permalink: /about/
 ---
@@ -30,6 +30,7 @@ permalink: /about/
   </div>
 </section>
 
+{% if site.data.about.press and site.data.about.press.size > 0 %}
 <section class="page-section two-col">
   <h2>Press</h2>
   <div class="timeline">
@@ -38,3 +39,4 @@ permalink: /about/
     {% endfor %}
   </div>
 </section>
+{% endif %}
