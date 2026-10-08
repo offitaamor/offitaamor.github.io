@@ -1,0 +1,112 @@
+/* OFFITA V1.0 — editorial typography, accessibility and responsive refinements.
+   Base page and collection styles remain in style.css, visual.css and music.css. */
+:root{
+  --ko-serif:"Noto Serif KR","Nanum Myeongjo",serif;
+  --warm-grey:#615b54;
+}
+html{scroll-padding-top:96px}
+body{word-break:keep-all;overflow-wrap:break-word}
+main{min-width:0}
+.skip-link{
+  position:absolute;top:-120px;left:20px;z-index:100;
+  padding:12px 18px;background:var(--soft-black);color:var(--ivory);
+  font-size:14px;text-decoration:none
+}
+.skip-link:focus{top:14px}
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--brown);outline-offset:4px
+}
+.site-nav a{min-height:44px;display:inline-flex;align-items:center}
+.site-nav a[aria-current="page"]{color:var(--brown)}
+
+/* A dense 1.03 line-height is unsuitable for multi-line Korean manifestos. */
+.visual-manifesto,.music-manifesto{
+  font-family:var(--ko-serif);
+  font-size:clamp(31px,4vw,58px);
+  line-height:1.37;
+  letter-spacing:-.012em;
+  max-width:980px;
+  margin:50px 0 34px;
+  text-wrap:pretty;
+  word-break:keep-all;
+}
+.visual-intro,.music-intro{
+  max-width:760px;
+  font-size:16px;
+  line-height:1.95;
+  color:var(--charcoal)
+}
+.visual-practice-copy,.music-practice-copy,.music-aesthetic-copy,
+.prose,.article-prose{
+  line-height:1.88
+}
+.prose p,.article-prose p{margin-bottom:1.4em}
+.visual-language-copy,.music-role-copy,.page-intro,
+.lead,.home-about,.detail-summary,.music-release-summary{
+  font-family:var(--ko-serif);
+  line-height:1.52;
+  letter-spacing:-.012em;
+  word-break:keep-all
+}
+.case-lead,.case-lead--small{
+  line-height:1.35;
+  letter-spacing:-.014em;
+}
+.two-col h2,.case-section-head h2,
+.writing-row h2,.article-header h1,
+.detail-hero h1,.music-release-hero h1{
+  line-height:1.13;
+}
+.writing-row h2,.article-header h1{
+  letter-spacing:-.018em
+}
+.artwork-title-row h3,.music-discography-row strong,
+.list-row strong,.research-index strong,.research-end-links strong,
+.research-visual-link strong{
+  line-height:1.28
+}
+.visual-language-copy,.music-role-copy{line-height:1.55}
+.visual-series-statement .prose,.case-study .prose{line-height:1.87}
+.artwork-card[id],.research-anchor{scroll-margin-top:110px}
+.artwork-card figcaption>p{line-height:1.75}
+.music-engineering-section{background:var(--ivory)!important}
+.music-engineering-section h2{line-height:1.14}
+.music-engineering-section .prose>p{margin-top:0}
+.music-engineering-links{margin-top:32px;border-top:1px solid var(--line)}
+.music-engineering-links a{
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+  border-bottom:1px solid var(--line);padding:18px 0;
+  font-size:14px;line-height:1.65
+}
+.music-engineering-links a:hover{color:var(--brown)}
+.music-engineering-links span{font-size:11px;color:var(--warm-grey)}
+/* Readable information text on muted background sections. */
+.visual-practice-section,.music-aesthetic-section,
+.music-releases-section,.split-home{--warm-grey:#524d47}
+
+/* Preserve editorial identity while avoiding clipped lines on mobile. */
+@media(max-width:980px){
+  .visual-manifesto,.music-manifesto{font-size:clamp(32px,4.7vw,52px);max-width:850px}
+}
+@media(max-width:760px){
+  html{scroll-padding-top:76px}
+  .site-nav a{min-height:50px}
+  .visual-manifesto,.music-manifesto{
+    font-size:clamp(29px,7.4vw,42px);
+    line-height:1.43;
+    letter-spacing:-.01em;
+    margin:32px 0 28px;
+    max-width:100%
+  }
+  .visual-intro,.music-intro{font-size:15px;line-height:1.85}
+  .visual-language-copy,.music-role-copy{font-size:clamp(21px,5.3vw,29px);line-height:1.55}
+  .page-intro,.detail-summary,.music-release-summary{line-height:1.55}
+  .article-header h1,.detail-hero h1,.music-release-hero h1{line-height:1.16}
+  .two-col h2,.case-section-head h2{line-height:1.17}
+  .home-about{line-height:1.55}
+  .prose,.article-prose{line-height:1.85}
+  .music-engineering-links a{flex-direction:column;align-items:flex-start;gap:4px}
+}
+@media(max-width:380px){
+  .visual-manifesto,.music-manifesto{font-size:clamp(27px,7.3vw,31px)}
+}
