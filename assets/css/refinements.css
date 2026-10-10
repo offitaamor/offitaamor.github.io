@@ -2,7 +2,7 @@
    Base page and collection styles remain in style.css, visual.css and music.css. */
 :root{
   --ko-serif:"Noto Serif KR","Nanum Myeongjo",serif;
-  --warm-grey:#615b54;
+  --warm-grey:#77736F;
 }
 html{scroll-padding-top:96px}
 body{word-break:keep-all;overflow-wrap:break-word}
@@ -109,4 +109,157 @@ a:focus-visible,button:focus-visible{
 }
 @media(max-width:380px){
   .visual-manifesto,.music-manifesto{font-size:clamp(27px,7.3vw,31px)}
+}
+
+
+/* OFFITA editorial palette + artwork-first refresh, October 2026
+   Preserves the approved eight-color brand palette, original content and font system. */
+:root{
+  --taupe:#938B82;
+  --warm-grey:#77736F;
+  --soft-black:#1C1B1A;
+  --muted-brown:#7A6556;
+}
+.home-hero{
+  grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  min-height:min(790px,calc(100svh - 76px));
+  gap:clamp(30px,5vw,80px);
+  padding-top:60px;padding-bottom:72px;
+}
+.home-hero h1{
+  font-size:clamp(67px,7.6vw,118px);
+  line-height:.91;
+  max-width:800px;
+  margin:29px 0;
+  text-wrap:balance;
+}
+.home-hero .home-copy{max-width:590px;line-height:1.72}
+.hero-editorial-art{position:relative;min-width:0;min-height:560px;padding:12px 30px 52px 0;isolation:isolate}
+.hero-primary-work{display:block;position:relative;width:82%;height:490px;overflow:hidden;background:var(--oatmeal);border:1px solid var(--line-soft)}
+.hero-primary-work img{width:100%;height:100%;object-fit:contain;transition:transform .25s ease}
+.hero-work-label{
+  position:absolute;bottom:0;left:0;right:0;display:flex;flex-direction:column;gap:4px;
+  background:rgba(28,27,26,.93);color:var(--ivory);padding:14px 18px;
+}
+.hero-work-label small{font-size:11px;letter-spacing:.14em;color:var(--oatmeal)}
+.hero-work-label strong{font-size:16px;font-weight:500}
+.hero-secondary-work{
+  display:block;position:absolute;width:43%;right:0;bottom:8px;
+  padding:9px;background:var(--greige);border:1px solid rgba(52,51,49,.22);z-index:1;
+  transition:transform .25s ease;
+}
+.hero-secondary-work img{width:100%;aspect-ratio:1;object-fit:contain;background:var(--ivory)}
+.hero-secondary-work span{display:block;margin-top:9px;color:var(--charcoal);font-size:10px;line-height:1.5;letter-spacing:.08em}
+.hero-art-index{
+  position:absolute;top:16px;right:0;writing-mode:vertical-rl;
+  font-size:10px;letter-spacing:.16em;color:var(--charcoal);
+}
+.hero-primary-work:hover img{transform:scale(1.012)}
+.hero-secondary-work:hover{transform:translateY(-3px)}
+.selected-section{background:var(--oatmeal)}
+.selected-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:56px 32px;align-items:start}
+.selected-grid .content-card{grid-column:span 5;min-width:0}
+.selected-grid .content-card:nth-child(4n+1),
+.selected-grid .content-card:nth-child(4n+4){grid-column:span 7}
+.selected-grid .content-card:first-child{grid-column:span 7}
+.selected-grid .card-image{aspect-ratio:4/3;background:var(--greige)}
+.selected-grid .content-card:first-child .card-image,
+.selected-grid .content-card:nth-child(4) .card-image{aspect-ratio:5/3}
+.selected-grid .card-meta>p:first-child{font-size:11px;letter-spacing:.11em;color:var(--charcoal)}
+.selected-grid .card-meta h3{font-size:clamp(28px,3vw,45px);line-height:1.06}
+.selected-grid .summary{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;color:var(--charcoal);line-height:1.7}
+.split-home{background:var(--taupe);gap:clamp(32px,6vw,90px)}
+.split-home h2,.split-home .home-about{color:var(--soft-black)}
+.split-home .home-about{line-height:1.75}
+.split-home .text-link{color:var(--soft-black)}
+.writing-section{background:var(--ivory)}
+.practice-section{background:var(--greige)}
+.home-nav-grid a{transition:color .2s ease,padding-left .2s ease,background-color .2s ease}
+.home-nav-grid a:hover{background-color:rgba(234,228,218,.19)}
+.home-contact-band{
+  position:relative;display:flex;justify-content:space-between;gap:24px;
+  padding:98px 40px 106px;background:var(--charcoal);color:var(--ivory);
+  border-bottom:1px solid rgba(234,228,218,.23);
+}
+.home-contact-band .eyebrow{color:var(--oatmeal);font-size:12px}
+.home-contact-inner h2{
+  margin:22px 0 40px;font-family:var(--serif);font-weight:500;
+  font-size:clamp(55px,7.8vw,116px);line-height:.94;letter-spacing:-.045em;
+}
+.home-contact-inner h2 em{font-style:italic;color:var(--oatmeal)}
+.home-contact-link{
+  display:inline-flex;gap:54px;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--oatmeal);padding:15px 0;min-height:48px;
+  font-size:13px;letter-spacing:.16em;transition:gap .2s ease,color .2s ease;
+}
+.home-contact-link:hover{gap:68px;color:var(--oatmeal)}
+.contact-band-marker{align-self:flex-end;writing-mode:vertical-rl;letter-spacing:.19em;font-size:10px;color:var(--greige)}
+.site-footer{border-top:0}
+.site-nav{font-size:12px}
+.footer-meta,.footer-brand span{font-size:12px}
+.page-hero-actions{display:flex;gap:32px;align-items:center;flex-wrap:wrap;margin-top:39px}
+.page-hero-actions a{
+  min-height:44px;display:inline-flex;gap:12px;align-items:center;
+  border-bottom:1px solid var(--charcoal);font-size:12px;letter-spacing:.1em;font-weight:500;
+  transition:color .2s ease,border-color .2s ease;
+}
+.page-hero-actions a:hover{color:var(--brown);border-color:var(--brown)}
+.music-page-hero,.visual-page-hero{padding-top:94px;padding-bottom:82px}
+.music-manifesto,.visual-manifesto{font-size:clamp(30px,3.5vw,52px);line-height:1.4;margin:34px 0 22px}
+.music-releases-section{background:var(--oatmeal)!important}
+.music-practice-section{background:var(--ivory)!important}
+.music-characteristics-section{background:var(--greige)!important}
+.music-role-section{background:var(--taupe)!important}
+.music-aesthetic-section{background:var(--ivory)!important}
+.music-discography-section{background:var(--oatmeal)!important}
+.music-engineering-section{background:var(--ivory)!important}
+.music-video-section{background:var(--greige)!important}
+.visual-series-section{background:var(--ivory)!important}
+.visual-practice-section{background:var(--oatmeal)!important}
+.visual-method-section{background:var(--ivory)!important}
+.visual-language-section{background:var(--greige)!important}
+.music-role-section .music-role-list span,.visual-language-section .visual-language-list span,
+.music-characteristics-section .music-characteristic-head span{color:var(--charcoal)}
+.page-section[id]{scroll-margin-top:84px}
+@media(max-width:1100px){
+  .home-hero{min-height:auto;grid-template-columns:minmax(0,1fr) minmax(0,.88fr);gap:32px}
+  .hero-editorial-art{min-height:455px}
+  .hero-primary-work{height:400px}
+}
+@media(max-width:760px){
+  .home-hero{grid-template-columns:1fr;gap:24px;padding:48px 20px 50px}
+  .home-hero h1{font-size:clamp(47px,11.8vw,74px);line-height:.97;margin:22px 0}
+  .home-hero .home-copy{font-size:15px}
+  .hero-editorial-art{min-height:350px;width:min(100%,450px);padding:10px 22px 35px 0}
+  .hero-primary-work{width:83%;height:310px}
+  .hero-secondary-work{width:42%;bottom:0;padding:7px}
+  .hero-secondary-work span{font-size:9px;letter-spacing:.035em}
+  .hero-work-label{padding:10px 12px}
+  .hero-work-label small{font-size:9px}
+  .hero-work-label strong{font-size:14px}
+  .hero-art-index{font-size:9px}
+  .selected-grid{grid-template-columns:1fr;gap:38px}
+  .selected-grid .content-card,
+  .selected-grid .content-card:first-child,
+  .selected-grid .content-card:nth-child(4n+1),
+  .selected-grid .content-card:nth-child(4n+4){grid-column:1/-1}
+  .selected-grid .card-image,
+  .selected-grid .content-card:first-child .card-image,
+  .selected-grid .content-card:nth-child(4) .card-image{aspect-ratio:4/3}
+  .split-home{gap:34px}
+  .home-contact-band{padding:76px 20px 86px}
+  .home-contact-inner h2{font-size:clamp(48px,12.5vw,72px)}
+  .contact-band-marker{display:none}
+  .page-hero-actions{gap:12px 24px;margin-top:25px}
+  .page-hero-actions a{font-size:11px}
+  .music-page-hero,.visual-page-hero{padding-top:66px;padding-bottom:66px}
+  .music-manifesto,.visual-manifesto{font-size:clamp(28px,7vw,39px);line-height:1.42}
+}
+@media(max-width:380px){
+  .home-hero h1{font-size:clamp(42px,11.3vw,49px)}
+  .hero-editorial-art{min-height:310px}
+  .hero-primary-work{height:276px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-primary-work img,.hero-secondary-work,.home-contact-link{transition:none}
 }

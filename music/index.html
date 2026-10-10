@@ -9,12 +9,28 @@ permalink: /music/
   <h1>Music</h1>
   <p class="music-manifesto">{{ site.data.music.hero_statement }}</p>
   <p class="music-intro">{{ site.data.music.intro }}</p>
+  <nav class="page-hero-actions" aria-label="Music page sections">
+    <a href="#music-works">EXPLORE MUSIC WORKS <span aria-hidden="true">↗</span></a>
+    <a href="#music-practice">READ SOUND PRACTICE <span aria-hidden="true">↓</span></a>
+  </nav>
 </section>
 
-<section class="page-section music-practice-section">
+<section class="page-section music-releases-section" id="music-works">
+  <div class="block-head">
+    <span>01</span><h2>Music Works</h2><span>SELECTED MUSIC ARCHIVE</span>
+  </div>
+  {% assign items = site.music | where: "music_type", "release" | sort: "date" | reverse %}
+  <div class="card-grid archive-grid">
+    {% for item in items %}
+      {% include card.html item=item index=forloop.index %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="page-section music-practice-section" id="music-practice">
   <div class="two-col">
     <div>
-      <p class="eyebrow">01 / SOUND PRACTICE</p>
+      <p class="eyebrow">02 / SOUND PRACTICE</p>
       <h2>Sound as<br>Expression.</h2>
     </div>
     <div class="prose music-practice-copy">{{ site.data.music.practice | newline_to_br }}</div>
@@ -23,7 +39,7 @@ permalink: /music/
 
 <section class="page-section music-characteristics-section">
   <div class="block-head">
-    <span>02</span><h2>Musical Characteristics</h2><span>LANGUAGE / METHOD / SOUND</span>
+    <span>03</span><h2>Musical Characteristics</h2><span>LANGUAGE / METHOD / SOUND</span>
   </div>
   <div class="music-characteristics-grid">
     {% for item in site.data.music.characteristics %}
@@ -42,7 +58,7 @@ permalink: /music/
 <section class="page-section music-role-section">
   <div class="two-col">
     <div>
-      <p class="eyebrow">03 / PRACTICE</p>
+      <p class="eyebrow">04 / PRACTICE</p>
       <h2>One work,<br>many means.</h2>
     </div>
     <div>
@@ -57,7 +73,7 @@ permalink: /music/
 <section class="page-section music-aesthetic-section">
   <div class="two-col">
     <div>
-      <p class="eyebrow">04 / PERSONAL AESTHETIC</p>
+      <p class="eyebrow">05 / PERSONAL AESTHETIC</p>
       <h2>Dreamy,<br>quiet, deep.</h2>
     </div>
     <div>
@@ -71,7 +87,7 @@ permalink: /music/
 
 <section class="page-section music-discography-section">
   <div class="block-head">
-    <span>05</span><h2>Discography</h2><a href="{{ site.data.music.melon_artist_url }}" target="_blank" rel="noopener">VIEW ON MELON ↗</a>
+    <span>06</span><h2>Discography</h2><a href="{{ site.data.music.melon_artist_url }}" target="_blank" rel="noopener">VIEW ON MELON ↗</a>
   </div>
   <div class="music-discography">
     {% for release in site.data.music.discography %}
@@ -84,18 +100,6 @@ permalink: /music/
         <span>{{ release.tracks }}</span>
         <b>↗</b>
       </a>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="page-section music-releases-section">
-  <div class="block-head">
-    <span>06</span><h2>Music Works</h2><span>SELECTED MUSIC ARCHIVE</span>
-  </div>
-  {% assign items = site.music | where: "music_type", "release" | sort: "date" | reverse %}
-  <div class="card-grid archive-grid">
-    {% for item in items %}
-      {% include card.html item=item index=forloop.index %}
     {% endfor %}
   </div>
 </section>

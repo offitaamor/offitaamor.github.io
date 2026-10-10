@@ -14,22 +14,50 @@ permalink: /
       <a class="button" href="{{ '/about/' | relative_url }}">ABOUT</a>
     </div>
   </div>
-  <div class="hero-brand-lockup" aria-hidden="true">
-    <img src="{{ '/assets/images/brand/offita-lockup.svg' | relative_url }}" alt="">
+  {% assign hero_visual = site.visual | where: "visual_type", "series" | sort: "order" | first %}
+  {% assign hero_music = site.music | where: "music_type", "release" | where: "featured", true | first %}
+  <div class="hero-editorial-art" aria-label="OFFITA featured visual and sound works">
+    {% if hero_visual %}
+    <a class="hero-primary-work" href="{{ hero_visual.url | relative_url }}" aria-label="{{ hero_visual.title }} 작품 감상">
+      <img src="{{ hero_visual.cover | relative_url }}" alt="{{ hero_visual.title }}" fetchpriority="high" decoding="async">
+      <span class="hero-work-label"><small>VISUAL / SELECTED SERIES</small><strong>{{ hero_visual.title }}</strong></span>
+    </a>
+    {% endif %}
+    {% if hero_music %}
+    <a class="hero-secondary-work" href="{{ hero_music.url | relative_url }}" aria-label="{{ hero_music.title }} 음반 보기">
+      <img src="{{ hero_music.cover | relative_url }}" alt="{{ hero_music.title }} 앨범아트" decoding="async">
+      <span>MUSIC / FEATURED RELEASE ↗</span>
+    </a>
+    {% endif %}
+    <span class="hero-art-index" aria-hidden="true">OFFITA / SELECTED PRACTICE — 2026</span>
   </div>
 </section>
 
 <section class="home-block selected-section">
   <div class="block-head">
-    <span>01</span><h2>Selected Works</h2><a href="{{ '/projects/' | relative_url }}">VIEW ALL →</a>
+    <span>01</span><h2>Selected Works</h2><a href="#practice-index">EXPLORE ALL →</a>
   </div>
   <div class="card-grid selected-grid">
+    {% assign selected_visual = site.visual | where: "visual_type", "series" | where: "featured", true | sort: "order" %}
+    {% assign selected_music = site.music | where: "music_type", "release" | sort: "date" | reverse %}
     {% assign selected_projects = site.projects | where: "featured", true %}
-    {% assign selected_music = site.music | where: "featured", true %}
-    {% assign selected_visual = site.visual | where: "featured", true %}
-    {% assign selected_all = selected_projects | concat: selected_music | concat: selected_visual %}
-    {% for item in selected_all limit: 5 %}
-      {% include card.html item=item index=forloop.index %}
+    {% for item in selected_visual limit: 1 %}
+      {% include card.html item=item %}
+    {% endfor %}
+    {% for item in selected_music limit: 1 %}
+      {% include card.html item=item %}
+    {% endfor %}
+    {% for item in selected_projects limit: 1 %}
+      {% include card.html item=item %}
+    {% endfor %}
+    {% for item in selected_visual offset: 1 limit: 1 %}
+      {% include card.html item=item %}
+    {% endfor %}
+    {% for item in selected_music offset: 1 limit: 1 %}
+      {% include card.html item=item %}
+    {% endfor %}
+    {% for item in selected_projects offset: 1 limit: 1 %}
+      {% include card.html item=item %}
     {% endfor %}
   </div>
 </section>
@@ -65,7 +93,7 @@ permalink: /
   </div>
 </section>
 
-<section class="practice-section">
+<section class="practice-section" id="practice-index">
   <p class="eyebrow">04 / PRACTICE INDEX</p>
   <div class="home-nav-grid">
     <a href="{{ '/music/' | relative_url }}"><span>01</span><strong>MUSIC</strong><em>→</em></a>
@@ -73,4 +101,12 @@ permalink: /
     <a href="{{ '/projects/' | relative_url }}"><span>03</span><strong>PROJECTS</strong><em>→</em></a>
     <a href="{{ '/writing/' | relative_url }}"><span>04</span><strong>WRITING</strong><em>→</em></a>
   </div>
+</section>
+<section class="home-contact-band">
+  <div class="home-contact-inner">
+    <p class="eyebrow">05 / COLLABORATION & CONTACT</p>
+    <h2>Let's make something<br><em>meaningful.</em></h2>
+    <a href="{{ '/contact/' | relative_url }}" class="home-contact-link">CONTACT OFFITA <span aria-hidden="true">↗</span></a>
+  </div>
+  <span class="contact-band-marker" aria-hidden="true">SOUND / IMAGE / PLACE / NARRATIVE</span>
 </section>
