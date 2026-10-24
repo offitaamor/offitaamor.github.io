@@ -7,13 +7,13 @@
 <title>GYEONGGI TRACKS — 12개의 지역 이야기 · OFFITA</title>
 <meta property="og:title" content="GYEONGGI TRACKS · OFFITA">
 <meta property="og:description" content="경기북부를 읽는 12개의 트랙. 한 지역의 이야기가 하나의 앨범이 됩니다.">
-<meta property="og:image" content="https://drive.google.com/thumbnail?id=1yY5e_gRanYoo0lrXROFzjBVDTCcI2zjU&sz=w1200">
+<meta property="og:image" content="https://offitaamor.github.io/gyeonggi-tracks/assets/maps/gyeonggi-north-map-current.webp">
 <link rel="icon" href="/assets/images/brand/offita-emblem.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css">
 </head><body>
 <a class="skip" href="#albums">앨범 목록으로 건너뛰기</a>
 <header class="topbar"><div class="shell"><a class="brand" href="./" aria-label="GYEONGGI TRACKS 처음으로">GYEONGGI <em>TRACKS</em></a><nav class="toplinks" aria-label="주요 메뉴"><a href="#intro">ABOUT</a><a href="#albums">12 TRACKS</a><a href="https://offitaamor.github.io/projects/">OFFITA ↗</a></nav></div></header>
 <main>
-<section class="hero shell"><div><div class="eyebrow">GYEONGGI NORTH · VISUAL ARCHIVE</div><h1>Every place<br>has <i>a story.</i></h1><p class="lead">경기북부, 열두 개의 지역.<br>아직 충분히 들려지지 않은 이야기.</p><p class="desc">마을의 사람과 기억, 생업과 풍경을 하나의 앨범처럼 펼칩니다. 그림에서 시작해 지역의 이야기를 읽고, 음악으로 이어지는 프로젝트입니다.</p><a href="#albums" class="text-cta">12개 이야기 살펴보기 <span aria-hidden="true">↗</span></a></div><a class="featured" href="./duji/" aria-label="대표 트랙 두지리 황복 이야기로 이동"><img src="https://drive.google.com/thumbnail?id=1yY5e_gRanYoo0lrXROFzjBVDTCcI2zjU&sz=w1200" alt="두지리 황복의 계절을 재해석한 OFFITA 일러스트" onerror="this.style.display='none';this.parentElement.style.background='#ebe3d5'" fetchpriority="high"><div class="caption">FEATURED TRACK <b>03 · 두지리 / 황복 ↗</b></div></a></section>
+<section class="hero shell"><div><div class="eyebrow">GYEONGGI NORTH · VISUAL ARCHIVE</div><h1>Twelve places<br><i>One region.</i></h1><p class="lead">경기북부, 열두 개의 지역.<br>저마다의 이야기를 가진 마을.</p><p class="desc">마을의 사람과 기억, 생업과 풍경을 하나의 앨범처럼 펼칩니다. 그림에서 시작해 지역의 이야기를 읽고, 음악으로 이어지는 프로젝트입니다.</p><a href="#albums" class="text-cta">12개 이야기 살펴보기 <span aria-hidden="true">↗</span></a></div><a class="featured map-feature" href="./assets/maps/gyeonggi-north-map-current.webp" target="_blank" rel="noopener" aria-label="경기 북부 12개 마을 이야기 지도 크게 보기"><img src="./assets/maps/gyeonggi-north-map-current.webp" alt="경기북부 12개 지역문화 이야기 지도. 09번 벽제관을 포함한 12개 트랙" fetchpriority="high"><div class="caption">12 STORIES · ONE REGION <b>GYEONGGI NORTH MAP ↗</b></div></a></section>
 <section class="shell small-note" id="intro"><strong>새로운 관광지를 만드는 것이 아니라,<br>이미 그곳에 있는 새로운 방문의 이유를 발견합니다.</strong><span>DISCOVER · INTERPRET · CREATE</span></section>
 <section class="archive shell" id="albums"><div class="title-row"><div><div class="eyebrow">AN OFFITA ORIGINAL PROJECT</div><h2>The 12 Tracks.</h2><p>각기 다른 역사와 생활문화를 가진 열두 개의 지역 앨범.</p></div><div class="big-count" aria-hidden="true">12</div></div>
 <div class="tools"><div class="filters" role="group" aria-label="지역문화 주제별 보기"><button type="button" data-filter="all" aria-pressed="true">전체 12</button><button type="button" data-filter="life" aria-pressed="false">삶과 생업</button><button type="button" data-filter="history" aria-pressed="false">역사와 기억</button><button type="button" data-filter="community" aria-pressed="false">마을과 예술</button></div><label><span class="skip">키워드 검색</span><input class="search" id="search" type="search" placeholder="지역·키워드 검색" aria-label="지역 또는 문화 키워드 검색"></label></div>
@@ -24,21 +24,8 @@
 <script>
 (()=>{
 "use strict";
-const thumb=id=>"https://drive.google.com/thumbnail?id="+encodeURIComponent(id)+"&sz=w1000";
-const tracks=[
-["01","baekhak","백학마을","연천 · 백학마을","호국","history","레클리스·지게부대와 접경 수복의 기억",null,"#a76548"],
-["02","haenghyeon","행현1리","가평 · 행현1리","잣","life","잣과 숲에서 이어져 온 생업과 생활문화","10_mPZRA6yihgFzOCiEdwqsEgwoZsVQ2A","#6f7653"],
-["03","duji","두지리","파주 · 두지리","황복","life","임진강·황복·계절의 식문화가 만나는 마을","1yY5e_gRanYoo0lrXROFzjBVDTCcI2zjU","#b78043"],
-["04","hangju","행주나루","고양 · 행주나루","웅어","life","한강 하류의 어업과 포구의 기억","1zZD-RVlyYfC8uGLL8yTbnNq7ukgHQwBH","#9a5744"],
-["05","galmae","갈매마을","구리 · 갈매마을","도당굿","community","도당굿으로 이어지는 마을의 제의와 공동체","1y0cn09jUtu2YfmgVszpV7x1NodJFsqRj","#9c443c"],
-["06","sinmang","신망리","연천 · 신망리","수복","history","전쟁 이후 피난민의 정착과 마을 재건의 기억",null,"#9d6048"],
-["07","gwanin","관인문화마을","포천 · 관인문화마을","관인","community","지명과 주민의 기억이 쌓인 마을의 정체성","1VQPbWYwhok7huNrGEuo9SCDZJpiP9wqw","#8c694b"],
-["08","horogoru","호로고루","연천 · 호로고루","고구려","history","임진강변 고구려 성곽과 경계의 기억","1xUKN8bDbtT0A9vMcYWvFEsjJ3E4cmfDo","#6d7466"],
-["09","gyeongse","경세 인물권","남양주 · 파주","경세","history","정약용·율곡·황희, 경세의 사상과 삶",null,"#a88248"],
-["10","manufacturing","양포동 제조권","양주 · 포천 · 동두천","제조","life","섬유·가죽·패션의 기술과 노동","1YJY3R9wXQEXCIbfr7OGHUMFPwm6GgSIr","#6c7773"],
-["11","jangheung","장흥면","양주 · 장흥면","예술","community","예술가·방문자·생활권이 만나는 지역",null,"#aa6e4b"],
-["12","wonilsan","와야촌","고양 · 와야촌","원일산","community","일산의 옛 지명과 시장·역·주거의 기억","1uq8Ee1Ujh1vG3z8dQtYGPNunoBREiuA1","#9a554b"]
-];
+const thumb=id=>"./assets/covers/"+encodeURIComponent(id)+".webp";
+const tracks=[["01","baekhak","백학마을","연천 · 백학마을","호국","history","레클리스·지게부대와 접경 수복의 기억","baekhak","#a76548"],["02","haenghyeon","행현1리","가평 · 행현1리","잣","life","잣과 숲에서 이어져 온 생업과 생활문화","haenghyeon","#6f7653"],["03","duji","두지리","파주 · 두지리","황복","life","임진강·황복·계절의 식문화가 만나는 마을","duji","#b78043"],["04","hangju","행주나루","고양 · 행주나루","웅어","life","한강 하류의 어업과 포구의 기억","hangju","#9a5744"],["05","galmae","갈매마을","구리 · 갈매마을","도당굿","community","도당굿으로 이어지는 마을의 제의와 공동체","galmae","#9c443c"],["06","sinmang","신망리","연천 · 신망리","수복","history","전쟁 이후 피난민의 정착과 마을 재건의 기억","sinmang","#9d6048"],["07","gwanin","관인문화마을","포천 · 관인문화마을","관인","community","지명과 주민의 기억이 쌓인 마을의 정체성","gwanin","#8c694b"],["08","horogoru","호로고루","연천 · 호로고루","고구려","history","임진강변 고구려 성곽과 경계의 기억","horogoru","#6d7466"],["09","byeokje","벽제","고양 · 벽제","벽제관","history","벽제관 터와 한양으로 향하던 옛길, 길손을 맞았던 기억","byeokje","#a25b43"],["10","manufacturing","양포동 제조권","양주 · 포천 · 동두천","제조","life","섬유·가죽·패션의 기술과 노동","manufacturing","#6c7773"],["11","jangheung","장흥면","양주 · 장흥면","예술","community","예술가·방문자·생활권이 만나는 지역","jangheung","#aa6e4b"],["12","wonilsan","와야촌","고양 · 와야촌","원일산","community","일산의 옛 지명과 시장·역·주거의 기억","wonilsan","#9a554b"]];
 const grid=document.querySelector("#grid"), search=document.querySelector("#search"), count=document.querySelector("#count"),empty=document.querySelector("#empty"),dialog=document.querySelector("#preview");
 let filter="all",last=null;
 function node(tag,cls,text){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el;}
@@ -47,7 +34,7 @@ if(id==="duji"){interactive.href="./duji/";interactive.setAttribute("aria-label"
 const cover=node("div","cover"+(!file?" pending":""));if(file){const img=document.createElement("img");img.src=thumb(file);img.alt=title+" 지역 아트워크";img.loading="lazy";img.decoding="async";img.addEventListener("error",()=>cover.classList.add("is-missing"));cover.append(img,node("div","fallback",title+" · 이미지 연결 확인 중"));if(id==="duji")cover.append(node("span","featured-label","대표 상세페이지 ↗"));}
 else{cover.style.setProperty("--shade",color);cover.append(node("small","", "TRACK "+num),node("strong","",theme+" / "+title),node("span","", "ARTWORK IN PROGRESS"));}
 const meta=node("div","album-meta"),numel=node("span","index",num),txt=node("div","");txt.append(node("h3","",title),node("p","",place),node("span","tag",theme));meta.append(numel,txt);interactive.append(cover,meta);article.append(interactive);return article;}
-function render(){const query=search.value.toLocaleLowerCase("ko").trim();const arr=tracks.filter(t=>(filter==="all"||t[5]===filter)&&(!query||[t[2],t[3],t[4],t[6]].join(" ").toLocaleLowerCase("ko").includes(query)));grid.replaceChildren(...arr.map(make));count.textContent=arr.length+"개 지역 표시 · 이미지 확보 "+arr.filter(t=>t[7]).length+"개";empty.hidden=!!arr.length;}
+function render(){const query=search.value.toLocaleLowerCase("ko").trim();const arr=tracks.filter(t=>(filter==="all"||t[5]===filter)&&(!query||[t[2],t[3],t[4],t[6]].join(" ").toLocaleLowerCase("ko").includes(query)));grid.replaceChildren(...arr.map(make));count.textContent=arr.length+"개 지역 표시 · 대표 표지 "+arr.filter(t=>t[7]).length+"개";empty.hidden=!!arr.length;}
 document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(c=>c.setAttribute("aria-pressed",String(c===b)));render();}));search.addEventListener("input",render);
 document.querySelector("#close").addEventListener("click",()=>dialog.close());dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close();});dialog.addEventListener("close",()=>last?.focus());render();
 })();
