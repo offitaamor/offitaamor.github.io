@@ -11,3 +11,21 @@
 @media(max-width:920px){.albums{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{gap:5%}.detail-hero{gap:4%}.story-grid{gap:12px}}
 @media(max-width:690px){.shell{width:90%}.topbar .shell{height:64px}.brand{font-size:20px}.micro-brand{display:none}.toplinks{gap:12px;font-size:10px}.toplinks a:nth-child(1){display:none}.hero{display:flex;flex-direction:column;padding:52px 0 57px;align-items:stretch;gap:30px}.hero h1{font-size:clamp(64px,14vw,90px)}.hero .lead{font-size:20px}.hero .desc{font-size:12px}.featured{max-width:530px}.small-note{display:block}.small-note strong{font-size:13px}.small-note span{display:block;margin-top:10px}.archive{padding:70px 0}.title-row h2{font-size:50px}.big-count{display:none}.tools{display:block;margin-top:28px}.filters{overflow:auto;flex-wrap:nowrap;padding-bottom:4px}.filters button{white-space:nowrap;flex:none}.search{width:100%;margin:14px 0 0}.albums{grid-template-columns:repeat(2,minmax(0,1fr));gap:29px 13px}.album-meta{gap:7px}.album h3{font-size:14px}.album p{font-size:10px}.cover.pending{padding:12px}.pending strong{font-size:20px}.pending small,.pending span{font-size:8px}.detail-top{font-size:11px}.detail-hero{display:flex;flex-direction:column;gap:27px;padding:5px 0 40px}.detail-hero img{max-width:600px}.detail-hero h1{font-size:55px}.detail-hero .korean{font-size:23px}.section{padding:45px 0 54px}.section-head h2{font-size:28px}.story-intro{display:block}.story-intro .opening{font-size:17px;margin-bottom:20px}.story-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 12px}.story-card figcaption{gap:8px}.story-card figcaption span{font-size:12px}.soundbox{padding:22px}.visit{grid-template-columns:1fr}.return-strip{display:block;padding:25px;margin-bottom:50px}.return-strip strong{display:block;margin-bottom:18px}.bottom{font-size:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+/* GYEONGGI TRACKS 12-regions update · 2026-10-24
+   Scoped to the gallery's map hero; preserves the existing Duji detail page. */
+@media(min-width:691px){
+  .hero{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:6%;padding:58px 0 64px}
+  .hero h1{font-size:clamp(58px,6vw,91px)}
+}
+.featured.map-feature{min-width:0;padding:0 0 23px;display:block}
+.featured.map-feature img{display:block;width:100%;height:auto;aspect-ratio:1101 / 1376;object-fit:contain;border:1px solid rgba(105,91,70,.16);box-shadow:0 13px 28px rgba(56,43,31,.08)}
+.featured.map-feature .caption{position:absolute;bottom:0;right:0;padding:9px 0 0 15px;background:var(--paper);font-size:10px;letter-spacing:.055em}
+.featured.map-feature .caption b{font-size:12px;letter-spacing:0}
+@media(max-width:690px){
+  .hero{padding:36px 0 48px;gap:26px}
+  .hero h1{font-size:clamp(54px,13vw,76px)}
+  .featured.map-feature{max-width:100%;padding-bottom:21px}
+  .featured.map-feature .caption{font-size:9px;padding:6px 0 0 8px}
+  .featured.map-feature .caption b{font-size:11px}
+}
