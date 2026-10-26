@@ -31,5 +31,15 @@ jobs:
             echo "Images unchanged."
             exit 0
           fi
-          git commit -m "Add optimized Gyeonggi Tracks artwork and map"
-          git push
+          git commit -m "Refresh optimized Gyeonggi Tracks regional artwork"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              echo "Regional artwork published."
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Unable to push after 3 attempts; no force push performed."
+          exit 1
