@@ -8,16 +8,16 @@ OUT = Path("gyeonggi-tracks/assets")
 SOURCES = {
     "baekhak": "1JXeP4z8NAqH274wQJg2bCJyspVrMoWWJ",
     "haenghyeon": "10_mPZRA6yihgFzOCiEdwqsEgwoZsVQ2A",
-    "duji": "1yY5e_gRanYoo0lrXROFzjBVDTCcI2zjU",
-    "hangju": "1zZD-RVlyYfC8uGLL8yTbnNq7ukgHQwBH",
+    "duji": "1Lcg_XkzY4xOJmrftMYU4cujERjiOCKC-",
+    "hangju": "1B7lj7heOt6UkWh7tIQWAJMKEc0Qf2NeM",
     "galmae": "1y0cn09jUtu2YfmgVszpV7x1NodJFsqRj",
-    "sinmang": "1l3i4eJLNRT9QQHCgNyJqD3ETBweDQk9V",
-    "gwanin": "1kt1MA7YtRzkdrkqmr6axOZB1PfYhU-8r",
-    "horogoru": "1xUKN8bDbtT0A9vMcYWvFEsjJ3E4cmfDo",
+    "sinmang": "1sNEWgh-w1G8kX4w_PqNQJHYaaALvaBcU",
+    "gwanin": "1Ol2biqLv1YaP5Q2BwSEi_tlYWKvkhxI6",
+    "horogoru": "1B-28Ba7h2S9-TFAqom2-J8uYj5w2qoZN",
     "byeokje": "18nzdCwgJkV30dtcJE1TK-PWrBNA0959Z",
-    "manufacturing": "1mIxKe9L5bv_AC68plGhA_2LTkHIza8Hd",
-    "jangheung": "1jGkfaXi5p-Kan1vXYNkrdNywev_lFfG3",
-    "wonilsan": "1uq8Ee1Ujh1vG3z8dQtYGPNunoBREiuA1",
+    "manufacturing": "1YJY3R9wXQEXCIbfr7OGHUMFPwm6GgSIr",
+    "jangheung": "1b8q5jWbzmxCtb2k6EUXiZlGPqpYv7L6a",
+    "wonilsan": "1TM8KoXJZ4o6I-63qrRpmrVIoP0YxWPtg",
 }
 MAP_ID = "1ko1_mdAMlf8VGmIVkQSsT0hNF-Agyyc7"
 UA = "Mozilla/5.0 (compatible; OFFITA-Gyeonggi-Assets/1.0)"
