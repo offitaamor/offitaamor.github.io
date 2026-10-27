@@ -4,7 +4,8 @@ category: "BOOK CULTURE / PARTICIPATION / DIGITAL"
 year: "2026"
 medium: "Web Experience / Book Culture"
 summary: "‘책은 다시, 사람에게’를 주제로 책과 사람의 연결을 제안하는 ‘다음장 — 이음’ 프로젝트의 온라인 페이지."
-cover: ""
+cover: "/assets/uploads/projects/daeumjang-ieum-cover.webp"
+poster_card: true
 featured: false
 case_study: false
 direct_external: true
