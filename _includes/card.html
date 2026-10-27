@@ -3,7 +3,7 @@
 {% else %}
 <a class="content-card" href="{{ include.item.url | relative_url }}">
 {% endif %}
-  <div class="card-image">
+  <div class="card-image"{% if include.item.poster_card %} style="aspect-ratio:1/1"{% endif %}>
     {% if include.item.cover and include.item.cover != "" %}
       <img src="{{ include.item.cover | relative_url }}" alt="{{ include.item.title }}">
     {% elsif include.item.remote_cover and include.item.remote_cover != "" %}
