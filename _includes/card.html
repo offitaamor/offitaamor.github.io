@@ -1,4 +1,8 @@
+{% if include.item.direct_external and include.item.external_url != blank %}
+<a class="content-card" href="{{ include.item.external_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ include.item.title }} 프로젝트 사이트 새 탭에서 열기">
+{% else %}
 <a class="content-card" href="{{ include.item.url | relative_url }}">
+{% endif %}
   <div class="card-image">
     {% if include.item.cover and include.item.cover != "" %}
       <img src="{{ include.item.cover | relative_url }}" alt="{{ include.item.title }}">
@@ -12,7 +16,7 @@
   </div>
   <div class="card-meta">
     <p>{{ include.item.category | default: include.item.section }}</p>
-    <h3>{{ include.item.title }}</h3>
+    <h3>{{ include.item.title }}{% if include.item.direct_external and include.item.external_url != blank %} <span aria-hidden="true">↗</span>{% endif %}</h3>
     {% if include.item.summary %}<p class="summary">{{ include.item.summary }}</p>{% endif %}
   </div>
 </a>
