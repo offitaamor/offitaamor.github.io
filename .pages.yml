@@ -433,6 +433,10 @@ content:
       - name: external_url
         label: External Link
         type: string
+      - name: direct_external
+        label: Open Website Directly from Project Card
+        type: boolean
+        description: "When enabled, the card opens External Link in a new tab."
       - name: body
         label: Project Description
         type: rich-text
