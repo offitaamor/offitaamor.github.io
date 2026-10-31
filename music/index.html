@@ -8,7 +8,6 @@ permalink: /music/
   <p class="eyebrow">SOUND PRACTICE / GENRE / COMPOSITION / PRODUCTION</p>
   <h1>Music</h1>
   <p class="music-manifesto">{{ site.data.music.hero_statement }}</p>
-  <p class="music-intro">{{ site.data.music.intro }}</p>
   <nav class="page-hero-actions" aria-label="Music page sections">
     <a href="#music-works">EXPLORE MUSIC WORKS <span aria-hidden="true">↗</span></a>
     <a href="#music-practice">READ SOUND PRACTICE <span aria-hidden="true">↓</span></a>
@@ -37,28 +36,10 @@ permalink: /music/
   </div>
 </section>
 
-<section class="page-section music-characteristics-section">
-  <div class="block-head">
-    <span>03</span><h2>Musical Characteristics</h2><span>LANGUAGE / METHOD / SOUND</span>
-  </div>
-  <div class="music-characteristics-grid">
-    {% for item in site.data.music.characteristics %}
-    <article class="music-characteristic-item">
-      <div class="music-characteristic-head">
-        <span>{{ item.code }}</span>
-        <em>{{ item.en }}</em>
-      </div>
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-
 <section class="page-section music-role-section">
   <div class="two-col">
     <div>
-      <p class="eyebrow">04 / PRACTICE</p>
+      <p class="eyebrow">03 / PRACTICE</p>
       <h2>One work,<br>many means.</h2>
     </div>
     <div>
@@ -70,35 +51,20 @@ permalink: /music/
   </div>
 </section>
 
-<section class="page-section music-aesthetic-section">
-  <div class="two-col">
-    <div>
-      <p class="eyebrow">05 / PERSONAL AESTHETIC</p>
-      <h2>Dreamy,<br>quiet, deep.</h2>
-    </div>
-    <div>
-      <div class="prose music-aesthetic-copy">{{ site.data.music.aesthetic | newline_to_br }}</div>
-      <div class="music-keywords">
-        {% for keyword in site.data.music.aesthetic_keywords %}<span>{{ keyword }}</span>{% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="page-section music-discography-section">
   <div class="block-head">
-    <span>06</span><h2>Discography</h2><a href="{{ site.data.music.melon_artist_url }}" target="_blank" rel="noopener">VIEW ON MELON ↗</a>
+    <span>04</span><h2>Discography</h2><a href="{{ site.data.music.melon_artist_url }}" target="_blank" rel="noopener">VIEW ON MELON ↗</a>
   </div>
   <div class="music-discography">
     {% for release in site.data.music.discography %}
-      <a class="music-discography-row" href="{{ site.data.music.melon_artist_url }}" target="_blank" rel="noopener">
+      <a class="music-discography-row" href="{% if release.url %}{{ release.url | relative_url }}{% else %}{{ site.data.music.melon_artist_url }}{% endif %}"{% unless release.url %} target="_blank" rel="noopener" aria-label="{{ release.title }} — 멜론 아티스트 음반 목록에서 찾기"{% endunless %}>
         <span>{{ release.date }}</span>
         <div>
           <em>{{ release.type }}</em>
           <strong>{{ release.title }}</strong>
         </div>
         <span>{{ release.tracks }}</span>
-        <b>↗</b>
+        <b>{% if release.url %}→{% else %}MELON ↗{% endif %}</b>
       </a>
     {% endfor %}
   </div>
@@ -107,7 +73,7 @@ permalink: /music/
 <section class="page-section music-engineering-section">
   <div class="two-col">
     <div>
-      <p class="eyebrow">07 / AUDIO ENGINEERING</p>
+      <p class="eyebrow">05 / AUDIO ENGINEERING</p>
       <h2>From idea<br>to sound.</h2>
     </div>
     <div class="prose">
@@ -124,7 +90,7 @@ permalink: /music/
 <section class="page-section music-video-section">
   <div class="two-col">
     <div>
-      <p class="eyebrow">08 / PERFORMANCE & VIDEO</p>
+      <p class="eyebrow">06 / PERFORMANCE & VIDEO</p>
       <h2>Beyond<br>the recording.</h2>
     </div>
     <div class="prose">

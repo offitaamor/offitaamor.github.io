@@ -46,7 +46,7 @@
 }
 .music-discography-section{background:var(--ivory)!important}
 .music-discography{border-top:1px solid var(--line)}
-.music-discography-row{display:grid;grid-template-columns:130px 1fr 100px 24px;gap:24px;align-items:center;padding:25px 0;border-bottom:1px solid var(--line);transition:color .2s ease,padding-left .2s ease}
+.music-discography-row{display:grid;grid-template-columns:130px 1fr 100px 75px;gap:24px;align-items:center;padding:25px 0;border-bottom:1px solid var(--line);transition:color .2s ease,padding-left .2s ease}
 .music-discography-row:hover{color:var(--brown);padding-left:8px}
 .music-discography-row>span{font-size:10px;letter-spacing:.1em;color:var(--warm-grey)}
 .music-discography-row>div{display:flex;flex-direction:column;gap:5px}

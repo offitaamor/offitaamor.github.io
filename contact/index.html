@@ -7,12 +7,16 @@ permalink: /contact/
 ---
 <section class="page-section contact-page">
   <p class="contact-big">Collaboration · Exhibition · Music Production · Project Inquiry</p>
-  <div class="contact-stack">
+  <h2 class="contact-group-heading">협업 문의</h2>
+  <div class="contact-stack contact-stack--primary">
+    {% if site.data.site.email != "" %}<a href="mailto:{{ site.data.site.email }}">EMAIL <span>{{ site.data.site.email }}</span></a>{% endif %}
     {% if site.data.site.kakao != "" %}<a href="{{ site.data.site.kakao }}" target="_blank" rel="noopener">KAKAO TALK <span>OPEN CHAT ↗</span></a>{% endif %}
+  </div>
+  <h2 class="contact-group-heading">작업과 소식</h2>
+  <div class="contact-stack contact-stack--social">
     {% if site.data.site.instagram != "" %}<a href="{{ site.data.site.instagram }}" target="_blank" rel="noopener">INSTAGRAM <span>@offitaism ↗</span></a>{% endif %}
-    {% if site.data.site.facebook != "" %}<a href="{{ site.data.site.facebook }}" target="_blank" rel="noopener">FACEBOOK <span>OFFITA ↗</span></a>{% endif %}
     {% if site.data.site.youtube != "" %}<a href="{{ site.data.site.youtube }}" target="_blank" rel="noopener">YOUTUBE <span>오피타 ↗</span></a>{% endif %}
     {% if site.data.site.music_link != "" %}<a href="{{ site.data.site.music_link }}" target="_blank" rel="noopener">MELON <span>ARTIST CHANNEL ↗</span></a>{% endif %}
-    {% if site.data.site.email != "" %}<a href="mailto:{{ site.data.site.email }}">EMAIL <span>{{ site.data.site.email }}</span></a>{% endif %}
+    {% if site.data.site.facebook != "" %}<a href="{{ site.data.site.facebook }}" target="_blank" rel="noopener">FACEBOOK <span>OFFITA ↗</span></a>{% endif %}
   </div>
 </section>

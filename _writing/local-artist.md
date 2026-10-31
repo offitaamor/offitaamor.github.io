@@ -1,6 +1,6 @@
 ---
 title: "지역에서 예술가는 무엇을 할 수 있는가"
-category: "LOCAL / ART"
+category: "ESSAY"
 date: 2026-09-12
 tags:
   - Local

@@ -263,3 +263,39 @@ a:focus-visible,button:focus-visible{
 @media(prefers-reduced-motion:reduce){
   .hero-primary-work img,.hero-secondary-work,.home-contact-link{transition:none}
 }
+
+/* Portfolio navigation: preserve artwork proportions and make key facts easy to scan. */
+.hero-secondary-work span strong{display:inline-block;margin-top:3px;font-size:12px;letter-spacing:0;font-weight:600}
+.selected-grid .music-cover-card .card-image,
+.archive-grid .music-cover-card .card-image{aspect-ratio:1;background:var(--ivory)}
+.selected-grid .music-cover-card .card-image img,
+.archive-grid .music-cover-card .card-image img{object-fit:contain}
+.selected-grid .music-cover-card:first-child .card-image,
+.selected-grid .music-cover-card:nth-child(4) .card-image{aspect-ratio:1}
+.card-meta .card-facts{font-size:11px;letter-spacing:.015em;line-height:1.6;color:var(--muted-brown);margin:0 0 11px}
+.archive-grid .card-meta .summary{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.home-contact-description{font-size:15px;line-height:1.7;color:var(--oatmeal);margin:-14px 0 30px}
+.contact-group-heading{font-family:var(--ko-serif);font-size:clamp(24px,2.5vw,33px);font-weight:500;margin:54px 0 0}
+.contact-stack--primary{margin-top:20px}
+.contact-stack--primary>a:first-child{font-size:14px;font-weight:600;letter-spacing:.08em}
+.contact-stack--primary>a:first-child span{color:var(--charcoal);overflow-wrap:anywhere}
+.contact-stack--social{margin-top:20px}
+.detail-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--line);margin:40px 0 0;padding:22px 0 0}
+.detail-highlights div{min-width:0}
+.detail-highlights dt{font-size:11px;letter-spacing:.08em;color:var(--muted-brown);margin-bottom:8px}
+.detail-highlights dd{margin:0;font-size:15px;line-height:1.6;font-weight:500}
+.visual-page-hero{padding-top:52px;padding-bottom:44px}
+.visual-page-hero h1{margin-bottom:10px}
+.visual-page-hero .visual-manifesto{max-width:800px;font-size:clamp(28px,3vw,43px);margin:16px 0 0}
+.visual-page-hero .page-hero-actions{margin-top:22px}
+@media(max-width:760px){
+  .selected-grid .music-cover-card .card-image,
+  .selected-grid .music-cover-card:first-child .card-image,
+  .selected-grid .music-cover-card:nth-child(4) .card-image{aspect-ratio:1}
+  .detail-highlights{grid-template-columns:1fr;gap:15px;margin-top:28px}
+  .detail-highlights div+div{border-top:1px solid var(--line);padding-top:15px}
+  .visual-page-hero{padding-top:38px;padding-bottom:38px}
+  .visual-page-hero .visual-manifesto{font-size:clamp(27px,7vw,36px);line-height:1.4}
+  .home-contact-description{font-size:14px;margin:-10px 0 26px}
+  .contact-stack>a{flex-wrap:wrap;line-height:1.6}
+}

@@ -10,6 +10,14 @@ cover: ""
 remote_cover: "https://drive.google.com/thumbnail?id=1W4tFaab4WcZutcHiJ4mdolXqBYomxDug&sz=w2000"
 featured: true
 case_study: true
+highlights:
+  - label: "기간"
+    value: "2026.07.30–08.03"
+  - label: "OFFITA의 역할"
+    value: "작가·작품 소개 정리 · 체험용 스티커 제작 · 현장 지원"
+  - label: "결과"
+    value: "관람객 362명 · 계약서 182건 · 만족도 4.74/5"
+external_label: "프로그램 소개"
 external_url: "https://www.socialilab.com/post/%EC%B0%B8%EC%97%AC%EC%9E%90-%EB%AA%A8%EC%A7%91-%EC%86%8C%EC%85%9C-we-%EC%95%84%ED%8A%B8%EB%B8%8C%EB%A6%BF%EC%A7%80-%EB%AC%B8%ED%99%94%EC%98%88%EC%88%A0-%EA%B8%B0%ED%9A%8D%EC%9E%90-%EC%96%91%EC%84%B1%EA%B3%BC%EC%A0%95-%EC%B2%AD%EB%85%84-%EC%B0%B8%EC%97%AC%EC%9E%90-%EB%AA%A8%EC%A7%91-~5-3"
 ---
 

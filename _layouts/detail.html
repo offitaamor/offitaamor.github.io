@@ -7,6 +7,13 @@ layout: default
     <p class="eyebrow">{{ page.category }}</p>
     <h1>{{ page.title }}</h1>
     {% if page.summary %}<p class="detail-summary">{{ page.summary }}</p>{% endif %}
+    {% if page.highlights %}
+    <dl class="detail-highlights" aria-label="프로젝트 핵심 정보">
+      {% for highlight in page.highlights %}
+      <div><dt>{{ highlight.label }}</dt><dd>{{ highlight.value }}</dd></div>
+      {% endfor %}
+    </dl>
+    {% endif %}
   </header>
 
   {% if page.cover and page.cover != "" %}
@@ -25,7 +32,7 @@ layout: default
       {% if page.role %}<div><span>ROLE</span><strong>{{ page.role }}</strong></div>{% endif %}
       {% if page.medium %}<div><span>MEDIUM</span><strong>{{ page.medium }}</strong></div>{% endif %}
       {% if page.client %}<div><span>WITH</span><strong>{{ page.client }}</strong></div>{% endif %}
-      {% if page.external_url %}<div><a href="{{ page.external_url }}" target="_blank" rel="noopener">EXTERNAL LINK ↗</a></div>{% endif %}
+      {% if page.external_url %}<div><a href="{{ page.external_url }}" target="_blank" rel="noopener">{{ page.external_label | default: 'EXTERNAL LINK' }} ↗</a></div>{% endif %}
     </aside>
     <div class="prose">{{ content }}</div>
   </div>
