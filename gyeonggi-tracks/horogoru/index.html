@@ -38,6 +38,38 @@
 @media(max-width:920px){.horo-scenes{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:690px){.horogoru-detail .detail-hero h1{font-size:clamp(43px,10vw,63px)}.reading-guide{gap:7px}.reading-guide a{padding:10px;font-size:11px}.reading-details summary{padding:17px}.reading-prose{padding:24px 19px 32px}.reading-chapter p{font-size:14px;line-height:2}.reading-context{font-size:12px}}
 @media(max-width:540px){.horo-scenes{grid-template-columns:1fr}.horo-scene{min-height:auto}}
+
+/* HOROGORU artwork gallery — same editorial layout and lightbox behavior as other tracks */
+.horo-scenes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 20px}
+.horo-scene{display:flex;flex-direction:column;min-width:0;padding:0;min-height:0;border:0;border-top:0;background:transparent}
+.horo-art{position:relative;aspect-ratio:1;background:#eadfc9;border:1px solid var(--line);overflow:hidden}
+.horo-art-trigger{display:block;position:relative;cursor:zoom-in;width:100%;height:100%;border:0;padding:0;background:transparent}
+.horo-art-trigger img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s ease;background:#eadfc9}
+.horo-art-trigger:hover img,.horo-art-trigger:focus-visible img{transform:scale(1.035)}
+.horo-art-trigger:focus-visible{outline:3px solid var(--horo-umber);outline-offset:-3px}
+.horo-art-open{position:absolute;right:10px;bottom:10px;z-index:1;padding:7px 10px;background:#f8efe0;color:var(--horo-ink);font:700 10px var(--sans);border:1px solid #cab9a2}
+.horo-art-unavailable{position:absolute;inset:0;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;text-align:center;background:#f5efdf;color:var(--sub);font:12px/1.7 var(--sans);padding:16px}
+.horo-art-unavailable[hidden]{display:none}
+.horo-art-unavailable a{color:var(--horo-umber);text-decoration:underline;text-underline-offset:3px}
+.horo-scene-copy{padding-top:13px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.horo-scene .scene-index{display:inline-block;font:700 11px/1.7 var(--sans);letter-spacing:.08em;color:var(--horo-umber);margin:0 0 4px}
+.horo-scene .scene-en{font:700 10px/1.6 var(--sans);letter-spacing:.07em;color:var(--horo-umber)}
+.horo-scene h3{font:600 17px/1.55 var(--ko);margin:4px 0}
+.horo-scene p{font:400 12px/1.85 var(--sans);color:var(--sub);margin:7px 0 14px}
+.horo-scene-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:auto}
+.horo-scene-links a{font:600 11px/1.8 var(--sans);color:var(--horo-ink);border-bottom:1px solid var(--horo-umber)}
+.horo-lightbox{border:0;width:min(1100px,96vw);max-width:1100px;max-height:96vh;padding:15px;background:var(--white);color:var(--ink);box-shadow:0 24px 65px #0005}
+.horo-lightbox::backdrop{background:#15130fcc}
+.horo-lightbox .lb-close{position:absolute;top:13px;right:13px;border:0;border-radius:50%;width:39px;height:39px;background:var(--white);font:24px var(--sans);z-index:3;box-shadow:0 2px 12px #0003;cursor:pointer}
+.horo-lightbox>img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;object-fit:contain;margin:0 auto}
+.horo-lightbox .lb-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px}
+.horo-lightbox .lb-nav button{border:1px solid var(--line);background:transparent;color:var(--horo-ink);padding:8px 13px;cursor:pointer;white-space:nowrap}
+.horo-lightbox .lb-nav button:hover{background:#eee2cf}
+.horo-lightbox .lb-nav p{margin:0;flex:1;text-align:center;font:12px/1.6 var(--sans)}
+.horo-lightbox .lb-error{text-align:center;padding:25px 10px;font:13px/1.8 var(--sans)}
+.horo-lightbox .lb-error a{display:block;color:var(--horo-umber);text-decoration:underline;margin-top:8px}
+@media(max-width:920px){.horo-scenes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.horo-scenes{grid-template-columns:1fr}}
 </style></head><body class="horogoru-detail">
 <a class="skip" href="#story">호로고루 이야기로 건너뛰기</a>
 <header class="topbar"><div class="shell"><a class="brand" href="../">GYEONGGI <em>TRACKS</em></a><nav class="toplinks" aria-label="주요 메뉴"><a href="../#intro">ABOUT</a><a href="../#albums">12 TRACKS</a><a href="https://offitaamor.github.io/projects/">OFFITA ↗</a></nav></div></header>
@@ -56,15 +88,64 @@
 <p>이 시리즈의 거대한 수호자는 고구려의 삶과 국경 방어를 상상하기 위해 만든 가상 인물입니다. 작품은 그가 돌을 옮기고, 음식을 먹고, 동료를 붙잡는 장면을 지나 오늘의 호로고루를 바라보는 아이에게로 이어집니다.</p></div></div>
 <div class="archive-note"><strong>사실과 창작의 경계</strong> · 호로고루의 위치·성곽·출토 유물 및 현대 지역문화는 역사 자료를 바탕으로 합니다. 수호자의 개인사, 구조 장면, 인물의 대화와 감정은 문학적 상상입니다. 고구려 시대의 군사적 국경과 현대의 군사분계선은 같은 경계가 아닙니다. 포스터의 지형과 시설 또한 실제 측량·복원도는 아닙니다.</div></section>
 <section class="section" id="illustrations" aria-labelledby="illustrations-title"><div class="section-head"><h2 id="illustrations-title">여섯 장면, 그리고 하나의 강</h2><span>02 / ILLUSTRATED SEQUENCE</span></div>
-<p class="reading-context">EP 01–06과 대표 커버의 장면 안내입니다. 각 장면을 선택하면 해당 문학 서사의 본문으로 이동합니다.</p>
-<div class="horo-scenes"><article class="horo-scene" id="scene-01"><div class="scene-index">01</div><span class="scene-en">THE GUARDIAN</span><h3>강을 지키는 자</h3><p>창을 쥐고 임진강을 감시하는 고구려 수호자.</p><a href="#lit-01" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></article>
-<article class="horo-scene" id="scene-02"><div class="scene-index">02</div><span class="scene-en">THE NATURAL FORTRESS</span><h3>강이 만든 성</h3><p>절벽과 여울, 삼각형 대지가 이룬 방어의 지형.</p><a href="#lit-02" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></article>
-<article class="horo-scene" id="scene-03"><div class="scene-index">03</div><span class="scene-en">THE BUILDERS</span><h3>성을 세우는 사람들</h3><p>흙을 다지고 돌을 옮겨 성벽을 쌓는 사람들.</p><a href="#lit-03" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></article>
-<article class="horo-scene" id="scene-04"><div class="scene-index">04</div><span class="scene-en">LIFE BEHIND THE WALL</span><h3>성벽 안의 하루</h3><p>곡물과 토기, 식사 속에 남은 군사 거점의 일상.</p><a href="#lit-04" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></article>
-<article class="horo-scene" id="scene-05"><div class="scene-index">05</div><span class="scene-en">THE CROSSING</span><h3>호로하를 건너다</h3><p>여울목에서 물살에 휩쓸린 동료를 붙잡는 손.</p><a href="#lit-05" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></article>
-<article class="horo-scene" id="scene-06"><div class="scene-index">06</div><span class="scene-en">BEYOND THE BORDER</span><h3>경계를 넘어</h3><p>오늘의 아이와 어른이 성벽에 관해 이야기를 나눈다.</p><a href="#lit-06" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></article>
-<article class="horo-scene" id="scene-final"><div class="scene-index">COVER</div><span class="scene-en">THE RIVER REMEMBERS</span><h3>강은 모든 경계를 기억한다</h3><p>뒤돌아보는 수호자와 저녁빛의 임진강.</p><a href="#lit-final" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></article></div>
-<p class="tip">현재 공개된 대표 커버 이미지는 상단에서 감상할 수 있으며, 각 장면의 개별 아트워크는 이 페이지에 아직 연결되지 않았습니다.</p></section>
+<p class="reading-context">EP 01–06과 최종 대표 커버, 총 7점의 작품입니다. 이미지를 선택하면 확대 감상할 수 있으며, 각 장면 아래에서 문학 서사로 이어집니다.</p>
+<div class="horo-scenes"><article class="horo-scene" id="scene-01">
+ <div class="horo-art"><button type="button" class="horo-art-trigger" data-art-index="0" aria-label="강을 지키는 자 이미지 확대 보기" aria-haspopup="dialog">
+ <img src="https://drive.google.com/thumbnail?id=1B-28Ba7h2S9-TFAqom2-J8uYj5w2qoZN&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1B-28Ba7h2S9-TFAqom2-J8uYj5w2qoZN&amp;sz=w2400" data-original="https://drive.google.com/file/d/1B-28Ba7h2S9-TFAqom2-J8uYj5w2qoZN/view" width="1000" height="1000" loading="lazy" decoding="async" alt="창을 쥔 고구려 수호자와 호로고루의 임진강 풍경">
+ <span class="horo-art-open" aria-hidden="true">크게 보기 ＋</span></button>
+ <div class="horo-art-unavailable" hidden><span>이미지를 불러오지 못했습니다.</span><a href="https://drive.google.com/file/d/1B-28Ba7h2S9-TFAqom2-J8uYj5w2qoZN/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div></div>
+ <div class="horo-scene-copy"><div class="scene-index">01</div><span class="scene-en">THE GUARDIAN</span><h3>강을 지키는 자</h3><p>창을 쥔 고구려 수호자와 호로고루의 임진강 풍경</p>
+ <div class="horo-scene-links"><a href="#lit-01" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1B-28Ba7h2S9-TFAqom2-J8uYj5w2qoZN/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></div>
+ </article>
+<article class="horo-scene" id="scene-02">
+ <div class="horo-art"><button type="button" class="horo-art-trigger" data-art-index="1" aria-label="강이 만든 성 이미지 확대 보기" aria-haspopup="dialog">
+ <img src="https://drive.google.com/thumbnail?id=1HYkP-FNHIAhZNKxdoaye_5KqFrle2Idm&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1HYkP-FNHIAhZNKxdoaye_5KqFrle2Idm&amp;sz=w2400" data-original="https://drive.google.com/file/d/1HYkP-FNHIAhZNKxdoaye_5KqFrle2Idm/view" width="1000" height="1000" loading="lazy" decoding="async" alt="현무암 절벽과 삼각형 대지가 만든 고구려의 강안 방어 지형">
+ <span class="horo-art-open" aria-hidden="true">크게 보기 ＋</span></button>
+ <div class="horo-art-unavailable" hidden><span>이미지를 불러오지 못했습니다.</span><a href="https://drive.google.com/file/d/1HYkP-FNHIAhZNKxdoaye_5KqFrle2Idm/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div></div>
+ <div class="horo-scene-copy"><div class="scene-index">02</div><span class="scene-en">THE NATURAL FORTRESS</span><h3>강이 만든 성</h3><p>현무암 절벽과 삼각형 대지가 만든 고구려의 강안 방어 지형</p>
+ <div class="horo-scene-links"><a href="#lit-02" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1HYkP-FNHIAhZNKxdoaye_5KqFrle2Idm/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></div>
+ </article>
+<article class="horo-scene" id="scene-03">
+ <div class="horo-art"><button type="button" class="horo-art-trigger" data-art-index="2" aria-label="성을 세우는 사람들 이미지 확대 보기" aria-haspopup="dialog">
+ <img src="https://drive.google.com/thumbnail?id=1pzNW30Ubssxm9EGIoJ_I_ysOjhyD028q&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1pzNW30Ubssxm9EGIoJ_I_ysOjhyD028q&amp;sz=w2400" data-original="https://drive.google.com/file/d/1pzNW30Ubssxm9EGIoJ_I_ysOjhyD028q/view" width="1000" height="1000" loading="lazy" decoding="async" alt="돌을 옮기고 목책을 세우는 고구려 사람들의 축성 장면">
+ <span class="horo-art-open" aria-hidden="true">크게 보기 ＋</span></button>
+ <div class="horo-art-unavailable" hidden><span>이미지를 불러오지 못했습니다.</span><a href="https://drive.google.com/file/d/1pzNW30Ubssxm9EGIoJ_I_ysOjhyD028q/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div></div>
+ <div class="horo-scene-copy"><div class="scene-index">03</div><span class="scene-en">THE BUILDERS</span><h3>성을 세우는 사람들</h3><p>돌을 옮기고 목책을 세우는 고구려 사람들의 축성 장면</p>
+ <div class="horo-scene-links"><a href="#lit-03" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1pzNW30Ubssxm9EGIoJ_I_ysOjhyD028q/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></div>
+ </article>
+<article class="horo-scene" id="scene-04">
+ <div class="horo-art"><button type="button" class="horo-art-trigger" data-art-index="3" aria-label="성벽 안의 하루 이미지 확대 보기" aria-haspopup="dialog">
+ <img src="https://drive.google.com/thumbnail?id=1okI-2V_mrorVv2d1h7Ws9PtPdvKKmCCH&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1okI-2V_mrorVv2d1h7Ws9PtPdvKKmCCH&amp;sz=w2400" data-original="https://drive.google.com/file/d/1okI-2V_mrorVv2d1h7Ws9PtPdvKKmCCH/view" width="1000" height="1000" loading="lazy" decoding="async" alt="호로고루 성벽 안에서 곡물을 준비하고 함께 식사하는 일상">
+ <span class="horo-art-open" aria-hidden="true">크게 보기 ＋</span></button>
+ <div class="horo-art-unavailable" hidden><span>이미지를 불러오지 못했습니다.</span><a href="https://drive.google.com/file/d/1okI-2V_mrorVv2d1h7Ws9PtPdvKKmCCH/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div></div>
+ <div class="horo-scene-copy"><div class="scene-index">04</div><span class="scene-en">LIFE BEHIND THE WALL</span><h3>성벽 안의 하루</h3><p>호로고루 성벽 안에서 곡물을 준비하고 함께 식사하는 일상</p>
+ <div class="horo-scene-links"><a href="#lit-04" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1okI-2V_mrorVv2d1h7Ws9PtPdvKKmCCH/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></div>
+ </article>
+<article class="horo-scene" id="scene-05">
+ <div class="horo-art"><button type="button" class="horo-art-trigger" data-art-index="4" aria-label="호로하를 건너다 이미지 확대 보기" aria-haspopup="dialog">
+ <img src="https://drive.google.com/thumbnail?id=1k6f0wJYLAuxSnDvBkfJYytEQH3Bpcdpc&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1k6f0wJYLAuxSnDvBkfJYytEQH3Bpcdpc&amp;sz=w2400" data-original="https://drive.google.com/file/d/1k6f0wJYLAuxSnDvBkfJYytEQH3Bpcdpc/view" width="1000" height="1000" loading="lazy" decoding="async" alt="임진강 여울에서 동료를 끌어올리는 고구려 수호자">
+ <span class="horo-art-open" aria-hidden="true">크게 보기 ＋</span></button>
+ <div class="horo-art-unavailable" hidden><span>이미지를 불러오지 못했습니다.</span><a href="https://drive.google.com/file/d/1k6f0wJYLAuxSnDvBkfJYytEQH3Bpcdpc/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div></div>
+ <div class="horo-scene-copy"><div class="scene-index">05</div><span class="scene-en">THE CROSSING</span><h3>호로하를 건너다</h3><p>임진강 여울에서 동료를 끌어올리는 고구려 수호자</p>
+ <div class="horo-scene-links"><a href="#lit-05" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1k6f0wJYLAuxSnDvBkfJYytEQH3Bpcdpc/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></div>
+ </article>
+<article class="horo-scene" id="scene-06">
+ <div class="horo-art"><button type="button" class="horo-art-trigger" data-art-index="5" aria-label="경계를 넘어 이미지 확대 보기" aria-haspopup="dialog">
+ <img src="https://drive.google.com/thumbnail?id=1NAK0Roxr-Mn4Cgav_8tGcPxvuIvGPvPr&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1NAK0Roxr-Mn4Cgav_8tGcPxvuIvGPvPr&amp;sz=w2400" data-original="https://drive.google.com/file/d/1NAK0Roxr-Mn4Cgav_8tGcPxvuIvGPvPr/view" width="1000" height="1000" loading="lazy" decoding="async" alt="현대 호로고루 성벽을 가리키는 아이와 함께하는 여성">
+ <span class="horo-art-open" aria-hidden="true">크게 보기 ＋</span></button>
+ <div class="horo-art-unavailable" hidden><span>이미지를 불러오지 못했습니다.</span><a href="https://drive.google.com/file/d/1NAK0Roxr-Mn4Cgav_8tGcPxvuIvGPvPr/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div></div>
+ <div class="horo-scene-copy"><div class="scene-index">06</div><span class="scene-en">BEYOND THE BORDER</span><h3>경계를 넘어</h3><p>현대 호로고루 성벽을 가리키는 아이와 함께하는 여성</p>
+ <div class="horo-scene-links"><a href="#lit-06" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1NAK0Roxr-Mn4Cgav_8tGcPxvuIvGPvPr/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></div>
+ </article>
+<article class="horo-scene" id="scene-final">
+ <div class="horo-art"><button type="button" class="horo-art-trigger" data-art-index="6" aria-label="강은 모든 경계를 기억한다 이미지 확대 보기" aria-haspopup="dialog">
+ <img src="https://drive.google.com/thumbnail?id=1xUKN8bDbtT0A9vMcYWvFEsjJ3E4cmfDo&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1xUKN8bDbtT0A9vMcYWvFEsjJ3E4cmfDo&amp;sz=w2400" data-original="https://drive.google.com/file/d/1xUKN8bDbtT0A9vMcYWvFEsjJ3E4cmfDo/view" width="1000" height="1000" loading="lazy" decoding="async" alt="호로고루의 강과 대지를 향해 걸어가는 거대한 수호자, 대표 커버">
+ <span class="horo-art-open" aria-hidden="true">크게 보기 ＋</span></button>
+ <div class="horo-art-unavailable" hidden><span>이미지를 불러오지 못했습니다.</span><a href="https://drive.google.com/file/d/1xUKN8bDbtT0A9vMcYWvFEsjJ3E4cmfDo/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div></div>
+ <div class="horo-scene-copy"><div class="scene-index">COVER</div><span class="scene-en">THE RIVER REMEMBERS</span><h3>강은 모든 경계를 기억한다</h3><p>호로고루의 강과 대지를 향해 걸어가는 거대한 수호자, 대표 커버</p>
+ <div class="horo-scene-links"><a href="#lit-final" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1xUKN8bDbtT0A9vMcYWvFEsjJ3E4cmfDo/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></div>
+ </article></div>
+<p class="tip">이미지를 선택하면 크게 볼 수 있습니다. 확대 화면에서는 이전·다음 버튼과 키보드의 좌우 화살표를 사용할 수 있습니다. 이미지 제공: 작품 원본 Google Drive.</p></section>
 <section class="section" id="literature" aria-labelledby="literature-title"><div class="section-head"><h2 id="literature-title">강이 기억하는 손</h2><span>03 / LITERARY NARRATIVE</span></div>
 <p class="reading-lead">고구려의 한 수호자가 국경을 지키는 일에서 사람들의 하루를 지키는 일로 시선을 넓혀가는 이야기.</p>
 <p class="reading-context">완성된 여섯 에피소드와 대표 커버를 바탕으로 쓴 연작 문학 산문 전문입니다. 사건과 대화는 역사적 소재에 기초한 허구입니다.</p>
@@ -345,4 +426,21 @@
 <div class="return-strip"><strong>호로고루의 강에서, 열두 지역의 이야기로.</strong><a href="../#albums">다른 11개 지역 살펴보기 ↗</a></div>
 </main><footer class="shell bottom"><span>GYEONGGI TRACKS © 2026 OFFITA</span><span>ORIGINAL ILLUSTRATION · REGIONAL STORY · SOUND</span><a href="https://offitaamor.github.io/">OFFITA HOME ↗</a></footer>
 <script>(()=>{"use strict";function openHash(){const id=decodeURIComponent(location.hash.slice(1)),el=id&&document.getElementById(id);if(!el)return;const details=el.closest("details");if(details&&!details.open)details.open=true;}document.querySelectorAll("[data-expand]").forEach(a=>a.addEventListener("click",()=>{const d=document.getElementById(a.dataset.expand);if(d)d.open=true;}));addEventListener("hashchange",openHash);openHash();})();</script>
+<dialog class="horo-lightbox" id="horo-lightbox" aria-label="호로고루 작품 확대 감상">
+<button type="button" class="lb-close" id="horo-lightbox-close" aria-label="확대 이미지 닫기">×</button>
+<img id="horo-lightbox-image" alt="">
+<div class="lb-error" id="horo-lightbox-error" hidden>이미지를 불러오지 못했습니다.<a id="horo-lightbox-original" href="#" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+<div class="lb-nav"><button type="button" id="horo-lightbox-prev" aria-label="이전 작품">← 이전</button><p id="horo-lightbox-caption" aria-live="polite"></p><button type="button" id="horo-lightbox-next" aria-label="다음 작품">다음 →</button></div>
+</dialog>
+<script>(()=>{"use strict";
+const triggers=Array.from(document.querySelectorAll("#illustrations .horo-art-trigger"));
+const dialog=document.getElementById("horo-lightbox"),big=document.getElementById("horo-lightbox-image"),caption=document.getElementById("horo-lightbox-caption"),error=document.getElementById("horo-lightbox-error"),original=document.getElementById("horo-lightbox-original");let current=0,previous=null;
+function show(index){current=(index+triggers.length)%triggers.length;const trigger=triggers[current],img=trigger.querySelector("img"),title=trigger.closest(".horo-scene").querySelector("h3").textContent;caption.textContent=(current+1)+" / "+triggers.length+" · "+title;original.href=img.dataset.original;error.hidden=true;big.hidden=false;big.alt=img.alt;big.src=img.dataset.full;}
+triggers.forEach((trigger,i)=>{trigger.addEventListener("click",()=>{previous=trigger;show(i);dialog.showModal();});const img=trigger.querySelector("img");img.addEventListener("error",()=>{trigger.hidden=true;trigger.closest(".horo-art").querySelector(".horo-art-unavailable").hidden=false;});});
+big.addEventListener("error",()=>{big.hidden=true;error.hidden=false;});
+document.getElementById("horo-lightbox-prev").addEventListener("click",()=>show(current-1));document.getElementById("horo-lightbox-next").addEventListener("click",()=>show(current+1));document.getElementById("horo-lightbox-close").addEventListener("click",()=>dialog.close());
+dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close();});
+dialog.addEventListener("keydown",e=>{if(e.key==="ArrowLeft"){e.preventDefault();show(current-1);}else if(e.key==="ArrowRight"){e.preventDefault();show(current+1);}});
+dialog.addEventListener("close",()=>{big.removeAttribute("src");previous?.focus();});
+})();</script>
 </body></html>
