@@ -52,6 +52,42 @@
 @media(max-width:850px){.jang-scenes{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:690px){.reading-guide{gap:7px}.reading-guide a{font-size:11px;padding:10px}.reading-details summary{padding:17px}.reading-prose{padding:24px 19px 32px}.reading-chapter p{font-size:14px;line-height:2}.reading-chapter h4{font-size:19px}.reading-context{font-size:12px}.reading-references{padding:18px}}
 @media(max-width:540px){.jang-scenes{grid-template-columns:1fr}.jang-scene{min-height:0}}
+
+/* Jangheung chapter gallery · consistent with regional illustrated sequences */
+.jang-story-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.jang-art-card{min-width:0;scroll-margin-top:25px}
+.jang-art-button{position:relative;display:block;width:100%;border:0;background:var(--paper2);padding:0;overflow:hidden;cursor:zoom-in}
+.jang-art-image{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;transition:transform .25s ease;background:var(--paper2)}
+.jang-art-button:hover .jang-art-image{transform:scale(1.025)}
+.jang-art-button:focus-visible{outline:3px solid var(--brick);outline-offset:3px}
+.jang-art-open{position:absolute;bottom:9px;right:9px;background:var(--white);padding:7px 10px;font:700 10px var(--sans);color:var(--ink);opacity:0;transition:opacity .2s ease}
+.jang-art-button:hover .jang-art-open,.jang-art-button:focus-visible .jang-art-open{opacity:1}
+.jang-image-fallback{display:none;min-height:220px;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--sub);font-size:12px;line-height:2}
+.jang-art-button.jang-img-failed{cursor:pointer}
+.jang-img-failed .jang-art-image,.jang-img-failed .jang-art-open{display:none}
+.jang-img-failed .jang-image-fallback{display:flex}
+.jang-art-card figcaption{display:flex;gap:12px;padding-top:14px;align-items:flex-start}
+.jang-art-card figcaption b{font:700 11px var(--sans);color:var(--brick)}
+.jang-art-card figcaption div{min-width:0}
+.jang-art-card .jang-scene-en{display:block;color:var(--olive);font:700 10px/1.5 var(--sans);letter-spacing:.08em}
+.jang-art-card figcaption strong{display:block;font:600 15px/1.6 var(--ko);margin-top:3px}
+.jang-art-card figcaption p{font:400 12px/1.85 var(--sans);color:var(--sub);margin:7px 0 8px}
+.jang-scene-read{display:inline-block;font:600 12px/1.7 var(--sans);border-bottom:1px solid var(--brick)}
+.jang-origin-link{display:block;width:max-content;max-width:100%;margin-top:7px;color:var(--sub);font:400 11px/1.6 var(--sans);border-bottom:1px solid var(--line)}
+.jang-art-dialog{max-width:min(1050px,96vw);width:min(1050px,96vw);max-height:95vh;padding:14px;background:var(--white);border:0;color:var(--ink);position:fixed;overflow:auto}
+.jang-art-dialog::backdrop{background:rgba(22,22,20,.90)}
+.jang-art-dialog img{display:block;max-width:100%;max-height:76vh;width:auto;height:auto;object-fit:contain;margin:auto}
+.jang-art-dialog .jang-dialog-close{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;background:var(--white);border:1px solid var(--line);border-radius:50%;font-size:22px;cursor:pointer}
+.jang-lightbox-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:13px}
+.jang-lightbox-nav button{position:static;border:1px solid var(--line);background:transparent;padding:9px 14px;color:var(--ink);font-size:12px;border-radius:0;white-space:nowrap}
+.jang-lightbox-nav button:hover,.jang-lightbox-nav button:focus-visible{background:var(--paper2)}
+.jang-lightbox-nav p{flex:1;min-width:0;text-align:center;margin:0;color:var(--sub);font-size:12px}
+.jang-lightbox-fallback{display:none;padding:60px 20px;text-align:center;color:var(--sub);font-size:13px}
+.jang-lightbox-fallback a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:920px){.jang-story-grid{gap:16px}}
+@media(max-width:690px){.jang-story-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 12px}.jang-art-open{opacity:1}.jang-art-dialog{padding:9px}.jang-art-dialog img{max-height:70vh}.jang-lightbox-nav{flex-wrap:wrap}.jang-lightbox-nav p{order:-1;flex-basis:100%}}
+@media(max-width:540px){.jang-story-grid{grid-template-columns:1fr;gap:30px}}
+@media(prefers-reduced-motion:reduce){.jang-art-image,.jang-art-open{transition:none}}
 </style>
 </head>
 <body>
@@ -73,12 +109,15 @@
 <div class="archive-note"><strong>사실과 창작의 경계</strong> · 실제 문화시설과 역사적 배경을 바탕으로 제작한 예술 시리즈입니다. 주인공과 주변 인물의 행동·대화, 하루 동안의 동선과 기억 지도는 문학적 재구성이며 특정 실존 인물이나 한날의 실제 기록을 그대로 재현한 것은 아닙니다.</div>
 </section>
 <section class="section" id="illustrations" aria-labelledby="sequence-title"><div class="section-head"><h2 id="sequence-title">여섯 장면, 예술이 흐르는 하루</h2><span>02 / ILLUSTRATED SEQUENCE</span></div>
-<div class="jang-scenes"><article class="jang-scene" id="scene-01"><span class="jang-scene-no">01 <small>ARRIVE</small></span><h3>계곡에서 예술을 발견하다</h3><p>석현천 옆길에서 지도와 스케치북을 펼치며 낯선 동네에 들어선다.</p><a href="#lit-01">이 장면의 문학 읽기 ↗</a></article>
-<article class="jang-scene" id="scene-02"><span class="jang-scene-no">02 <small>SEE</small></span><h3>보는 일이 산책이 되는 곳</h3><p>미술관과 야외조각 사이에서 작품을 보는 사람들의 움직임을 그린다.</p><a href="#lit-02">이 장면의 문학 읽기 ↗</a></article>
-<article class="jang-scene" id="scene-03"><span class="jang-scene-no">03 <small>MAKE</small></span><h3>보던 사람이 만드는 사람이 된다</h3><p>작은 사진과 종이를 잘라 붙이며 가족·어린이와 함께 새로운 풍경을 만든다.</p><a href="#lit-03">이 장면의 문학 읽기 ↗</a></article>
-<article class="jang-scene" id="scene-04"><span class="jang-scene-no">04 <small>WORK / LIVE</small></span><h3>전시장이 끝나는 곳에서 작업이 시작된다</h3><p>777레지던스의 작업실에서 창작에 쌓이는 시간과 예술가의 이야기를 만난다.</p><a href="#lit-04">이 장면의 문학 읽기 ↗</a></article>
-<article class="jang-scene" id="scene-05"><span class="jang-scene-no">05 <small>NATURE</small></span><h3>계곡과 미술관 사이</h3><p>석현천의 물소리를 녹음하며 그림에 남지 않는 감각을 발견한다.</p><a href="#lit-05">이 장면의 문학 읽기 ↗</a></article>
-<article class="jang-scene" id="scene-06"><span class="jang-scene-no">06 <small>ONE DAY</small></span><h3>하루가 하나의 작품이 되다</h3><p>하루 동안 모은 스케치와 사진을 이어 붙여 자신만의 장흥 기억 지도를 완성한다.</p><a href="#lit-06">이 장면의 문학 읽기 ↗</a></article></div><p class="tip">여섯 장면의 핵심을 간추린 안내입니다. 각 장면을 선택하면 아래 문학 서사의 해당 부분으로 이동합니다. 개별 일러스트 원본은 이미지 연결이 확인된 뒤 갤러리에 추가됩니다.</p>
+<div class="story-grid jang-story-grid" id="story-grid">
+<figure class="story-card jang-art-card" id="scene-01"><button type="button" class="jang-art-button" aria-label="01번 장면 그림 확대: 계곡에서 예술을 발견하다" aria-haspopup="dialog" data-art-index="0"><img class="jang-art-image" src="https://drive.google.com/thumbnail?id=1TzV9a3GYwX_mNa3tQzW7NrzFuec0KeVm&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=1TzV9a3GYwX_mNa3tQzW7NrzFuec0KeVm&amp;sz=w2400" data-drive="https://drive.google.com/file/d/1TzV9a3GYwX_mNa3tQzW7NrzFuec0KeVm/view" loading="lazy" decoding="async" width="1254" height="1254" alt="가을 장흥 계곡길을 걷는 금발 여성 예술가가 지도와 스케치북을 들고 물길과 건축을 바라보는 일러스트"><span class="jang-art-open" aria-hidden="true">그림 확대 ↗</span><span class="jang-image-fallback" aria-hidden="true">이미지를 불러올 수 없습니다.<br>원본 이미지 열기 ↗</span></button><figcaption><b>01</b><div><span class="jang-scene-en">ARRIVE</span><strong>계곡에서 예술을 발견하다</strong><p>석현천 옆길에서 지도와 스케치북을 펼치며 낯선 동네에 들어선다.</p><a class="jang-scene-read" href="#lit-01">이 장면의 문학 읽기 ↗</a><a class="jang-origin-link" href="https://drive.google.com/file/d/1TzV9a3GYwX_mNa3tQzW7NrzFuec0KeVm/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 보기 ↗</a></div></figcaption></figure>
+<figure class="story-card jang-art-card" id="scene-02"><button type="button" class="jang-art-button" aria-label="02번 장면 그림 확대: 보는 일이 산책이 되는 곳" aria-haspopup="dialog" data-art-index="1"><img class="jang-art-image" src="https://drive.google.com/thumbnail?id=1uph5yZiVRQkjO1FKEk_UOqpCTTwMH2EF&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=1uph5yZiVRQkjO1FKEk_UOqpCTTwMH2EF&amp;sz=w2400" data-drive="https://drive.google.com/file/d/1uph5yZiVRQkjO1FKEk_UOqpCTTwMH2EF/view" loading="lazy" decoding="async" width="1254" height="1254" alt="가을 야외조각공원에서 금발 예술가가 벤치에 앉아 스케치하고 관람객과 아이들이 작품을 감상하는 일러스트"><span class="jang-art-open" aria-hidden="true">그림 확대 ↗</span><span class="jang-image-fallback" aria-hidden="true">이미지를 불러올 수 없습니다.<br>원본 이미지 열기 ↗</span></button><figcaption><b>02</b><div><span class="jang-scene-en">SEE</span><strong>보는 일이 산책이 되는 곳</strong><p>미술관과 야외조각 사이에서 작품을 보는 사람들의 움직임을 그린다.</p><a class="jang-scene-read" href="#lit-02">이 장면의 문학 읽기 ↗</a><a class="jang-origin-link" href="https://drive.google.com/file/d/1uph5yZiVRQkjO1FKEk_UOqpCTTwMH2EF/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 보기 ↗</a></div></figcaption></figure>
+<figure class="story-card jang-art-card" id="scene-03"><button type="button" class="jang-art-button" aria-label="03번 장면 그림 확대: 보던 사람이 만드는 사람이 된다" aria-haspopup="dialog" data-art-index="2"><img class="jang-art-image" src="https://drive.google.com/thumbnail?id=16FlbA_cNhyNGv2sTvS7dHK7D7KXaAjJ8&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=16FlbA_cNhyNGv2sTvS7dHK7D7KXaAjJ8&amp;sz=w2400" data-drive="https://drive.google.com/file/d/16FlbA_cNhyNGv2sTvS7dHK7D7KXaAjJ8/view" loading="lazy" decoding="async" width="1254" height="1254" alt="미술관 공방에서 금발 여성 예술가와 가족, 어린이가 함께 사진과 색종이로 콜라주를 제작하는 일러스트"><span class="jang-art-open" aria-hidden="true">그림 확대 ↗</span><span class="jang-image-fallback" aria-hidden="true">이미지를 불러올 수 없습니다.<br>원본 이미지 열기 ↗</span></button><figcaption><b>03</b><div><span class="jang-scene-en">MAKE</span><strong>보던 사람이 만드는 사람이 된다</strong><p>작은 사진과 종이를 잘라 붙이며 가족·어린이와 함께 새로운 풍경을 만든다.</p><a class="jang-scene-read" href="#lit-03">이 장면의 문학 읽기 ↗</a><a class="jang-origin-link" href="https://drive.google.com/file/d/16FlbA_cNhyNGv2sTvS7dHK7D7KXaAjJ8/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 보기 ↗</a></div></figcaption></figure>
+<figure class="story-card jang-art-card" id="scene-04"><button type="button" class="jang-art-button" aria-label="04번 장면 그림 확대: 전시장이 끝나는 곳에서 작업이 시작된다" aria-haspopup="dialog" data-art-index="3"><img class="jang-art-image" src="https://drive.google.com/thumbnail?id=10hohSU1DlwxIOprd46Sb4lGDk0URhnuX&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=10hohSU1DlwxIOprd46Sb4lGDk0URhnuX&amp;sz=w2400" data-drive="https://drive.google.com/file/d/10hohSU1DlwxIOprd46Sb4lGDk0URhnuX/view" loading="lazy" decoding="async" width="1254" height="1254" alt="오래된 숙박시설을 활용한 장흥 예술가 레지던시 작업실에서 창작 활동과 교류가 이루어지는 일러스트"><span class="jang-art-open" aria-hidden="true">그림 확대 ↗</span><span class="jang-image-fallback" aria-hidden="true">이미지를 불러올 수 없습니다.<br>원본 이미지 열기 ↗</span></button><figcaption><b>04</b><div><span class="jang-scene-en">WORK / LIVE</span><strong>전시장이 끝나는 곳에서 작업이 시작된다</strong><p>777레지던스의 작업실에서 창작에 쌓이는 시간과 예술가의 이야기를 만난다.</p><a class="jang-scene-read" href="#lit-04">이 장면의 문학 읽기 ↗</a><a class="jang-origin-link" href="https://drive.google.com/file/d/10hohSU1DlwxIOprd46Sb4lGDk0URhnuX/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 보기 ↗</a></div></figcaption></figure>
+<figure class="story-card jang-art-card" id="scene-05"><button type="button" class="jang-art-button" aria-label="05번 장면 그림 확대: 계곡과 미술관 사이" aria-haspopup="dialog" data-art-index="4"><img class="jang-art-image" src="https://drive.google.com/thumbnail?id=1lC1SI69ODOna7aQttW6KXPjfjuNUAXNl&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=1lC1SI69ODOna7aQttW6KXPjfjuNUAXNl&amp;sz=w2400" data-drive="https://drive.google.com/file/d/1lC1SI69ODOna7aQttW6KXPjfjuNUAXNl/view" loading="lazy" decoding="async" width="1254" height="1254" alt="가을 계곡의 돌 위에 앉은 금발 예술가가 작은 녹음기로 물소리를 듣는 일러스트"><span class="jang-art-open" aria-hidden="true">그림 확대 ↗</span><span class="jang-image-fallback" aria-hidden="true">이미지를 불러올 수 없습니다.<br>원본 이미지 열기 ↗</span></button><figcaption><b>05</b><div><span class="jang-scene-en">NATURE</span><strong>계곡과 미술관 사이</strong><p>석현천의 물소리를 녹음하며 그림에 남지 않는 감각을 발견한다.</p><a class="jang-scene-read" href="#lit-05">이 장면의 문학 읽기 ↗</a><a class="jang-origin-link" href="https://drive.google.com/file/d/1lC1SI69ODOna7aQttW6KXPjfjuNUAXNl/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 보기 ↗</a></div></figcaption></figure>
+<figure class="story-card jang-art-card" id="scene-06"><button type="button" class="jang-art-button" aria-label="06번 장면 그림 확대: 하루가 하나의 작품이 되다" aria-haspopup="dialog" data-art-index="5"><img class="jang-art-image" src="https://drive.google.com/thumbnail?id=112tCZb1hPg44UMiF3lXeysxPxofU4LqH&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=112tCZb1hPg44UMiF3lXeysxPxofU4LqH&amp;sz=w2400" data-drive="https://drive.google.com/file/d/112tCZb1hPg44UMiF3lXeysxPxofU4LqH/view" loading="lazy" decoding="async" width="1254" height="1254" alt="가을빛 작업실에서 금발 예술가가 사진과 스케치, 종이를 모아 장흥의 콜라주 기억 지도를 구성하는 일러스트"><span class="jang-art-open" aria-hidden="true">그림 확대 ↗</span><span class="jang-image-fallback" aria-hidden="true">이미지를 불러올 수 없습니다.<br>원본 이미지 열기 ↗</span></button><figcaption><b>06</b><div><span class="jang-scene-en">ONE DAY</span><strong>하루가 하나의 작품이 되다</strong><p>하루 동안 모은 스케치와 사진을 이어 붙여 자신만의 장흥 기억 지도를 완성한다.</p><a class="jang-scene-read" href="#lit-06">이 장면의 문학 읽기 ↗</a><a class="jang-origin-link" href="https://drive.google.com/file/d/112tCZb1hPg44UMiF3lXeysxPxofU4LqH/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 보기 ↗</a></div></figcaption></figure>
+</div>
+<p class="tip">그림을 선택하면 크게 볼 수 있습니다. 확대 화면의 이전·다음 버튼 또는 방향키로 여섯 장면을 연속 감상할 수 있습니다. 이미지들은 실제 지역문화 소재를 바탕으로 한 예술적 재구성입니다.</p>
 </section>
 <section class="section" id="literature" aria-labelledby="literature-title"><div class="section-head"><h2 id="literature-title">그림 밖으로 흐르는 것들</h2><span>03 / LITERARY NARRATIVE</span></div>
 <p class="reading-lead">한 예술가가 장흥의 건물과 작품을 기록하기 시작했다. 하루가 끝날 무렵, 그녀의 스케치북에는 사람들이 남긴 시간이 모여 있었다.</p>
@@ -299,5 +338,33 @@
 <script>
 (()=>{"use strict";function openHash(){let id=decodeURIComponent(location.hash.slice(1));const el=id&&document.getElementById(id);if(!el)return;const d=el.closest("details");if(d&&!d.open)d.open=true;}
 window.addEventListener("hashchange",openHash);openHash();})();
+</script>
+
+<dialog class="jang-art-dialog" id="art-lightbox" aria-label="장흥 6개 챕터 일러스트 확대 감상">
+<button type="button" class="jang-dialog-close" id="art-close" aria-label="확대 보기 닫기">×</button>
+<img id="art-large" alt="">
+<div id="art-fallback" class="jang-lightbox-fallback">이미지를 불러오지 못했습니다. <a id="art-drive-link" href="#" target="_blank" rel="noopener noreferrer">Google Drive 원본 이미지 보기 ↗</a></div>
+<div class="jang-lightbox-nav"><button type="button" id="art-prev" aria-label="이전 장면">← 이전</button><p id="art-caption" aria-live="polite"></p><button type="button" id="art-next" aria-label="다음 장면">다음 →</button></div>
+</dialog>
+<script>
+(()=>{"use strict";
+const buttons=Array.from(document.querySelectorAll(".jang-art-button"));
+const dialog=document.querySelector("#art-lightbox"),large=document.querySelector("#art-large"),caption=document.querySelector("#art-caption"),fallback=document.querySelector("#art-fallback"),origin=document.querySelector("#art-drive-link");
+let current=0,previous=null;
+function show(index){current=(index+buttons.length)%buttons.length;const button=buttons[current],img=button.querySelector("img"),title=button.closest("figure").querySelector("figcaption strong").textContent;
+  caption.textContent=(current+1)+" / "+buttons.length+" · "+title;origin.href=img.dataset.drive;fallback.style.display="none";large.style.display="block";large.alt=img.alt;large.src=img.dataset.full;
+}
+buttons.forEach((button,index)=>{
+  button.addEventListener("click",()=>{const img=button.querySelector("img");if(button.classList.contains("jang-img-failed")){window.open(img.dataset.drive,"_blank","noopener,noreferrer");return;}previous=button;show(index);dialog.showModal();});
+  button.querySelector("img").addEventListener("error",()=>button.classList.add("jang-img-failed"));
+});
+large.addEventListener("error",()=>{large.style.display="none";fallback.style.display="block";});
+document.querySelector("#art-close").addEventListener("click",()=>dialog.close());
+document.querySelector("#art-prev").addEventListener("click",()=>show(current-1));
+document.querySelector("#art-next").addEventListener("click",()=>show(current+1));
+dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close();});
+dialog.addEventListener("keydown",event=>{if(event.key==="ArrowLeft"){event.preventDefault();show(current-1);}else if(event.key==="ArrowRight"){event.preventDefault();show(current+1);}});
+dialog.addEventListener("close",()=>{large.removeAttribute("src");if(previous)previous.focus();});
+})();
 </script>
 </body></html>
