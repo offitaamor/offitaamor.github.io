@@ -20,10 +20,29 @@
 .chapter-nav a{text-align:center;padding:14px 8px;border-right:1px solid var(--line);font:700 12px var(--sans);color:var(--baekhak-violet)}
 .chapter-nav a:last-child{border-right:0}.chapter-nav a span{display:block;margin-top:5px;font:500 11px/1.5 var(--ko);color:var(--ink)}.chapter-nav a:hover,.chapter-nav a:focus-visible{background:#e5e1f0}
 .baekhak-scenes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 20px}.baekhak-scene{scroll-margin-top:30px;min-width:0}
-.scene-art{aspect-ratio:1;background:radial-gradient(circle at 70% 35%,#b7b5d2 0 33%,transparent 34%),linear-gradient(130deg,#f4f0e6,#e5e1f0);border:1px solid #ccc5d3;display:flex;flex-direction:column;justify-content:space-between;padding:18px;color:var(--baekhak-deep)}
-.scene-art small,.scene-art span{font:700 9px var(--sans);letter-spacing:.12em}.scene-art strong{font:500 clamp(23px,2.2vw,34px)/1.15 var(--serif)}
+.scene-art{aspect-ratio:1;background:#e5e1f0;position:relative;overflow:hidden;border:1px solid #ccc5d3}
+.scene-art .art-trigger{display:block;position:relative;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:zoom-in;color:inherit}
+.scene-art .art-trigger img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s ease;background:var(--baekhak-ivory)}
+.scene-art .art-trigger:hover img,.scene-art .art-trigger:focus-visible img{transform:scale(1.03)}
+.scene-art .art-trigger:focus-visible{outline:3px solid var(--baekhak-violet);outline-offset:-3px}
+.scene-art .art-open{position:absolute;bottom:10px;right:10px;padding:6px 10px;font:700 10px var(--sans);background:var(--baekhak-ivory);color:var(--baekhak-deep);border:1px solid #b7b5d2}
+.scene-art .art-unavailable{position:absolute;inset:0;background:var(--baekhak-ivory);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px;padding:14px;color:var(--sub);font-size:12px;line-height:1.6}
+.scene-art .art-unavailable[hidden]{display:none}
+.scene-art .art-unavailable a{font-size:12px;text-decoration:underline;text-underline-offset:3px;color:var(--baekhak-deep)}
 .baekhak-scene .scene-en{display:block;font:700 10px var(--sans);letter-spacing:.07em;color:var(--baekhak-violet);margin-top:13px}
-.baekhak-scene h3{font:600 17px var(--ko);margin:4px 0}.baekhak-scene p{font-size:12px;line-height:1.85;color:var(--sub);margin:8px 0}.baekhak-scene a{display:inline-block;font-size:11px;border-bottom:1px solid var(--baekhak-violet);color:var(--baekhak-deep);margin-top:8px}
+.baekhak-scene h3{font:600 17px var(--ko);margin:4px 0}
+.baekhak-scene p{font-size:12px;line-height:1.85;color:var(--sub);margin:8px 0}
+.baekhak-scene .scene-copy>a{display:inline-block;font-size:11px;border-bottom:1px solid var(--baekhak-violet);color:var(--baekhak-deep);margin-top:8px}
+.baekhak-lightbox{border:0;width:min(1100px,96vw);max-width:1100px;max-height:96vh;padding:15px;background:var(--white);color:var(--ink);box-shadow:0 24px 65px #0005}
+.baekhak-lightbox::backdrop{background:#15131bcf}
+.baekhak-lightbox .lb-close{position:absolute;top:13px;right:13px;border:0;border-radius:50%;width:39px;height:39px;background:var(--white);font:24px var(--sans);z-index:3;box-shadow:0 2px 12px #0003}
+.baekhak-lightbox>img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;object-fit:contain;margin:0 auto}
+.baekhak-lightbox .lb-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px}
+.baekhak-lightbox .lb-nav button{border:1px solid var(--line);background:transparent;color:var(--baekhak-deep);padding:8px 13px;cursor:pointer;white-space:nowrap}
+.baekhak-lightbox .lb-nav button:hover{background:#e5e1f0}
+.baekhak-lightbox .lb-nav p{margin:0;flex:1;text-align:center;font-size:12px;line-height:1.6}
+.baekhak-lightbox .lb-error{text-align:center;padding:30px 10px;font-size:13px;color:var(--sub)}
+.baekhak-lightbox .lb-error a{display:block;color:var(--baekhak-deep);text-decoration:underline;margin-top:8px}
 .reading-lead{max-width:820px;font:500 clamp(16px,1.8vw,21px)/1.85 var(--ko);margin:0 0 12px}
 .reading-context{color:var(--sub);max-width:770px;line-height:1.9;font-size:13px;margin:0 0 24px}
 .reading-details{max-width:880px;margin:0 auto;border:1px solid var(--line);background:var(--white)}
@@ -62,13 +81,87 @@
 <div class="archive-note"><strong>사실과 창작의 경계</strong> · 역사와 주민 문화활동은 기록에 근거했지만, 등장인물의 내면·대화·장면의 연결은 창작입니다. 38선과 1953년 군사분계선은 서로 다른 경계입니다.</div></section>
 <section class="section" id="illustrations" aria-labelledby="illustrations-title"><div class="section-head"><h2 id="illustrations-title">일곱 장면, 하나의 백학</h2><span>02 / ILLUSTRATED SEQUENCE</span></div>
 <nav class="chapter-nav" aria-label="장면 바로가기"><a href="#scene-01">01<span>기억의 수호자</span></a><a href="#scene-02">02<span>아침해라는 이름</span></a><a href="#scene-03">03<span>쉰한 번의 길</span></a><a href="#scene-04">04<span>어깨 위의 전쟁</span></a><a href="#scene-05">05<span>경계가 된 땅</span></a><a href="#scene-06">06<span>총성이 멈춘 뒤</span></a><a href="#scene-07">07<span>남겨진 군마</span></a></nav>
-<div class="baekhak-scenes"><article class="baekhak-scene" id="scene-01"><div class="scene-art" aria-hidden="true"><small>EPISODE 01</small><strong>THE KEEPER OF MEMORY</strong><span>BAEKHAK · MEMORY</span></div><div><span class="scene-en">THE KEEPER OF MEMORY</span><h3>기억의 수호자</h3><p>사진을 든 여성 기록자가 역사의 문을 연다.</p><a href="#lit-01" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div></article>
-<article class="baekhak-scene" id="scene-02"><div class="scene-art" aria-hidden="true"><small>EPISODE 02</small><strong>MORNING SUN</strong><span>BAEKHAK · MEMORY</span></div><div><span class="scene-en">MORNING SUN</span><h3>아침해라는 이름</h3><p>탄약 운반 안장을 갖춘 군마 레클리스를 만난다.</p><a href="#lit-02" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div></article>
-<article class="baekhak-scene" id="scene-03"><div class="scene-art" aria-hidden="true"><small>EPISODE 03</small><strong>FIFTY-ONE TRIPS</strong><span>BAEKHAK · MEMORY</span></div><div><span class="scene-en">FIFTY-ONE TRIPS</span><h3>쉰한 번의 길</h3><p>레클리스가 가파른 보급로를 오르는 장면.</p><a href="#lit-03" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div></article>
-<article class="baekhak-scene" id="scene-04"><div class="scene-art" aria-hidden="true"><small>EPISODE 04</small><strong>THE A-FRAME ARMY</strong><span>BAEKHAK · MEMORY</span></div><div><span class="scene-en">THE A-FRAME ARMY</span><h3>어깨 위의 전쟁</h3><p>전선을 지탱했던 한국인 지게부대의 노동.</p><a href="#lit-04" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div></article>
-<article class="baekhak-scene" id="scene-05"><div class="scene-art" aria-hidden="true"><small>EPISODE 05</small><strong>THE LAND BETWEEN LINES</strong><span>BAEKHAK · MEMORY</span></div><div><span class="scene-en">THE LAND BETWEEN LINES</span><h3>경계가 된 땅</h3><p>38선과 군사분계선의 역사가 겹친 접경 풍경.</p><a href="#lit-05" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div></article>
-<article class="baekhak-scene" id="scene-06"><div class="scene-art" aria-hidden="true"><small>EPISODE 06</small><strong>AFTER THE GUNS FELL SILENT</strong><span>BAEKHAK · MEMORY</span></div><div><span class="scene-en">AFTER THE GUNS FELL SILENT</span><h3>총성이 멈춘 뒤</h3><p>정전 뒤의 가족이 낡은 집을 다시 세운다.</p><a href="#lit-06" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div></article>
-<article class="baekhak-scene" id="scene-07"><div class="scene-art" aria-hidden="true"><small>EPISODE 07</small><strong>THE HORSE REMAINS</strong><span>BAEKHAK · MEMORY</span></div><div><span class="scene-en">THE HORSE REMAINS</span><h3>남겨진 군마</h3><p>백학호수의 레클리스 기념물과 현재의 기록자.</p><a href="#lit-07" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div></article></div><p class="tip">개별 일러스트 원본은 현재 사이트 저장소에 등록되지 않아 설명형 장면 카드로 연결했습니다. 이미지가 등록되면 동일한 순서로 갤러리 교체가 가능합니다.</p></section>
+<div class="baekhak-scenes"><article class="baekhak-scene" id="scene-01">
+<div class="scene-art">
+<button type="button" class="art-trigger" aria-label="에피소드 01 기억의 수호자 작품 확대 보기" aria-haspopup="dialog" data-art-index="0">
+<img src="https://drive.google.com/thumbnail?id=1MYRbb8SuGeRymuyArCzmQOMq32KZGIoX&amp;sz=w900" data-full="https://drive.google.com/thumbnail?id=1MYRbb8SuGeRymuyArCzmQOMq32KZGIoX&amp;sz=w2048" data-original="https://drive.google.com/file/d/1MYRbb8SuGeRymuyArCzmQOMq32KZGIoX/view" alt="백학마을 에피소드 01. 사진을 든 여성 기록자가 역사의 문을 연다." loading="lazy" decoding="async" width="960" height="960">
+<span class="art-open" aria-hidden="true">크게 보기 ＋</span>
+</button>
+<div class="art-unavailable" hidden>이미지를 불러오지 못했습니다.<a href="https://drive.google.com/file/d/1MYRbb8SuGeRymuyArCzmQOMq32KZGIoX/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+</div>
+<div class="scene-copy"><span class="scene-en">THE KEEPER OF MEMORY</span><h3>기억의 수호자</h3><p>사진을 든 여성 기록자가 역사의 문을 연다.</p><a href="#lit-01" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div>
+</article>
+<article class="baekhak-scene" id="scene-02">
+<div class="scene-art">
+<button type="button" class="art-trigger" aria-label="에피소드 02 아침해라는 이름 작품 확대 보기" aria-haspopup="dialog" data-art-index="1">
+<img src="https://drive.google.com/thumbnail?id=1PqFfgGCVwZ_YeuOLgWl7-PsEVqRKSBej&amp;sz=w900" data-full="https://drive.google.com/thumbnail?id=1PqFfgGCVwZ_YeuOLgWl7-PsEVqRKSBej&amp;sz=w2048" data-original="https://drive.google.com/file/d/1PqFfgGCVwZ_YeuOLgWl7-PsEVqRKSBej/view" alt="백학마을 에피소드 02. 탄약 운반 안장을 갖춘 군마 레클리스를 만난다." loading="lazy" decoding="async" width="960" height="960">
+<span class="art-open" aria-hidden="true">크게 보기 ＋</span>
+</button>
+<div class="art-unavailable" hidden>이미지를 불러오지 못했습니다.<a href="https://drive.google.com/file/d/1PqFfgGCVwZ_YeuOLgWl7-PsEVqRKSBej/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+</div>
+<div class="scene-copy"><span class="scene-en">MORNING SUN</span><h3>아침해라는 이름</h3><p>탄약 운반 안장을 갖춘 군마 레클리스를 만난다.</p><a href="#lit-02" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div>
+</article>
+<article class="baekhak-scene" id="scene-03">
+<div class="scene-art">
+<button type="button" class="art-trigger" aria-label="에피소드 03 쉰한 번의 길 작품 확대 보기" aria-haspopup="dialog" data-art-index="2">
+<img src="https://drive.google.com/thumbnail?id=19l9-JqNBbgTpklS4gknokgaPpwFikGpe&amp;sz=w900" data-full="https://drive.google.com/thumbnail?id=19l9-JqNBbgTpklS4gknokgaPpwFikGpe&amp;sz=w2048" data-original="https://drive.google.com/file/d/19l9-JqNBbgTpklS4gknokgaPpwFikGpe/view" alt="백학마을 에피소드 03. 레클리스가 가파른 보급로를 오르는 장면." loading="lazy" decoding="async" width="960" height="960">
+<span class="art-open" aria-hidden="true">크게 보기 ＋</span>
+</button>
+<div class="art-unavailable" hidden>이미지를 불러오지 못했습니다.<a href="https://drive.google.com/file/d/19l9-JqNBbgTpklS4gknokgaPpwFikGpe/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+</div>
+<div class="scene-copy"><span class="scene-en">FIFTY-ONE TRIPS</span><h3>쉰한 번의 길</h3><p>레클리스가 가파른 보급로를 오르는 장면.</p><a href="#lit-03" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div>
+</article>
+<article class="baekhak-scene" id="scene-04">
+<div class="scene-art">
+<button type="button" class="art-trigger" aria-label="에피소드 04 어깨 위의 전쟁 작품 확대 보기" aria-haspopup="dialog" data-art-index="3">
+<img src="https://drive.google.com/thumbnail?id=1LEL3Butpg4BjZ5-eg8HEUOJO_Sg_6gKV&amp;sz=w900" data-full="https://drive.google.com/thumbnail?id=1LEL3Butpg4BjZ5-eg8HEUOJO_Sg_6gKV&amp;sz=w2048" data-original="https://drive.google.com/file/d/1LEL3Butpg4BjZ5-eg8HEUOJO_Sg_6gKV/view" alt="백학마을 에피소드 04. 전선을 지탱했던 한국인 지게부대의 노동." loading="lazy" decoding="async" width="960" height="960">
+<span class="art-open" aria-hidden="true">크게 보기 ＋</span>
+</button>
+<div class="art-unavailable" hidden>이미지를 불러오지 못했습니다.<a href="https://drive.google.com/file/d/1LEL3Butpg4BjZ5-eg8HEUOJO_Sg_6gKV/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+</div>
+<div class="scene-copy"><span class="scene-en">THE A-FRAME ARMY</span><h3>어깨 위의 전쟁</h3><p>전선을 지탱했던 한국인 지게부대의 노동.</p><a href="#lit-04" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div>
+</article>
+<article class="baekhak-scene" id="scene-05">
+<div class="scene-art">
+<button type="button" class="art-trigger" aria-label="에피소드 05 경계가 된 땅 작품 확대 보기" aria-haspopup="dialog" data-art-index="4">
+<img src="https://drive.google.com/thumbnail?id=1aTuKObT-ha6SwlqdMjqX2J1dsQ3QLSiO&amp;sz=w900" data-full="https://drive.google.com/thumbnail?id=1aTuKObT-ha6SwlqdMjqX2J1dsQ3QLSiO&amp;sz=w2048" data-original="https://drive.google.com/file/d/1aTuKObT-ha6SwlqdMjqX2J1dsQ3QLSiO/view" alt="백학마을 에피소드 05. 38선과 군사분계선의 역사가 겹친 접경 풍경." loading="lazy" decoding="async" width="960" height="960">
+<span class="art-open" aria-hidden="true">크게 보기 ＋</span>
+</button>
+<div class="art-unavailable" hidden>이미지를 불러오지 못했습니다.<a href="https://drive.google.com/file/d/1aTuKObT-ha6SwlqdMjqX2J1dsQ3QLSiO/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+</div>
+<div class="scene-copy"><span class="scene-en">THE LAND BETWEEN LINES</span><h3>경계가 된 땅</h3><p>38선과 군사분계선의 역사가 겹친 접경 풍경.</p><a href="#lit-05" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div>
+</article>
+<article class="baekhak-scene" id="scene-06">
+<div class="scene-art">
+<button type="button" class="art-trigger" aria-label="에피소드 06 총성이 멈춘 뒤 작품 확대 보기" aria-haspopup="dialog" data-art-index="5">
+<img src="https://drive.google.com/thumbnail?id=1XiLhVOGgPPmnRcOoJWZ1EpmDsSNJweCr&amp;sz=w900" data-full="https://drive.google.com/thumbnail?id=1XiLhVOGgPPmnRcOoJWZ1EpmDsSNJweCr&amp;sz=w2048" data-original="https://drive.google.com/file/d/1XiLhVOGgPPmnRcOoJWZ1EpmDsSNJweCr/view" alt="백학마을 에피소드 06. 정전 뒤의 가족이 낡은 집을 다시 세운다." loading="lazy" decoding="async" width="960" height="960">
+<span class="art-open" aria-hidden="true">크게 보기 ＋</span>
+</button>
+<div class="art-unavailable" hidden>이미지를 불러오지 못했습니다.<a href="https://drive.google.com/file/d/1XiLhVOGgPPmnRcOoJWZ1EpmDsSNJweCr/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+</div>
+<div class="scene-copy"><span class="scene-en">AFTER THE GUNS FELL SILENT</span><h3>총성이 멈춘 뒤</h3><p>정전 뒤의 가족이 낡은 집을 다시 세운다.</p><a href="#lit-06" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div>
+</article>
+<article class="baekhak-scene" id="scene-07">
+<div class="scene-art">
+<button type="button" class="art-trigger" aria-label="에피소드 07 남겨진 군마 작품 확대 보기" aria-haspopup="dialog" data-art-index="6">
+<img src="https://drive.google.com/thumbnail?id=1JXeP4z8NAqH274wQJg2bCJyspVrMoWWJ&amp;sz=w900" data-full="https://drive.google.com/thumbnail?id=1JXeP4z8NAqH274wQJg2bCJyspVrMoWWJ&amp;sz=w2048" data-original="https://drive.google.com/file/d/1JXeP4z8NAqH274wQJg2bCJyspVrMoWWJ/view" alt="백학마을 에피소드 07. 백학호수의 레클리스 기념물과 현재의 기록자." loading="lazy" decoding="async" width="960" height="960">
+<span class="art-open" aria-hidden="true">크게 보기 ＋</span>
+</button>
+<div class="art-unavailable" hidden>이미지를 불러오지 못했습니다.<a href="https://drive.google.com/file/d/1JXeP4z8NAqH274wQJg2bCJyspVrMoWWJ/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+</div>
+<div class="scene-copy"><span class="scene-en">THE HORSE REMAINS</span><h3>남겨진 군마</h3><p>백학호수의 레클리스 기념물과 현재의 기록자.</p><a href="#lit-07" data-expand="literature-full">이 장면의 이야기 읽기 ↗</a></div>
+</article>
+<article class="baekhak-scene" id="scene-final">
+<div class="scene-art">
+<button type="button" class="art-trigger" aria-label="대표 커버 우리가 짊어진 시간 작품 확대 보기" aria-haspopup="dialog" data-art-index="7">
+<img src="https://drive.google.com/thumbnail?id=10A8eB-F3660EK6cWV7aQhMsN0lSv3PTR&amp;sz=w900" data-full="https://drive.google.com/thumbnail?id=10A8eB-F3660EK6cWV7aQhMsN0lSv3PTR&amp;sz=w2048" data-original="https://drive.google.com/file/d/10A8eB-F3660EK6cWV7aQhMsN0lSv3PTR/view" alt="백학마을 대표 커버. 기록자와 군마, 지게부대원이 서로 다른 시대의 기억으로 만나는 대표 커버." loading="lazy" decoding="async" width="960" height="960">
+<span class="art-open" aria-hidden="true">크게 보기 ＋</span>
+</button>
+<div class="art-unavailable" hidden>이미지를 불러오지 못했습니다.<a href="https://drive.google.com/file/d/10A8eB-F3660EK6cWV7aQhMsN0lSv3PTR/view" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+</div>
+<div class="scene-copy"><span class="scene-en">THE WEIGHT OF REMEMBRANCE</span><h3>우리가 짊어진 시간</h3><p>기록자와 군마, 지게부대원이 서로 다른 시대의 기억으로 만나는 대표 커버.</p><a href="#lit-final" data-expand="literature-full">이 작품의 이야기 읽기 ↗</a></div>
+</article></div>
+<p class="tip">EP01–07과 시리즈 대표 커버를 감상할 수 있습니다. 이미지를 선택하면 확대되며, 좌우 버튼 또는 키보드 화살표로 작품을 이동할 수 있습니다.</p></section>
 <section class="section" id="literature" aria-labelledby="literature-title">
 <div class="section-head"><h2 id="literature-title">우리가 짊어진 시간</h2><span>03 / LITERARY NARRATIVE</span></div>
 <p class="reading-lead">한 장의 사진에서 시작해 과거를 지나, 백학호수에서 현재로 돌아오는 이야기.</p><p class="reading-context">7개 에피소드와 마지막 대표 커버의 문학 서사 전문입니다. 사진 속 존재들의 감정과 대화는 역사기록이 아닌 문학적 상상입니다.</p>
@@ -353,4 +446,26 @@
 <div class="return-strip"><strong>백학의 기억에서, 열두 지역의 이야기로.</strong><a href="../#albums">다른 11개 지역 살펴보기 ↗</a></div>
 </main><footer class="shell bottom"><span>GYEONGGI TRACKS © 2026 OFFITA</span><span>ORIGINAL ILLUSTRATION · REGIONAL STORY · SOUND</span><a href="https://offitaamor.github.io/">OFFITA HOME ↗</a></footer>
 <script>(()=>{"use strict";function openHash(){const id=decodeURIComponent(location.hash.slice(1)),el=id&&document.getElementById(id);if(!el)return;const details=el.closest("details");if(details&&!details.open)details.open=true;}document.querySelectorAll("[data-expand]").forEach(a=>a.addEventListener("click",()=>{const d=document.getElementById(a.dataset.expand);if(d)d.open=true;}));addEventListener("hashchange",openHash);openHash();})();</script>
+<dialog class="baekhak-lightbox" id="baekhak-lightbox" aria-label="백학마을 아트워크 확대 감상">
+<button type="button" class="lb-close" id="baekhak-lightbox-close" aria-label="확대 이미지 닫기">×</button>
+<img id="baekhak-lightbox-image" alt="">
+<div class="lb-error" id="baekhak-lightbox-error" hidden>확대 이미지를 불러오지 못했습니다.<a id="baekhak-lightbox-original" href="#" target="_blank" rel="noopener noreferrer">Google Drive 원본 열기 ↗</a></div>
+<div class="lb-nav"><button type="button" id="baekhak-lightbox-prev" aria-label="이전 작품">← 이전</button>
+<p id="baekhak-lightbox-caption" aria-live="polite"></p>
+<button type="button" id="baekhak-lightbox-next" aria-label="다음 작품">다음 →</button></div>
+</dialog>
+<script>(()=>{"use strict";
+const triggers=Array.from(document.querySelectorAll("#illustrations .art-trigger"));
+const dialog=document.getElementById("baekhak-lightbox"),big=document.getElementById("baekhak-lightbox-image"),caption=document.getElementById("baekhak-lightbox-caption"),error=document.getElementById("baekhak-lightbox-error"),original=document.getElementById("baekhak-lightbox-original");
+let current=0,previous=null;
+function show(index){current=(index+triggers.length)%triggers.length;const trigger=triggers[current],img=trigger.querySelector("img"),title=trigger.closest(".baekhak-scene").querySelector("h3").textContent;caption.textContent=(current+1)+" / "+triggers.length+" · "+title;original.href=img.dataset.original;error.hidden=true;big.hidden=false;big.alt=img.alt;big.src=img.dataset.full;}
+triggers.forEach((trigger,i)=>{trigger.addEventListener("click",()=>{previous=trigger;show(i);dialog.showModal();});const thumbnail=trigger.querySelector("img");thumbnail.addEventListener("error",()=>{trigger.hidden=true;trigger.parentElement.querySelector(".art-unavailable").hidden=false;});});
+big.addEventListener("error",()=>{big.hidden=true;error.hidden=false;});
+document.getElementById("baekhak-lightbox-prev").addEventListener("click",()=>show(current-1));
+document.getElementById("baekhak-lightbox-next").addEventListener("click",()=>show(current+1));
+document.getElementById("baekhak-lightbox-close").addEventListener("click",()=>dialog.close());
+dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close();});
+dialog.addEventListener("keydown",e=>{if(e.key==="ArrowLeft"){e.preventDefault();show(current-1);}else if(e.key==="ArrowRight"){e.preventDefault();show(current+1);}});
+dialog.addEventListener("close",()=>{big.removeAttribute("src");previous?.focus();});
+})();</script>
 </body></html>
