@@ -57,6 +57,28 @@
 .reading-references a{text-decoration:underline;text-underline-offset:3px;margin-right:14px;display:inline-block}
 @media(max-width:690px){.reading-guide{gap:7px}.reading-guide a{font-size:11px;padding:10px}.reading-details summary{padding:17px}.reading-prose{padding:24px 19px 32px}.reading-chapter p{font-size:14px;line-height:2.0}.reading-chapter h4{font-size:19px}.reading-context{font-size:12px}.reading-references{padding:18px}}
 
+
+/* Illustrated sequence — gallery and accessible image viewing */
+.story-card .scene-art-button{display:block;position:relative;width:100%;border:0;background:var(--paper2);padding:0;text-align:left;overflow:hidden;cursor:zoom-in}
+.story-card .scene-art-image{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;transition:transform .25s ease;background:var(--paper2)}
+.story-card .scene-art-button:hover .scene-art-image{transform:scale(1.025)}
+.story-card .scene-art-button:focus-visible{outline:3px solid var(--brick);outline-offset:3px}
+.scene-art-button .art-open{position:absolute;right:8px;bottom:8px;background:var(--white);color:var(--ink);font:700 10px var(--sans);padding:6px 10px;opacity:0;transition:opacity .2s}
+.scene-art-button:hover .art-open,.scene-art-button:focus-visible .art-open{opacity:1}
+.scene-art-fallback{aspect-ratio:1;background:#e9e1d3;display:none;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--sub);font-size:12px;text-align:center;padding:20px}
+.scene-art-button.image-failed{cursor:default}.scene-art-button.image-failed .scene-art-image{display:none}.scene-art-button.image-failed .scene-art-fallback{display:flex}.scene-art-button.image-failed .art-open{display:none}
+.image-source-link{display:inline-block;font-size:12px;color:var(--ink);border-bottom:1px solid var(--brick);margin-top:9px}
+.wonil-art-dialog{max-width:min(1050px,96vw);width:min(1050px,96vw);max-height:96vh;overflow:auto;border:0;padding:15px;background:var(--white);color:var(--ink)}
+.wonil-art-dialog::backdrop{background:rgba(22,22,20,.91)}
+.wonil-art-dialog img{display:block;width:auto;height:auto;max-width:100%;max-height:75vh;object-fit:contain;margin:auto;background:var(--paper2)}
+.wonil-art-dialog .dialog-close{position:absolute;right:14px;top:14px;width:37px;height:37px;border-radius:50%;background:var(--white);border:1px solid var(--line);font-size:23px;color:var(--ink)}
+.wonil-art-dialog .lightbox-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:11px}
+.wonil-art-dialog .lightbox-actions button{border:1px solid var(--line);background:transparent;padding:9px 14px;color:var(--ink);font-size:12px}
+.wonil-art-dialog .lightbox-actions button:hover,.wonil-art-dialog .lightbox-actions button:focus-visible{background:var(--paper2)}
+.wonil-art-dialog .lightbox-actions p{font-size:12px;text-align:center;flex:1;margin:0}
+.wonil-art-dialog .dialog-fallback{display:none;text-align:center;padding:40px 12px}
+@media(max-width:690px){.scene-art-button .art-open{opacity:1}.wonil-art-dialog{padding:9px}.wonil-art-dialog img{max-height:69vh}.wonil-art-dialog .lightbox-actions{flex-wrap:wrap}.wonil-art-dialog .lightbox-actions p{order:-1;flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.story-card .scene-art-image,.scene-art-button .art-open{transition:none}}
 </style>
 </head>
 <body>
@@ -77,13 +99,13 @@
 <div class="archive-note"><strong>사실과 창작의 경계</strong> · 와야촌의 지명유래, 1904년 일산역 영업 시작, 현존 구 역사(1933), 일산시장과 3·8일장의 역사는 자료로 확인됩니다. 소녀와 두 어르신, 기와 조각 발견, 대화와 조사 과정은 창작입니다. 특히 극중 기와 조각을 와야촌 당시 유물로 단정하지 않습니다.</div>
 </section>
 <section class="section" id="illustrations" aria-labelledby="seq-title"><div class="section-head"><h2 id="seq-title">여섯 장면, 하나의 이름</h2><span>02 / ILLUSTRATED SEQUENCE</span></div>
-<div class="story-grid" id="story-grid"><figure class="story-card" id="scene-01"><div class="scene-preview" role="img" aria-label="질문이 시작된 시장 장면의 일러스트는 아직 웹에 등록되지 않았습니다"><span class="scene-no">01</span><span class="scene-mark" aria-hidden="true">∥</span><small>ARTWORK · IMAGE PENDING</small></div><figcaption><b>01</b><div><span class="scene-en">QUESTION</span><strong>질문이 시작된 시장</strong><p>시장 할머니에게 ‘원일산’이라는 이름을 묻는 소녀. 골목 건너편에서 할아버지가 지나갑니다.</p><a class="scene-read" href="#lit-01">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
-<figure class="story-card" id="scene-02"><div class="scene-preview" role="img" aria-label="와야촌을 찾아서 장면의 일러스트는 아직 웹에 등록되지 않았습니다"><span class="scene-no">02</span><span class="scene-mark" aria-hidden="true">∥</span><small>ARTWORK · IMAGE PENDING</small></div><figcaption><b>02</b><div><span class="scene-en">TRACE</span><strong>와야촌을 찾아서</strong><p>오래된 골목의 기와 조각 앞에 쪼그려 앉아, 이름에 담긴 흔적을 살펴봅니다.</p><a class="scene-read" href="#lit-02">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
-<figure class="story-card" id="scene-03"><div class="scene-preview" role="img" aria-label="철길을 따라 장면의 일러스트는 아직 웹에 등록되지 않았습니다"><span class="scene-no">03</span><span class="scene-mark" aria-hidden="true">∥</span><small>ARTWORK · IMAGE PENDING</small></div><figcaption><b>03</b><div><span class="scene-en">RAIL</span><strong>철길을 따라</strong><p>옛 일산역의 낮은 지붕을 그리는 소녀와 철길의 방향을 가리키는 할아버지.</p><a class="scene-read" href="#lit-03">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
-<figure class="story-card" id="scene-04"><div class="scene-preview" role="img" aria-label="삼 일과 팔 일 장면의 일러스트는 아직 웹에 등록되지 않았습니다"><span class="scene-no">04</span><span class="scene-mark" aria-hidden="true">∥</span><small>ARTWORK · IMAGE PENDING</small></div><figcaption><b>04</b><div><span class="scene-en">MARKET</span><strong>삼 일과 팔 일</strong><p>다시 돌아온 장날, 할머니의 좌판에서 세 사람의 이야기가 이어집니다.</p><a class="scene-read" href="#lit-04">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
-<figure class="story-card" id="scene-05"><div class="scene-preview" role="img" aria-label="원일로 탐사대 장면의 일러스트는 아직 웹에 등록되지 않았습니다"><span class="scene-no">05</span><span class="scene-mark" aria-hidden="true">∥</span><small>ARTWORK · IMAGE PENDING</small></div><figcaption><b>05</b><div><span class="scene-en">WALK</span><strong>원일로 탐사대</strong><p>경사진 원일로를 걸으며 간판을 찍고 오래된 가게를 떠올립니다.</p><a class="scene-read" href="#lit-05">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
-<figure class="story-card" id="scene-06"><div class="scene-preview" role="img" aria-label="우리가 찾은 원일산 장면의 일러스트는 아직 웹에 등록되지 않았습니다"><span class="scene-no">06</span><span class="scene-mark" aria-hidden="true">∥</span><small>ARTWORK · IMAGE PENDING</small></div><figcaption><b>06</b><div><span class="scene-en">FINALE</span><strong>우리가 찾은 원일산</strong><p>소녀의 수첩에 사람과 장소의 기억이 한 장씩 모입니다.</p><a class="scene-read" href="#lit-06">이 장면의 문학 읽기 ↗</a></div></figcaption></figure></div>
-<p class="tip">이 시리즈의 장면별 일러스트 원본은 현재 저장소에 등록되지 않아, 그림을 대신하는 임시 장면 표지를 표시합니다. 각 장면의 문학 본문은 아래에서 전문을 읽을 수 있습니다.</p>
+<div class="story-grid" id="story-grid"><figure class="story-card" id="scene-01"><button type="button" class="scene-art-button" data-art-index="0" aria-label="1번 장면 일러스트 크게 보기: 일산시장 채소 좌판 앞에서 할머니에게 질문하는 소녀와 뒤편의 폐지 수집 할아버지" aria-haspopup="dialog"><img class="scene-art-image" src="https://drive.google.com/thumbnail?id=1uq8Ee1Ujh1vG3z8dQtYGPNunoBREiuA1&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=1uq8Ee1Ujh1vG3z8dQtYGPNunoBREiuA1&amp;sz=w2400" data-drive="https://drive.google.com/file/d/1uq8Ee1Ujh1vG3z8dQtYGPNunoBREiuA1/view" loading="lazy" decoding="async" width="1254" height="1254" alt="일산시장 채소 좌판 앞에서 할머니에게 질문하는 소녀와 뒤편의 폐지 수집 할아버지"><span class="art-open" aria-hidden="true">확대 보기 ↗</span></button><figcaption><b>01</b><div><span class="scene-en">QUESTION</span><strong>질문이 시작된 시장</strong><p>시장 할머니에게 ‘원일산’이라는 이름을 묻는 소녀. 골목 건너편에서 할아버지가 지나갑니다.</p><a class="scene-read" href="#lit-01">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
+<figure class="story-card" id="scene-02"><button type="button" class="scene-art-button" data-art-index="1" aria-label="2번 장면 일러스트 크게 보기: 원일산의 오래된 주택 골목에서 회색 기와 조각을 살펴보는 소녀와 할아버지" aria-haspopup="dialog"><img class="scene-art-image" src="https://drive.google.com/thumbnail?id=108a4hm23atjc34zy44qEqES3JdrHNdQ2&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=108a4hm23atjc34zy44qEqES3JdrHNdQ2&amp;sz=w2400" data-drive="https://drive.google.com/file/d/108a4hm23atjc34zy44qEqES3JdrHNdQ2/view" loading="lazy" decoding="async" width="1254" height="1254" alt="원일산의 오래된 주택 골목에서 회색 기와 조각을 살펴보는 소녀와 할아버지"><span class="art-open" aria-hidden="true">확대 보기 ↗</span></button><figcaption><b>02</b><div><span class="scene-en">TRACE</span><strong>와야촌을 찾아서</strong><p>오래된 골목의 기와 조각 앞에 쪼그려 앉아, 이름에 담긴 흔적을 살펴봅니다.</p><a class="scene-read" href="#lit-02">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
+<figure class="story-card" id="scene-03"><button type="button" class="scene-art-button" data-art-index="2" aria-label="3번 장면 일러스트 크게 보기: 구 일산역사와 철길 앞에서 역 지붕을 기록하는 소녀, 옛길을 가리키는 할아버지" aria-haspopup="dialog"><img class="scene-art-image" src="https://drive.google.com/thumbnail?id=1V623CbjMvD2dfnGRUT0YcqUKfYKKB56b&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=1V623CbjMvD2dfnGRUT0YcqUKfYKKB56b&amp;sz=w2400" data-drive="https://drive.google.com/file/d/1V623CbjMvD2dfnGRUT0YcqUKfYKKB56b/view" loading="lazy" decoding="async" width="1254" height="1254" alt="구 일산역사와 철길 앞에서 역 지붕을 기록하는 소녀, 옛길을 가리키는 할아버지"><span class="art-open" aria-hidden="true">확대 보기 ↗</span></button><figcaption><b>03</b><div><span class="scene-en">RAIL</span><strong>철길을 따라</strong><p>옛 일산역의 낮은 지붕을 그리는 소녀와 철길의 방향을 가리키는 할아버지.</p><a class="scene-read" href="#lit-03">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
+<figure class="story-card" id="scene-04"><button type="button" class="scene-art-button" data-art-index="3" aria-label="4번 장면 일러스트 크게 보기: 푸른 천막의 일산 오일장에서 소녀와 시장 할머니, 할아버지가 함께 어울리는 장면" aria-haspopup="dialog"><img class="scene-art-image" src="https://drive.google.com/thumbnail?id=1J5nx7htQtop7gshMah-S2dvFjOnBJ5ID&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=1J5nx7htQtop7gshMah-S2dvFjOnBJ5ID&amp;sz=w2400" data-drive="https://drive.google.com/file/d/1J5nx7htQtop7gshMah-S2dvFjOnBJ5ID/view" loading="lazy" decoding="async" width="1254" height="1254" alt="푸른 천막의 일산 오일장에서 소녀와 시장 할머니, 할아버지가 함께 어울리는 장면"><span class="art-open" aria-hidden="true">확대 보기 ↗</span></button><figcaption><b>04</b><div><span class="scene-en">MARKET</span><strong>삼 일과 팔 일</strong><p>다시 돌아온 장날, 할머니의 좌판에서 세 사람의 이야기가 이어집니다.</p><a class="scene-read" href="#lit-04">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
+<figure class="story-card" id="scene-05"><button type="button" class="scene-art-button" data-art-index="4" aria-label="5번 장면 일러스트 크게 보기: 원일로의 오래된 상점과 간판을 카메라로 찍는 소녀, 할머니와 손수레 할아버지" aria-haspopup="dialog"><img class="scene-art-image" src="https://drive.google.com/thumbnail?id=1GounJqY0YpyWiMS85WbbYMgUjwZajZEi&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=1GounJqY0YpyWiMS85WbbYMgUjwZajZEi&amp;sz=w2400" data-drive="https://drive.google.com/file/d/1GounJqY0YpyWiMS85WbbYMgUjwZajZEi/view" loading="lazy" decoding="async" width="1254" height="1254" alt="원일로의 오래된 상점과 간판을 카메라로 찍는 소녀, 할머니와 손수레 할아버지"><span class="art-open" aria-hidden="true">확대 보기 ↗</span></button><figcaption><b>05</b><div><span class="scene-en">WALK</span><strong>원일로 탐사대</strong><p>경사진 원일로를 걸으며 간판을 찍고 오래된 가게를 떠올립니다.</p><a class="scene-read" href="#lit-05">이 장면의 문학 읽기 ↗</a></div></figcaption></figure>
+<figure class="story-card" id="scene-06"><button type="button" class="scene-art-button" data-art-index="5" aria-label="6번 장면 일러스트 크게 보기: 일산시장과 옛 일산역, 현대 원일산 풍경을 배경으로 기록을 펼쳐 보는 소녀와 두 노인" aria-haspopup="dialog"><img class="scene-art-image" src="https://drive.google.com/thumbnail?id=1SzvhPv8QczeD-DPIlWwdeQucLgHIumiq&amp;sz=w1200" data-full="https://drive.google.com/thumbnail?id=1SzvhPv8QczeD-DPIlWwdeQucLgHIumiq&amp;sz=w2400" data-drive="https://drive.google.com/file/d/1SzvhPv8QczeD-DPIlWwdeQucLgHIumiq/view" loading="lazy" decoding="async" width="1254" height="1254" alt="일산시장과 옛 일산역, 현대 원일산 풍경을 배경으로 기록을 펼쳐 보는 소녀와 두 노인"><span class="art-open" aria-hidden="true">확대 보기 ↗</span></button><figcaption><b>06</b><div><span class="scene-en">FINALE</span><strong>우리가 찾은 원일산</strong><p>소녀의 수첩에 사람과 장소의 기억이 한 장씩 모입니다.</p><a class="scene-read" href="#lit-06">이 장면의 문학 읽기 ↗</a></div></figcaption></figure></div>
+<p class="tip">그림을 선택하면 크게 감상할 수 있습니다. 확대 화면에서 좌우 버튼 또는 방향키로 다음 장면으로 이동할 수 있습니다. 그림은 지역사를 바탕으로 한 예술적 재구성입니다.</p>
 </section>
 <section class="section" id="literature" aria-labelledby="literature-title"><div class="section-head"><h2 id="literature-title">와야촌 — 길이 기억하는 이름</h2><span>03 / LITERARY NARRATIVE</span></div>
 <p class="reading-lead">아이는 오래된 동네의 이름을 찾으러 나섰다가, 그 이름을 기억하는 사람들을 만났다.</p>
@@ -383,6 +405,29 @@
 <script>
 (()=>{"use strict";function openHash(){const h=decodeURIComponent(location.hash.slice(1));const el=h&&document.getElementById(h);if(!el)return;const d=el.closest("details");if(d&&!d.open)d.open=true;}
 window.addEventListener("hashchange",openHash);openHash();})();
+</script>
+<dialog class="wonil-art-dialog" id="art-lightbox" aria-label="와야촌 장면별 일러스트 확대 보기">
+<button type="button" class="dialog-close" id="art-close" aria-label="일러스트 확대 보기 닫기">×</button>
+<img id="art-large" alt="">
+<div id="art-fallback" class="dialog-fallback">이미지를 불러올 수 없습니다. <a id="art-drive-link" class="image-source-link" href="#" target="_blank" rel="noopener noreferrer">Google Drive 원본 보기 ↗</a></div>
+<div class="lightbox-actions"><button type="button" id="art-prev" aria-label="이전 장면 보기">← 이전</button><p id="art-caption" aria-live="polite"></p><button type="button" id="art-next" aria-label="다음 장면 보기">다음 →</button></div>
+</dialog>
+<script>
+(()=>{"use strict";
+ const buttons=Array.from(document.querySelectorAll(".scene-art-button"));
+ const dialog=document.querySelector("#art-lightbox"),large=document.querySelector("#art-large"),caption=document.querySelector("#art-caption"),fallback=document.querySelector("#art-fallback"),source=document.querySelector("#art-drive-link");
+ let current=0,previous=null;
+ function show(index){current=(index+buttons.length)%buttons.length;const img=buttons[current].querySelector("img");const title=buttons[current].closest("figure").querySelector("figcaption strong").textContent;
+  fallback.style.display="none";large.style.display="block";large.alt=img.alt;large.src=img.dataset.full;source.href=img.dataset.drive;caption.textContent=(current+1)+" / "+buttons.length+" · "+title;}
+ buttons.forEach((button,i)=>{button.addEventListener("click",()=>{if(button.classList.contains("image-failed")){window.open(button.querySelector("img").dataset.drive,"_blank","noopener");return;}previous=button;show(i);dialog.showModal();});
+ const im=button.querySelector("img");im.addEventListener("error",()=>{button.classList.add("image-failed");if(!button.querySelector(".scene-art-fallback")){const note=document.createElement("span");note.className="scene-art-fallback";note.textContent="이미지를 불러오지 못했습니다. Google Drive 원본 보기 ↗";button.appendChild(note);}});
+ });
+ large.addEventListener("error",()=>{large.style.display="none";fallback.style.display="block";});
+ document.querySelector("#art-prev").addEventListener("click",()=>show(current-1));document.querySelector("#art-next").addEventListener("click",()=>show(current+1));document.querySelector("#art-close").addEventListener("click",()=>dialog.close());
+ dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close();});
+ dialog.addEventListener("keydown",event=>{if(event.key==="ArrowLeft"){event.preventDefault();show(current-1);}else if(event.key==="ArrowRight"){event.preventDefault();show(current+1);}});
+ dialog.addEventListener("close",()=>{large.removeAttribute("src");if(previous)previous.focus();});
+})();
 </script>
 </body>
 </html>
