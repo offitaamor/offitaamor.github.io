@@ -278,6 +278,10 @@ a:focus-visible,button:focus-visible{
 .archive-grid .card-meta .summary{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 .home-contact-description{font-size:15px;line-height:1.7;color:var(--oatmeal);margin:-14px 0 30px}
 .contact-group-heading{font-family:var(--ko-serif);font-size:clamp(24px,2.5vw,33px);font-weight:500;margin:54px 0 0}
+.contact-page-hero{padding-top:68px;padding-bottom:48px}
+.contact-page{padding-top:48px}
+.contact-big{font-family:var(--ko-serif);font-size:clamp(22px,2.5vw,32px);line-height:1.45;letter-spacing:-.02em;max-width:100%;margin:0}
+.contact-page .contact-group-heading:first-of-type{margin-top:28px}
 .contact-stack--primary{margin-top:20px}
 .contact-stack--primary>a:first-child{font-size:14px;font-weight:600;letter-spacing:.08em}
 .contact-stack--primary>a:first-child span{color:var(--charcoal);overflow-wrap:anywhere}
@@ -300,4 +304,6 @@ a:focus-visible,button:focus-visible{
   .visual-page-hero .visual-manifesto{font-size:clamp(27px,7vw,36px);line-height:1.4}
   .home-contact-description{font-size:14px;margin:-10px 0 26px}
   .contact-stack>a{flex-wrap:wrap;line-height:1.6}
+  .contact-page-hero{padding-top:52px;padding-bottom:34px}
+  .contact-page{padding-top:36px}
 }
