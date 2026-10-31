@@ -51,6 +51,33 @@
 .reading-references a{display:inline-block;text-decoration:underline;text-underline-offset:3px;margin:0 16px 4px 0}
 @media(max-width:850px){.gwanin-scenes{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.gwanin-scenes{grid-template-columns:1fr}.gwanin-scene{min-height:auto}.reading-prose{padding:26px 19px 32px}.reading-details summary{padding:16px 19px}.reading-chapter p{font-size:14px;line-height:2}.reading-guide a{font-size:11px}.gwanin-detail .detail-hero h1{font-size:clamp(46px,11.5vw,60px)}}
+
+/* Gwanin illustrated sequence — follows the shared three-column story-grid pattern */
+.gwanin-art-grid{align-items:start}
+.gwanin-art-card{min-width:0;margin:0}
+.gwanin-art-trigger{display:block;width:100%;padding:0;border:0;text-align:left;background:transparent;color:inherit}
+.gwanin-art-slot{display:block;aspect-ratio:1;position:relative;background:var(--paper2);overflow:hidden}
+.gwanin-art-slot img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.gwanin-art-trigger:hover .gwanin-art-slot img{transform:scale(1.025)}
+.gwanin-art-trigger:focus-visible{outline:2px solid var(--brick);outline-offset:3px}
+.gwanin-art-card figcaption{display:flex;gap:11px;padding:12px 1px 0;align-items:flex-start}
+.gwanin-art-card figcaption b{font:700 12px var(--sans);color:var(--brick)}
+.gwanin-art-card figcaption span{font:500 13px/1.6 var(--ko)}
+.gwanin-art-card figcaption strong{font:700 10px/1.5 var(--sans);letter-spacing:.045em;display:block;color:var(--ink)}
+.gwanin-art-desc{margin:9px 0 11px;font:400 12px/1.9 var(--sans);color:var(--sub)}
+.gwanin-art-links{display:flex;flex-wrap:wrap;gap:12px}
+.gwanin-art-links a{font-size:11px;font-weight:700;border-bottom:1px solid var(--brick);padding-bottom:2px}
+.gwanin-art-fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;text-align:center;font:500 12px/1.8 var(--sans);color:var(--sub);padding:20px}
+.gwanin-art-trigger.is-failed .gwanin-art-fallback{display:flex}
+.gwanin-art-trigger.is-failed img{display:none}
+#gwanin-art-lightbox{width:min(1050px,94vw);max-height:95vh;position:fixed}
+#gwanin-art-lightbox img{max-height:73vh}
+#gwanin-art-lightbox .gwanin-dialog-actions{display:flex;justify-content:center;align-items:center;gap:12px;margin:10px auto 0;flex-wrap:wrap}
+#gwanin-art-lightbox .gwanin-dialog-actions button{position:static;width:auto;height:auto;border:1px solid var(--line);border-radius:0;background:var(--white);padding:8px 14px;font-size:12px}
+#gwanin-art-lightbox .gwanin-dialog-actions a{font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+#gwanin-art-lightbox .gwanin-dialog-fallback{padding:36px 10px;text-align:center;color:var(--sub)}
+@media(max-width:690px){.gwanin-art-card figcaption span{font-size:12px}.gwanin-art-card figcaption strong{font-size:9px}.gwanin-art-desc{font-size:11px}}
+@media(max-width:480px){.gwanin-art-grid{grid-template-columns:1fr}}
 </style></head>
 <body class="gwanin-detail">
 <a class="skip" href="#story">지역 이야기로 건너뛰기</a>
@@ -76,13 +103,56 @@
 <p>작품 속 삼부자와 대화는 창작입니다. 역사·자연·실제 점포에 관한 확인 자료와 구분해 감상해 주세요.</p></div></div>
 <div class="archive-note"><strong>읽기 안내</strong> · 아래의 문학 《이름을 그리는 법》은 가상의 인물과 장면을 통해 지역을 경험하는 창작물입니다. 칼럼 《관인, 사람의 이야기가 마을의 역사가 되는 곳》은 역사·자연·생활문화를 설명하는 사실 기반 글입니다. 화적연은 관인문화마을 골목이 아닌 인근 영북면의 명승입니다.</div></section>
 <section class="section" id="illustrations" aria-labelledby="illustrations-title"><div class="section-head"><h2 id="illustrations-title">일곱 장면, 하나의 이름</h2><span>02 / ILLUSTRATED SEQUENCE</span></div>
-<div class="gwanin-scenes"><article class="gwanin-scene"><div class="gwanin-scene-no">01<small>THREE GENERATIONS, ONE VILLAGE</small></div><h3>한 마을에 쌓인 세 사람의 시간</h3><p>가상의 삼부자가 각기 다른 시간을 바라봅니다. 할아버지의 기억, 아버지의 생활, 청년의 스케치북이 한 마을에서 만납니다.</p><a href="#lit-01">이 장면의 이야기 읽기 ↗</a></article>
-<article class="gwanin-scene"><div class="gwanin-scene-no">02<small>THOSE WHO LEFT THE COURT</small></div><h3>벼슬을 내려놓고, 사람 곁에 남다</h3><p>관인의 이름에 전해지는 궁예 시대의 지명 유래설을 상상으로 풀어낸 장면입니다. 역사적 사실로 확증된 사건은 아닙니다.</p><a href="#lit-02">이 장면의 이야기 읽기 ↗</a></article>
-<article class="gwanin-scene"><div class="gwanin-scene-no">03<small>A SCHOOL AFTER THE WAR</small></div><h3>폐허를 지나, 다시 배움의 문을 열다</h3><p>1955년 관인중학교 재건을 배경으로 아이들이 학교로 향합니다. 소년은 가상 인물로, 전후 일상의 회복을 상징합니다.</p><a href="#lit-03">이 장면의 이야기 읽기 ↗</a></article>
-<article class="gwanin-scene"><div class="gwanin-scene-no">04<small>THE HANDS THAT KEPT THE VILLAGE</small></div><h3>가위 끝에 남은 마을의 시간</h3><p>오래된 이발관에서 움직이는 손, 익숙한 손님, 장면을 그리는 청년. 관인 생활문화의 평범하지만 소중한 시간을 담았습니다.</p><a href="#lit-04">이 장면의 이야기 읽기 ↗</a></article>
-<article class="gwanin-scene"><div class="gwanin-scene-no">05<small>THE TASTE OF A LOST HOMETOWN</small></div><h3>고향을 떠나도, 손맛은 남는다</h3><p>실향민 음식문화와 연결된 호박만두를 만들며 오래된 조리법과 가족의 이야기가 다음 세대로 전해집니다.</p><a href="#lit-05">이 장면의 이야기 읽기 ↗</a></article>
-<article class="gwanin-scene"><div class="gwanin-scene-no">06<small>THE ROCK THAT OUTLASTS GENERATIONS</small></div><h3>강은 흐르고, 바위는 시간을 품는다</h3><p>관인 주민들의 소풍 기억과 연결된 인근 화적연. 큰 화강암 바위와 한탄강의 시간은 사람의 삶보다 오래 이어집니다.</p><a href="#lit-06">이 장면의 이야기 읽기 ↗</a></article>
-<article class="gwanin-scene"><div class="gwanin-scene-no">07<small>THE VILLAGE THAT REMEMBERS</small></div><h3>기록하는 손길마다, 마을은 이어진다</h3><p>주민들과 삼부자가 사진·레시피·그림을 살펴봅니다. 관인 에코뮤지엄의 기록 활동에서 영감을 받은 창작 장면입니다.</p><a href="#lit-07">이 장면의 이야기 읽기 ↗</a></article></div><p class="tip">일곱 장면의 내용과 문학 각 장을 연결했습니다. 개별 에피소드 원본 이미지가 저장소에 게시되면 아트워크 갤러리를 추가할 수 있습니다.</p></section>
+<div class="story-grid gwanin-art-grid"><figure class="story-card gwanin-art-card" id="art-01">
+<button type="button" class="art-trigger gwanin-art-trigger" data-index="0" data-drive="https://drive.google.com/file/d/1kt1MA7YtRzkdrkqmr6axOZB1PfYhU-8r/view" aria-label="한 마을에 쌓인 세 사람의 시간 이미지 확대 보기">
+<span class="gwanin-art-slot"><img loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1kt1MA7YtRzkdrkqmr6axOZB1PfYhU-8r&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1kt1MA7YtRzkdrkqmr6axOZB1PfYhU-8r&amp;sz=w2000" data-fallback="https://lh3.googleusercontent.com/d/1kt1MA7YtRzkdrkqmr6axOZB1PfYhU-8r=w1200" alt="관인문화마을 에피소드 01 · 한 마을에 쌓인 세 사람의 시간">
+<span class="gwanin-art-fallback">이미지를 표시할 수 없습니다.<br>선택하면 드라이브 원본을 엽니다.</span></span>
+<figcaption><b>01</b><span><strong>THREE GENERATIONS, ONE VILLAGE</strong><br>한 마을에 쌓인 세 사람의 시간</span></figcaption></button>
+<p class="gwanin-art-desc">가상의 삼부자가 각기 다른 시간을 바라봅니다. 할아버지의 기억, 아버지의 생활, 청년의 스케치북이 한 마을에서 만납니다.</p>
+<div class="gwanin-art-links"><a href="#lit-01">이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1kt1MA7YtRzkdrkqmr6axOZB1PfYhU-8r/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></figure>
+<figure class="story-card gwanin-art-card" id="art-02">
+<button type="button" class="art-trigger gwanin-art-trigger" data-index="1" data-drive="https://drive.google.com/file/d/1tRnmSbGNWS3owQTpiOcoO4FXMeBw4-Fj/view" aria-label="벼슬을 내려놓고, 사람 곁에 남다 이미지 확대 보기">
+<span class="gwanin-art-slot"><img loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1tRnmSbGNWS3owQTpiOcoO4FXMeBw4-Fj&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1tRnmSbGNWS3owQTpiOcoO4FXMeBw4-Fj&amp;sz=w2000" data-fallback="https://lh3.googleusercontent.com/d/1tRnmSbGNWS3owQTpiOcoO4FXMeBw4-Fj=w1200" alt="관인문화마을 에피소드 02 · 벼슬을 내려놓고, 사람 곁에 남다">
+<span class="gwanin-art-fallback">이미지를 표시할 수 없습니다.<br>선택하면 드라이브 원본을 엽니다.</span></span>
+<figcaption><b>02</b><span><strong>THOSE WHO LEFT THE COURT</strong><br>벼슬을 내려놓고, 사람 곁에 남다</span></figcaption></button>
+<p class="gwanin-art-desc">관인의 이름에 전해지는 궁예 시대의 지명 유래설을 상상으로 풀어낸 장면입니다. 역사적 사실로 확증된 사건은 아닙니다.</p>
+<div class="gwanin-art-links"><a href="#lit-02">이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1tRnmSbGNWS3owQTpiOcoO4FXMeBw4-Fj/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></figure>
+<figure class="story-card gwanin-art-card" id="art-03">
+<button type="button" class="art-trigger gwanin-art-trigger" data-index="2" data-drive="https://drive.google.com/file/d/12ux3Gvy2UBViW7Tj1IHr1JpeFLdH_wLc/view" aria-label="폐허를 지나, 다시 배움의 문을 열다 이미지 확대 보기">
+<span class="gwanin-art-slot"><img loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=12ux3Gvy2UBViW7Tj1IHr1JpeFLdH_wLc&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=12ux3Gvy2UBViW7Tj1IHr1JpeFLdH_wLc&amp;sz=w2000" data-fallback="https://lh3.googleusercontent.com/d/12ux3Gvy2UBViW7Tj1IHr1JpeFLdH_wLc=w1200" alt="관인문화마을 에피소드 03 · 폐허를 지나, 다시 배움의 문을 열다">
+<span class="gwanin-art-fallback">이미지를 표시할 수 없습니다.<br>선택하면 드라이브 원본을 엽니다.</span></span>
+<figcaption><b>03</b><span><strong>A SCHOOL AFTER THE WAR</strong><br>폐허를 지나, 다시 배움의 문을 열다</span></figcaption></button>
+<p class="gwanin-art-desc">1955년 관인중학교 재건을 배경으로 아이들이 학교로 향합니다. 소년은 가상 인물로, 전후 일상의 회복을 상징합니다.</p>
+<div class="gwanin-art-links"><a href="#lit-03">이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/12ux3Gvy2UBViW7Tj1IHr1JpeFLdH_wLc/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></figure>
+<figure class="story-card gwanin-art-card" id="art-04">
+<button type="button" class="art-trigger gwanin-art-trigger" data-index="3" data-drive="https://drive.google.com/file/d/1cPzrW1AQn9XQHEhDX7ajafGocQODqNif/view" aria-label="가위 끝에 남은 마을의 시간 이미지 확대 보기">
+<span class="gwanin-art-slot"><img loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1cPzrW1AQn9XQHEhDX7ajafGocQODqNif&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1cPzrW1AQn9XQHEhDX7ajafGocQODqNif&amp;sz=w2000" data-fallback="https://lh3.googleusercontent.com/d/1cPzrW1AQn9XQHEhDX7ajafGocQODqNif=w1200" alt="관인문화마을 에피소드 04 · 가위 끝에 남은 마을의 시간">
+<span class="gwanin-art-fallback">이미지를 표시할 수 없습니다.<br>선택하면 드라이브 원본을 엽니다.</span></span>
+<figcaption><b>04</b><span><strong>THE HANDS THAT KEPT THE VILLAGE</strong><br>가위 끝에 남은 마을의 시간</span></figcaption></button>
+<p class="gwanin-art-desc">오래된 이발관에서 움직이는 손, 익숙한 손님, 장면을 그리는 청년. 관인 생활문화의 평범하지만 소중한 시간을 담았습니다.</p>
+<div class="gwanin-art-links"><a href="#lit-04">이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1cPzrW1AQn9XQHEhDX7ajafGocQODqNif/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></figure>
+<figure class="story-card gwanin-art-card" id="art-05">
+<button type="button" class="art-trigger gwanin-art-trigger" data-index="4" data-drive="https://drive.google.com/file/d/1J6fyk2dDMsg1HkK4h8Vt9dkuFForP415/view" aria-label="고향을 떠나도, 손맛은 남는다 이미지 확대 보기">
+<span class="gwanin-art-slot"><img loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1J6fyk2dDMsg1HkK4h8Vt9dkuFForP415&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1J6fyk2dDMsg1HkK4h8Vt9dkuFForP415&amp;sz=w2000" data-fallback="https://lh3.googleusercontent.com/d/1J6fyk2dDMsg1HkK4h8Vt9dkuFForP415=w1200" alt="관인문화마을 에피소드 05 · 고향을 떠나도, 손맛은 남는다">
+<span class="gwanin-art-fallback">이미지를 표시할 수 없습니다.<br>선택하면 드라이브 원본을 엽니다.</span></span>
+<figcaption><b>05</b><span><strong>THE TASTE OF A LOST HOMETOWN</strong><br>고향을 떠나도, 손맛은 남는다</span></figcaption></button>
+<p class="gwanin-art-desc">실향민 음식문화와 연결된 호박만두를 만들며 오래된 조리법과 가족의 이야기가 다음 세대로 전해집니다.</p>
+<div class="gwanin-art-links"><a href="#lit-05">이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1J6fyk2dDMsg1HkK4h8Vt9dkuFForP415/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></figure>
+<figure class="story-card gwanin-art-card" id="art-06">
+<button type="button" class="art-trigger gwanin-art-trigger" data-index="5" data-drive="https://drive.google.com/file/d/1B4LJUNCtelkjogHX9iIhuEG1ATp4f8Sa/view" aria-label="강은 흐르고, 바위는 시간을 품는다 이미지 확대 보기">
+<span class="gwanin-art-slot"><img loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1B4LJUNCtelkjogHX9iIhuEG1ATp4f8Sa&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1B4LJUNCtelkjogHX9iIhuEG1ATp4f8Sa&amp;sz=w2000" data-fallback="https://lh3.googleusercontent.com/d/1B4LJUNCtelkjogHX9iIhuEG1ATp4f8Sa=w1200" alt="관인문화마을 에피소드 06 · 강은 흐르고, 바위는 시간을 품는다">
+<span class="gwanin-art-fallback">이미지를 표시할 수 없습니다.<br>선택하면 드라이브 원본을 엽니다.</span></span>
+<figcaption><b>06</b><span><strong>THE ROCK THAT OUTLASTS GENERATIONS</strong><br>강은 흐르고, 바위는 시간을 품는다</span></figcaption></button>
+<p class="gwanin-art-desc">관인 주민들의 소풍 기억과 연결된 인근 화적연. 큰 화강암 바위와 한탄강의 시간은 사람의 삶보다 오래 이어집니다.</p>
+<div class="gwanin-art-links"><a href="#lit-06">이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1B4LJUNCtelkjogHX9iIhuEG1ATp4f8Sa/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></figure>
+<figure class="story-card gwanin-art-card" id="art-07">
+<button type="button" class="art-trigger gwanin-art-trigger" data-index="6" data-drive="https://drive.google.com/file/d/1VQPbWYwhok7huNrGEuo9SCDZJpiP9wqw/view" aria-label="기록하는 손길마다, 마을은 이어진다 이미지 확대 보기">
+<span class="gwanin-art-slot"><img loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1VQPbWYwhok7huNrGEuo9SCDZJpiP9wqw&amp;sz=w1000" data-full="https://drive.google.com/thumbnail?id=1VQPbWYwhok7huNrGEuo9SCDZJpiP9wqw&amp;sz=w2000" data-fallback="https://lh3.googleusercontent.com/d/1VQPbWYwhok7huNrGEuo9SCDZJpiP9wqw=w1200" alt="관인문화마을 에피소드 07 · 기록하는 손길마다, 마을은 이어진다">
+<span class="gwanin-art-fallback">이미지를 표시할 수 없습니다.<br>선택하면 드라이브 원본을 엽니다.</span></span>
+<figcaption><b>07</b><span><strong>THE VILLAGE THAT REMEMBERS</strong><br>기록하는 손길마다, 마을은 이어진다</span></figcaption></button>
+<p class="gwanin-art-desc">주민들과 삼부자가 사진·레시피·그림을 살펴봅니다. 관인 에코뮤지엄의 기록 활동에서 영감을 받은 창작 장면입니다.</p>
+<div class="gwanin-art-links"><a href="#lit-07">이야기 읽기 ↗</a><a href="https://drive.google.com/file/d/1VQPbWYwhok7huNrGEuo9SCDZJpiP9wqw/view" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div></figure></div>
+<p class="tip">관인문화마을 7부작 원본 이미지를 순서대로 연결했습니다. 그림을 누르면 확대해서 볼 수 있고, 원본 보기를 선택하면 공유된 Google Drive 파일이 열립니다. 각 그림의 설명과 문학 본문도 연결되어 있습니다.</p></section>
 <section class="section" id="literature" aria-labelledby="literature-title"><div class="section-head"><h2 id="literature-title">이름을 그리는 법</h2><span>03 / LITERARY NARRATIVE</span></div>
 <p class="reading-lead">그림 속 세계로 들어가 한 사람의 시선으로 관인의 골목과 손길, 이름의 의미를 발견하는 연작 단편소설.</p>
 <p class="reading-context">청년의 스케치북을 따라가는 일곱 개의 장면과 에필로그입니다. 각 장은 독립적으로 읽을 수 있으며 순서대로 읽으면 하나의 이야기로 연결됩니다.</p>
@@ -377,5 +447,47 @@
 <div class="return-strip"><strong>한 지역의 기억에서, 열두 지역의 이야기로.</strong><a href="../#albums">나머지 트랙 살펴보기 ↗</a></div>
 </main>
 <footer class="shell bottom"><span>GYEONGGI TRACKS © 2026 OFFITA</span><span>ORIGINAL ILLUSTRATION · REGIONAL STORY · SOUND</span><a href="https://offitaamor.github.io/">OFFITA HOME ↗</a></footer>
+<dialog class="lightbox" id="gwanin-art-lightbox" aria-label="관인문화마을 아트워크 확대 보기">
+<button type="button" id="gwanin-art-close" aria-label="확대 이미지 닫기">×</button>
+<img id="gwanin-art-large" alt=""><p class="gwanin-dialog-fallback" id="gwanin-art-fallback" hidden>이미지를 불러오지 못했습니다. 아래의 원본 보기 링크를 이용해 주세요.</p>
+<p id="gwanin-art-caption" aria-live="polite"></p>
+<div class="gwanin-dialog-actions"><button type="button" id="gwanin-art-prev">← 이전 그림</button><a id="gwanin-art-original" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/">드라이브 원본 보기 ↗</a><button type="button" id="gwanin-art-next">다음 그림 →</button></div>
+</dialog>
 <script>document.querySelectorAll('.reading-guide a').forEach(a=>a.addEventListener('click',e=>{const detail=document.getElementById('literature-full');if(detail&&!detail.open)detail.open=true;}));</script>
+<script>
+(()=>{
+"use strict";
+const buttons=[...document.querySelectorAll(".gwanin-art-trigger")];
+const dialog=document.getElementById("gwanin-art-lightbox"),photo=document.getElementById("gwanin-art-large"),caption=document.getElementById("gwanin-art-caption"),source=document.getElementById("gwanin-art-original"),fallback=document.getElementById("gwanin-art-fallback");
+let current=0,previous=null;
+buttons.forEach(button=>{
+ const img=button.querySelector("img");
+ img.addEventListener("error",()=>{
+  if(!img.dataset.triedFallback){img.dataset.triedFallback="1";img.src=img.dataset.fallback;return;}
+  button.classList.add("is-failed");
+ });
+ button.addEventListener("click",()=>{
+  if(button.classList.contains("is-failed")){window.open(button.dataset.drive,"_blank","noopener,noreferrer");return;}
+  previous=button;show(Number(button.dataset.index));dialog.showModal();
+ });
+});
+function show(index){
+ current=(index+buttons.length)%buttons.length;
+ const button=buttons[current],img=button.querySelector("img");
+ photo.hidden=false;fallback.hidden=true;
+ photo.alt=img.alt;photo.src=img.dataset.full;source.href=button.dataset.drive;
+ caption.textContent=String(current+1).padStart(2,"0")+" / 07 · "+button.closest("figure").querySelector("figcaption span").innerText.replace(/\\n/g," · ");
+}
+photo.addEventListener("error",()=>{photo.hidden=true;fallback.hidden=false;});
+document.getElementById("gwanin-art-close").addEventListener("click",()=>dialog.close());
+document.getElementById("gwanin-art-prev").addEventListener("click",()=>show(current-1));
+document.getElementById("gwanin-art-next").addEventListener("click",()=>show(current+1));
+dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close();});
+dialog.addEventListener("keydown",event=>{
+ if(event.key==="ArrowLeft"){event.preventDefault();show(current-1);}
+ if(event.key==="ArrowRight"){event.preventDefault();show(current+1);}
+});
+dialog.addEventListener("close",()=>{photo.removeAttribute("src");if(previous)previous.focus();});
+})();
+</script>
 </body></html>
