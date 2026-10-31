@@ -272,6 +272,8 @@ a:focus-visible,button:focus-visible{
 .archive-grid .music-cover-card .card-image img{object-fit:contain}
 .selected-grid .music-cover-card:first-child .card-image,
 .selected-grid .music-cover-card:nth-child(4) .card-image{aspect-ratio:1}
+.selected-grid .content-card:first-child .card-image{aspect-ratio:4/3}
+.selected-grid .content-card:first-child .card-image img{object-fit:contain}
 .card-meta .card-facts{font-size:11px;letter-spacing:.015em;line-height:1.6;color:var(--muted-brown);margin:0 0 11px}
 .archive-grid .card-meta .summary{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 .home-contact-description{font-size:15px;line-height:1.7;color:var(--oatmeal);margin:-14px 0 30px}

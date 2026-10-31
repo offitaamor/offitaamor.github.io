@@ -8,7 +8,7 @@ date: 2026-09-10
 release_date: "2026.09.10"
 year: "2026"
 track_count: 1
-remote_cover: "https://drive.google.com/uc?export=view&id=1QfA7Y6fkwcypY6ZG5H_sMfSqkWQ27iSJ"
+remote_cover: "https://drive.google.com/thumbnail?id=1QfA7Y6fkwcypY6ZG5H_sMfSqkWQ27iSJ&sz=w1200"
 summary: "날씨를 통해 사랑의 감정을 표현하는 시리즈의 두 번째 곡."
 featured: false
 tracklist:
