@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>그을린 모던 — OFFITA 대구 전시</title>
+  <meta name="description" content="OFFITA의 대구 체류 전시 《그을린 모던》. 대구 음식 의인화와 도시 인물화, 연암서당골의 하루, 음악 아트워크와 테이스팅 카드를 기록합니다.">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta name="theme-color" content="#2B2B2B">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="OFFITA">
+  <meta property="og:title" content="그을린 모던 — OFFITA 대구 전시">
+  <meta property="og:description" content="빛은 바랬고, 소리는 남았다. 대구의 색과 사람, 음식과 소리를 담은 OFFITA의 전시 아카이브.">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ page.cover | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="{{ '/assets/images/brand/offita-emblem.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@400;500;600;700;800;900&amp;family=Noto+Serif+KR:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/daegu-exhibition.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#content">본문으로 건너뛰기</a>
+  <header class="d-nav">
+    <a class="d-brand" href="{{ '/' | relative_url }}" aria-label="OFFITA 홈페이지">OFFITA<span>®</span></a>
+    <nav aria-label="전시 목차">
+      <a href="#city">도시의 색</a><a href="#artworks">그림</a><a href="#village">연암서당골</a><a href="#music">음악</a>
+    </nav>
+    <a class="d-back" href="{{ '/projects/' | relative_url }}">전체 프로젝트 ↗</a>
+  </header>
+  <main id="content">
+    <section class="d-hero" aria-labelledby="d-title">
+      <div class="d-hero__copy">
+        <p class="d-eyebrow"><span class="d-line"></span> OFFITA / DAEGU EXHIBITION ARCHIVE / 2026</p>
+        <h1 id="d-title">그을린<br><em>모던.</em></h1>
+        <p class="d-hero__en">SCORCHED MODERN</p>
+        <p class="d-hero__lead">빛은 바랬고,<br>소리는 남았다.</p>
+        <p class="d-hero__body">대구의 음식과 사람을 그림으로, 연암서당골에서 보낸 하루를 기록으로. 싱어송라이터이자 시각예술가 OFFITA가 낯선 도시에 머물며 만든 전시입니다.</p>
+        <a class="d-hero__action" href="#artworks">작품 감상하기 <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="d-hero__visual">
+        <img src="{{ page.cover | relative_url }}" alt="대구 인물화 두 점과 뭉티기 의인화 작품을 함께 배치한 전시 표지" fetchpriority="high">
+        <span>01 / CITY, TASTE &amp; PEOPLE</span>
+      </div>
+      <div class="d-hero__foot"><span>DAEGU · YEONAM SEODANGGOL</span><span>SCROLL TO EXPLORE ↓</span></div>
+    </section>
+    {{ content }}
+  </main>
+  <footer class="d-footer">
+    <div><span>OFFITA / SCORCHED MODERN / 2026</span><strong>빛은 바랬고, 소리는 남았다.</strong></div>
+    <div class="d-footer__links"><a href="{{ '/' | relative_url }}">OFFITA 홈 ↗</a><a href="{{ '/projects/' | relative_url }}">다른 프로젝트 ↗</a><a href="{{ site.data.site.instagram }}" target="_blank" rel="noopener">INSTAGRAM ↗</a></div>
+  </footer>
+</body>
+</html>
