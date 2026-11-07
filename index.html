@@ -6,12 +6,12 @@ permalink: /
 ---
 <section class="home-hero">
   <div class="hero-copy-wrap">
-    <p class="eyebrow">INDEPENDENT ARTIST · GOYANG / SEOUL</p>
+    <p class="eyebrow">OFFITA AMON · MUSIC / VISUAL / PLACE</p>
     <h1>{{ site.data.site.tagline_en }}</h1>
-    <p class="home-copy">{{ site.data.site.tagline_ko }}</p>
+    <p class="home-copy">싱어송라이터이자 시각예술가 OFFITA. 음악을 만들고 그림을 그리며, 머문 장소와 만난 사람을 작품으로 기록합니다.</p>
     <div class="hero-actions">
-      <a class="button dark" href="#selected-works">SELECTED WORKS</a>
-      <a class="button" href="{{ '/about/' | relative_url }}">ABOUT</a>
+      <a class="button dark" href="{{ '/projects/daegu-onna/' | relative_url }}">대구 전시 아카이브</a>
+      <a class="button" href="#selected-works">SELECTED WORKS</a>
     </div>
   </div>
   {% assign hero_visual = site.visual | where: "visual_type", "series" | sort: "order" | first %}
@@ -32,6 +32,16 @@ permalink: /
     <span class="hero-art-index" aria-hidden="true">OFFITA / SELECTED PRACTICE — 2026</span>
   </div>
 </section>
+
+<a class="daegu-home-feature" href="{{ '/projects/daegu-onna/' | relative_url }}">
+  <div class="daegu-home-feature__copy">
+    <span>NEW PROJECT / DAEGU · 2026</span>
+    <h2>빛은 바랬고,<br>소리는 남았다.</h2>
+    <p>대구의 음식과 사람을 그림으로, 연암서당골의 하루를 기록으로. OFFITA의 대구 체류 전시를 만나보세요.</p>
+    <strong>전시 작품과 기록 보기 <span aria-hidden="true">↗</span></strong>
+  </div>
+  <img src="{{ '/assets/uploads/projects/daegu-onna/mungtigi.webp' | relative_url }}" alt="대구 음식 뭉티기를 인물로 그린 OFFITA의 작품" loading="lazy" decoding="async">
+</a>
 
 <section class="home-block selected-section" id="selected-works">
   <div class="block-head">

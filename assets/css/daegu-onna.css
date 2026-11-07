@@ -1,0 +1,63 @@
+/* OFFITA / SCORCHED MODERN — project archive */
+.daegu-home-feature{display:grid;grid-template-columns:1.15fr .85fr;min-height:360px;background:#2a2326;color:#f1e8dd;text-decoration:none;overflow:hidden}
+.daegu-home-feature__copy{padding:clamp(32px,5vw,76px) clamp(24px,6vw,90px);align-self:center}
+.daegu-home-feature__copy>span{font-size:11px;letter-spacing:.16em;color:#c6a8a1}
+.daegu-home-feature h2{font-family:var(--serif);font-size:clamp(38px,4.8vw,72px);font-weight:500;line-height:1.1;letter-spacing:-.04em;margin:22px 0}
+.daegu-home-feature p{max-width:550px;font-size:15px;line-height:1.75;color:#ddd1c6;margin:0 0 30px}
+.daegu-home-feature strong{font-size:13px;font-weight:500;border-bottom:1px solid #c6a8a1;padding-bottom:8px}
+.daegu-home-feature img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.daegu-home-feature:hover strong{color:#e7bbb4}
+.daegu-case .detail-cover{background:#302529}
+.daegu-case .detail-hero h1{font-size:clamp(52px,6.4vw,102px);line-height:1.03;max-width:1100px}
+.daegu-case .detail-cover img{object-fit:cover}
+.daegu-case .detail-highlights dd{line-height:1.5}
+.daegu-intro{margin-bottom:42px}
+.daegu-disclaimer{font-size:13px;color:var(--warm-grey);max-width:720px}
+.daegu-jump{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 115px}
+.daegu-jump a{display:block;padding:18px 12px 18px 0;font-size:12px;color:var(--charcoal);text-decoration:none}
+.daegu-jump a+a{padding-left:15px;border-left:1px solid var(--line)}
+.daegu-jump a:hover{color:#7b3b44}
+.daegu-case .case-section-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(42px,5.2vw,77px);line-height:1.08;letter-spacing:-.045em}
+.daegu-gallery{display:grid;gap:40px 20px;margin:42px 0 70px}
+.daegu-gallery--food,.daegu-gallery--music{grid-template-columns:repeat(3,minmax(0,1fr))}
+.daegu-gallery--people{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}
+.daegu-gallery figure,.daegu-field-grid figure,.daegu-card-grid figure{margin:0;min-width:0}
+.daegu-gallery a,.daegu-card-grid a{display:block;background:#e7ded2;overflow:hidden}
+.daegu-gallery img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;transition:transform .3s ease}
+.daegu-gallery a:hover img,.daegu-card-grid a:hover img{transform:scale(1.015)}
+.daegu-gallery figcaption{display:grid;gap:5px;padding:11px 0;border-top:1px solid var(--line);margin-top:12px}
+.daegu-gallery figcaption strong{font-size:15px;line-height:1.5;font-weight:600;color:var(--soft-black)}
+.daegu-gallery figcaption span{font-size:12px;line-height:1.65;color:var(--warm-grey)}
+.daegu-subhead{font-family:var(--serif);font-size:clamp(29px,3vw,44px);font-weight:500;line-height:1.2;margin:70px 0 20px}
+.daegu-field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:42px 0 17px}
+.daegu-field-grid img{display:block;width:100%;height:240px;object-fit:cover;background:#e7ded2}
+.daegu-field-grid figcaption{padding:9px 0;font-size:12px;color:var(--charcoal)}
+.daegu-small-note{font-size:12px!important;color:var(--warm-grey);line-height:1.7;margin-top:16px}
+.daegu-small-note a{text-decoration:underline;text-underline-offset:3px}
+.daegu-quote{margin:60px 0 0;padding:37px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--serif);font-size:clamp(25px,3vw,43px);line-height:1.3}
+.daegu-quote span{display:block;margin-top:13px;font-family:"Noto Sans KR",sans-serif;font-size:11px;color:var(--warm-grey)}
+.daegu-gallery--music figcaption{min-height:55px}
+.daegu-card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 14px;margin:42px 0}
+.daegu-card-grid a{background:#e8e0d3}
+.daegu-card-grid img{display:block;width:100%;height:auto;aspect-ratio:396/560;object-fit:contain;transition:transform .3s ease}
+.daegu-card-grid figcaption{font-size:11px;line-height:1.5;margin-top:8px;color:var(--charcoal)}
+.daegu-process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:48px 0 75px}
+.daegu-process-grid>div{padding-top:16px;border-top:1px solid var(--line)}
+.daegu-process-grid span{display:block;font-size:10px;letter-spacing:.14em;color:#8e5c62}
+.daegu-process-grid strong{display:block;margin:13px 0;font-family:var(--serif);font-size:24px;line-height:1.2;font-weight:500}
+.daegu-process-grid p{font-size:13px;line-height:1.7;color:var(--warm-grey);margin:0}
+.daegu-ending{background:#302529;color:#efe6da;padding:clamp(28px,4vw,55px);margin:0}
+.daegu-ending p{font-size:11px;letter-spacing:.15em;color:#c7a5a7;margin:0 0 28px}
+.daegu-ending strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.2vw,48px);line-height:1.3}
+.daegu-ending a{display:inline-block;margin-top:40px;font-size:12px;border-bottom:1px solid #c7a5a7;padding-bottom:6px;color:#efe6da}
+@media(max-width:900px){.daegu-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.daegu-gallery--food,.daegu-gallery--music{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .daegu-home-feature{grid-template-columns:1fr}.daegu-home-feature__copy{padding:35px 22px 38px}.daegu-home-feature img{height:270px;aspect-ratio:auto;object-position:center 35%}
+ .daegu-case .detail-hero h1{font-size:clamp(45px,11vw,70px)}.daegu-case .detail-cover img{aspect-ratio:4/3}
+ .daegu-jump{grid-template-columns:repeat(2,1fr);margin-bottom:75px}.daegu-jump a{padding:14px 10px;font-size:11px}.daegu-jump a:nth-child(3){border-left:0;border-top:1px solid var(--line)}.daegu-jump a:nth-child(4){border-top:1px solid var(--line)}
+ .daegu-gallery{gap:25px 12px;margin:30px 0 55px}.daegu-gallery--food,.daegu-gallery--music{grid-template-columns:repeat(2,minmax(0,1fr))}.daegu-gallery--people{grid-template-columns:1fr}
+ .daegu-gallery figcaption strong{font-size:13px}.daegu-gallery figcaption span{font-size:11px}
+ .daegu-field-grid{gap:20px 12px}.daegu-field-grid img{height:150px}.daegu-field-grid figcaption{font-size:11px}
+ .daegu-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px}.daegu-process-grid{grid-template-columns:1fr;gap:26px;margin-bottom:60px}
+}
+@media(max-width:380px){.daegu-gallery--food,.daegu-gallery--music{gap:22px 9px}.daegu-gallery figcaption span{display:none}}

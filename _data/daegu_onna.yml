@@ -1,0 +1,33 @@
+food:
+  - {image: jjimgalbi, title: '대구 찜갈비', caption: '동인동식 찜갈비의 붉은 양념과 양푼을 인물로 옮겼다.'}
+  - {image: mungtigi, title: '대구 뭉티기 — 붉은 마담', caption: '뭉티기의 질감과 붉은 색을 한 인물의 태도로 표현했다.'}
+  - {image: ttaro-gukbap, title: '대구 따로국밥', caption: '국과 밥이 따로 놓이는 한 상을 무신과 호위 인물로 그렸다.'}
+  - {image: napjak-mandu, title: '대구 납작만두', caption: '얇은 피와 소박한 골목 간식의 분위기를 담았다.'}
+  - {image: fried-gizzard, title: '대구 닭똥집튀김', caption: '튀김의 색, 은박 테이블, 세 가지 양념을 인물 주변에 놓았다.'}
+  - {image: makchang, title: '대구 막창', caption: '연탄구이와 곱창 머리끈을 젊은 인물의 소품으로 바꾸었다.'}
+  - {image: yakki-udon, title: '대구 야끼우동', caption: '매운 양념과 면발의 움직임을 교복 차림의 인물로 풀었다.'}
+people:
+  - {image: daegu-man, title: '내가 바라본 대구의 남자 — 단디.', caption: '도시에서 받은 단단한 인상을 의상과 자세, 사투리로 기록했다.'}
+  - {image: daegu-woman, title: '내가 바라본 대구의 여자 — 그카믄 됐지~ 개안타', caption: '친근함과 강인함을 한 인물의 표정과 차림에 담았다.'}
+music:
+  - {image: malchus, title: 'Malchus · 말고'}
+  - {image: maldo-motha, title: '말도 못해'}
+  - {image: syndrome, title: 'SYNDROME — Topic. Drive'}
+  - {image: rain, title: '이 비는 계속 내릴 거 같은데'}
+  - {image: sunlight, title: '이 햇살은 오래 비출 것 같은데'}
+  - {image: humming, title: 'Humming in the rain'}
+cards:
+  - {image: syndrome, title: 'SYNDROME'}
+  - {image: nine-stages, title: 'NINE STAGES OF LOVE'}
+  - {image: humming, title: 'Humming in the rain'}
+  - {image: maldo-motha, title: '말도 못해'}
+  - {image: malgo, title: '말고'}
+  - {image: rain, title: '이 비는 계속 내릴 거 같은데'}
+  - {image: sunlight, title: '이 햇살은 오래 비출 것 같은데'}
+  - {image: mandu, title: '대구 납작만두'}
+  - {image: gizzard, title: '대구 닭똥집튀김'}
+  - {image: makchang, title: '대구 막창'}
+  - {image: yakki-udon, title: '대구 야끼우동'}
+  - {image: mungtigi, title: '대구 뭉티기'}
+  - {image: ttaro, title: '대구 따로국밥'}
+  - {image: jjim, title: '대구 찜갈비'}
