@@ -59,6 +59,11 @@
     if(target.classList.contains('marker'))target.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();select(target.dataset.spot);}});
   });
   select('art');
-  // Preserve an overview first, then let small screens pan through the single large scene.
-  if(matchMedia('(max-width:800px)').matches)sceneScroll.scrollLeft=Math.max(0,(sceneScroll.scrollWidth-sceneScroll.clientWidth)/2);
+  const zoomButton=document.getElementById('zoomScene');
+  zoomButton.addEventListener('click',()=>{
+    const zoomed=sceneScroll.classList.toggle('is-zoomed');
+    zoomButton.setAttribute('aria-pressed',String(zoomed));
+    zoomButton.textContent=zoomed?'전체 장면 보기 ↙':'장면 확대해서 보기 ↗';
+    sceneScroll.scrollLeft=zoomed?Math.max(0,(sceneScroll.scrollWidth-sceneScroll.clientWidth)/2):0;
+  });
 })();
