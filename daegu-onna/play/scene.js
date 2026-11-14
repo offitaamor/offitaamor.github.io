@@ -22,9 +22,7 @@
     {x:1188,y:344,w:62,h:81,file:'session02-02.webp'},
     {x:1300,y:436,w:45,h:59,file:'session02-03.webp'},
     {x:1090,y:337,w:52,h:69,file:'session02-01.webp'},
-    {x:1023,y:426,w:38,h:52,file:'session02-02.webp'},
-    {x:1217,y:510,w:54,h:48,file:'session02-03.webp'},
-    {x:1145,y:455,w:39,h:51,file:'session02-01.webp'}
+    {x:1023,y:426,w:38,h:52,file:'session02-02.webp'}
   ];
   docs.forEach((doc,i)=>{
     const g=svg('g',{transform:`rotate(${[-2,1,-1,2,1,-2,1][i]} ${doc.x+doc.w/2} ${doc.y+doc.h/2})`});
@@ -33,6 +31,14 @@
     g.append(svg('image',{x:doc.x+3,y:doc.y+3,width:doc.w-6,height:doc.h-6,href:`assets/${doc.file}`,preserveAspectRatio:'xMidYMid meet'}));
     sheets.append(g);
   });
+  // Graphic placeholder for the large hand-drawn field map visible on the real pegboard.
+  const map=svg('g',{transform:'rotate(-2 1155 488)'});
+  map.append(svg('rect',{x:1100,y:432,width:107,height:113,fill:'#f7f3e9',stroke:'#8f8370','stroke-width':2}));
+  map.append(svg('path',{d:'M1113 447q28 9 37-4t42 7M1114 459q31 8 43-3t36 6M1114 510q37-20 70-1m-68 10q42-16 75-3',fill:'none',stroke:'#9ca38d','stroke-width':1.5,opacity:.7}));
+  map.append(svg('path',{d:'M1115 479q15 9 25 0t20 9t30-8M1121 532q14-29 30-31t32-31',fill:'none',stroke:'#6e827b','stroke-width':3,opacity:.75}));
+  for(const [x,y] of [[1130,482],[1151,501],[1183,473],[1169,521]])map.append(svg('circle',{cx:x,cy:y,r:4,fill:'#b7815c'}));
+  const mapTitle=svg('text',{x:1111,y:444,fill:'#51473e','font-size':7,'font-weight':700});mapTitle.textContent='YEONAM FIELD MAP';map.append(mapTitle);
+  sheets.append(map);
   const spots={
     art:{title:'왼쪽 작품 선반',text:'흰 벽의 얇은 선반 위에 대구 작품의 작은 나무 액자가 한 줄로 놓입니다. 아래에는 천이 덮인 긴 자료 테이블이 이어집니다.',photo:'art-wall.webp',alt:'실제 전시장 왼쪽 작품 선반'},
     archive:{title:'오른쪽 기록 타공판',text:'맞은편 베이지 타공판에는 버킷리스트, 연암서당골 기록, 지도와 인쇄 패널이 다양한 간격으로 붙습니다.',photo:'archive-wall.webp',alt:'실제 전시장 오른쪽 기록 타공판'},
