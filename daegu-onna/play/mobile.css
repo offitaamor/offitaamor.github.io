@@ -166,3 +166,27 @@ button{-webkit-tap-highlight-color:transparent}
  .hud-actions [data-action="help"]::after{content:'도움'}
  .hud-actions [data-action="reset"]::after{content:'처음'}
 }
+/* Photo route through the actual OFFITA pop-up venue. */
+.splash-actions{flex-wrap:wrap}
+.venue-modal{width:min(1140px,100%);background:#efede7}
+.venue-tour{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.72fr);min-height:600px}
+.venue-main{background:#252522;display:flex;flex-direction:column;min-width:0}
+.venue-photo{flex:1;display:grid;place-items:center;min-height:490px;padding:22px}
+.venue-photo img{display:block;width:100%;height:auto;max-height:min(68dvh,720px);object-fit:contain;box-shadow:0 14px 35px #0006}
+.venue-photo-foot{display:flex;align-items:center;justify-content:space-between;padding:4px 24px 17px;color:#e7e3d9;font:12px Georgia,serif;letter-spacing:1px}
+.venue-photo-foot .full-image-link{color:#f1e9dc}
+.venue-aside{padding:54px 34px 28px;display:flex;flex-direction:column}
+.venue-aside h2{font-size:clamp(26px,2.8vw,36px)}
+.venue-aside>p{font-size:13px;line-height:1.8;margin:8px 0}
+.venue-rule{border-top:1px solid #c8c2b7;margin:24px 0}
+.venue-area{font:10px Georgia,serif;letter-spacing:2px;color:#987451}
+.venue-aside h3{font-size:22px;letter-spacing:-.5px;margin:8px 0 4px}
+.venue-points{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:25px}
+.venue-points button{background:#f8f6f0;color:#383630;border:1px solid #b8b1a6;padding:10px;min-height:44px;font-size:12px}
+.venue-points button[aria-pressed=true]{background:#30302d;color:#f6f3e9;border-color:#30302d}
+.venue-controls{display:flex;gap:8px;margin-top:14px}
+.venue-controls .action-btn{flex:1;min-height:44px;padding:10px 8px;font-size:12px}
+.venue-controls button:disabled{opacity:.4;cursor:default}
+@media(max-width:720px){.splash-actions{gap:9px}.splash-actions .text-btn{font-size:11px}.venue-tour{display:flex;flex-direction:column;min-height:0}.venue-photo{min-height:0;padding:12px}.venue-photo img{max-height:37dvh}.venue-photo-foot{padding:0 14px 8px}.venue-aside{padding:18px 21px 22px}.venue-aside h2{font-size:23px;margin-bottom:4px}.venue-aside>p{font-size:11px;line-height:1.6;margin:4px 0}.venue-rule{margin:10px 0}.venue-aside h3{font-size:17px;margin:4px 0}.venue-points{padding-top:8px;gap:6px}.venue-points button{min-height:38px;padding:6px;font-size:11px}.venue-controls{margin-top:8px}.venue-controls .action-btn{min-height:40px}}
+@media(max-width:720px) and (max-height:700px){.venue-photo img{max-height:29dvh}.venue-aside>p:first-of-type{display:none}.venue-rule{margin:6px 0}}
+@media(max-width:390px){.hud-actions button{width:36px;height:36px;min-width:36px;min-height:36px;font-size:16px}.brand-lockup .brand-monogram,.brand-lockup small,.brand-lockup strong span{display:none}.brand-lockup strong{font-size:13px}}
