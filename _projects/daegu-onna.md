@@ -90,8 +90,19 @@ featured: true
   <a class="d-music__link" href="{{ '/music/' | relative_url }}">음악과 발매 정보 더 보기 ↗</a>
 </section>
 
+<section class="d-play" id="play" aria-labelledby="play-title"><div class="d-container d-play__grid">
+  <div class="d-play__copy">
+    <span class="d-small-label">05 / INTERACTIVE EXHIBITION</span>
+    <h2 id="play-title">이번에는<br>전시 속을 걷다.</h2>
+    <p>연암서당골에서 시작해 대구의 그림과 음악, 골목의 기록을 따라 걷는 온라인 전시입니다. 공간을 이동하며 작품을 눌러 감상하고 작은 미션을 완성해 보세요.</p>
+    <p class="d-play__hint">PC: 방향키 또는 WASD · 모바일: 화면 터치 이동</p>
+    <a class="d-play__link" href="{{ '/daegu-onna/play/' | relative_url }}">전시 게임 입장하기 <span aria-hidden="true">↗</span></a>
+  </div>
+  <a class="d-play__visual" href="{{ '/daegu-onna/play/' | relative_url }}" aria-label="OFFITA 대구 인터랙티브 전시 게임 입장하기"><img src="{{ '/assets/uploads/projects/daegu-onna/cover.webp' | relative_url }}" alt="대구 전시의 도시 인물화와 음식 의인화 대표 작품" loading="lazy" decoding="async"><span>WALK THROUGH THE ART ↗</span></a>
+</div></section>
+
 <section class="d-outro" aria-labelledby="outro-title"><div class="d-container">
-  <span class="d-small-label">05 / PROCESS &amp; WHAT REMAINS</span>
+  <span class="d-small-label">06 / PROCESS &amp; WHAT REMAINS</span>
   <h2 id="outro-title">완성한 작업과<br>아직 남은 질문.</h2>
   <p>직접 그린 원화를 다듬고 인쇄물과 음악 카드로 확장했다. AI로 그림체를 구현하고 음식의 형태를 3D로 옮기는 실험에는 여전히 해결할 문제가 있다. 연암서당골의 노래와 골목의 소리, 주민과 함께 남길 기록은 다음 작업의 가능성으로 적어 두었다.</p>
   <div class="d-outro__line"><span>OBSERVE</span><span>DRAW &amp; SOUND</span><span>CONTINUE</span></div>
