@@ -10,6 +10,20 @@ button{-webkit-tap-highlight-color:transparent}
 .project-link:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 #game:focus{outline:none}
 .detail-buttons a.action-btn{display:inline-flex;align-items:center;text-decoration:none}
+.brand-monogram img{width:26px;height:30px;object-fit:contain;filter:invert(1)}
+.art-detail-image{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px}
+.art-detail-image img{display:block;max-height:min(57vh,570px)}
+.art-detail-image img.artifact-portrait{width:auto;max-width:100%;height:auto;max-height:min(57vh,570px);aspect-ratio:auto;border-width:5px}
+.detail-image-caption{font-size:11px;color:#5c4b3b;text-align:center;line-height:1.5}
+.artifact-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;max-width:100%}
+.artifact-tabs button{border:1px solid #9d876c;background:#e9ddca;color:#5a4838;padding:9px 10px;font-size:11px;min-height:38px}
+.artifact-tabs button[aria-pressed="true"]{background:#3a3029;border-color:#3a3029;color:#fff6e7}
+.full-image-link{display:inline-block;color:#5d4937;font-size:12px;text-decoration:underline;text-underline-offset:3px;padding:7px}
+.full-image-link:focus-visible,.artifact-tabs button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.artifact-context,.archive-source{font-size:12px!important;color:#88715c!important}
+.archive-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.archive-preview img{width:auto;max-width:100%;height:auto}
+.poster-detail .archive-preview{background:#ddd3c5}
 .modal-layer{padding-top:max(10px,var(--safe-top));padding-bottom:max(10px,var(--safe-bottom));padding-left:max(10px,var(--safe-left));padding-right:max(10px,var(--safe-right));touch-action:auto}
 .modal{max-height:calc(100dvh - max(20px,var(--safe-top)) - max(20px,var(--safe-bottom)));-webkit-overflow-scrolling:touch;touch-action:pan-y;scrollbar-width:thin}
 .modal-close{min-width:44px;min-height:44px;border-radius:50%}
@@ -37,6 +51,10 @@ button{-webkit-tap-highlight-color:transparent}
   .control-hint{display:none}
 }
 @media (max-width:720px){
+  .brand-monogram img{width:21px;height:24px}
+  .art-detail-image img{max-height:33dvh}
+  .art-detail-image img.artifact-portrait{max-height:33dvh}
+  .artifact-tabs button{font-size:10px;padding:8px}
   .interact-key{display:none}
   .splash{padding-top:max(12px,calc(var(--safe-top) + 8px))}
   .splash-main{flex:0 0 auto}

@@ -20,12 +20,18 @@ window.EXHIBITION_DATA = {
     {id:'art12',index:12,zone:3,title:'Humming in the rain',subtitle:'OFFITA AMON',description:'비가 만든 물결과 풀잎 사이에 누운 인물이 등장하는 앨범아트. 서정적인 손그림과 타이포그래피가 어우러집니다.',kind:'음악 아트워크'}
   ],
   archive:[
-    {id:'field01',pages:[0,1,2],title:'연암서당골에서 보낸 하루',subtitle:'A DAY IN YEONAM SEODANGGOL',description:'직접 요리하고 성경을 읽고, 노트를 적고 운동한 뒤 그림과 음악을 작업하던 하루의 리듬입니다.'},
-    {id:'field02',pages:[3,4],title:'작업실과 골목',subtitle:'DRAWING · MUSIC · FIELD RECORD',description:'원화 스케치와 음악 작업, 골목 답사에서 마주한 장소들을 기록합니다.'},
-    {id:'field03',pages:[5],title:'대구의 저녁과 밤',subtitle:'LOCAL FOOD · EVENING WORK',description:'왕거미식당의 뭉티기와 중화반점의 야끼우동을 비롯해 음식과 함께 이어진 대구의 저녁.'},
-    {id:'field04',pages:[6,7,8],title:'처음의 계획과 실험',subtitle:'ORIGINAL PLAN · AI · 3D',description:'초기 계획 노트, 완성하지 못한 일, 실제 손그림을 활용한 AI 실험과 음식 3D 모델링까지.'},
-    {id:'field05',pages:[9],title:'예술가와 질문을 교환하다',subtitle:'QUESTION EXCHANGE',description:'작가는 관람객에게 묻고, 관람객은 다시 작가에게 묻습니다. 대구를 바라보는 서로 다른 시선을 기록합니다.'},
-    {id:'field06',pages:[10],title:'전시의 순간을 남기다',subtitle:'INSTAGRAM PHOTO EVENT',description:'전시 사진과 참여 이벤트의 실제 기록입니다. 화면 속 안내는 2026년 당시의 아카이브이며 현재 진행 중인 이벤트는 아닙니다.'}
+    {id:'field01',pages:['session02-01'],title:'아직 끝나지 않은 것들',subtitle:'OFFITA / FIELD ARCHIVE · A3 PANEL 01',description:'실제 전시에 놓였던 작업과 계획의 목록입니다. 완성한 일뿐 아니라 계속 이어질 음악·그림·지역 프로젝트의 방향을 보여줍니다.',kind:'panel'},
+    {id:'field02',pages:['session02-02'],title:'작가의 질문에 답해주세요',subtitle:'OFFITA / FIELD ARCHIVE · A3 PANEL 02',description:'작가가 관람객에게 건넸던 세 가지 질문과 응답 칸이 담긴 실제 전시 패널입니다. 이 화면의 빈칸은 당시 참여를 위한 지면이며 온라인 입력란은 아닙니다.',kind:'panel'},
+    {id:'field03',pages:['session02-03'],title:'이번에는 OFFITA에게 질문해주세요',subtitle:'OFFITA / FIELD ARCHIVE · A3 PANEL 03',description:'관람객이 작가에게 자유롭게 질문을 남길 수 있었던 실제 전시 패널입니다. 2026년 현장 기록으로 감상해주세요.',kind:'panel'},
+    {id:'field04',pages:[0,1,2],title:'연암서당골에서 보낸 하루',subtitle:'A DAY IN YEONAM SEODANGGOL',description:'직접 요리하고 노트를 적고 운동한 뒤 그림과 음악을 작업하던 하루의 리듬입니다.',kind:'photo'},
+    {id:'field05',pages:[3,4,9],title:'작업실과 골목',subtitle:'DRAWING · MUSIC · FIELD RECORD',description:'원화 스케치와 음악 작업, 골목 답사에서 마주한 장소들을 기록합니다.',kind:'photo'},
+    {id:'field06',pages:[5,6,7,8,10],title:'대구의 저녁과 전시 기록',subtitle:'LOCAL FOOD · COLOR ARCHIVE',description:'대구에서 만난 음식과 전시를 위해 정리한 색채 자료를 모았습니다. 당시 참여 안내는 현재 진행 중인 이벤트가 아닙니다.',kind:'photo'}
+  ],
+  posters:[
+    {id:'poster-logo',asset:'logo',title:'OFFITA 아티스트 로고',subtitle:'ARTIST IDENTITY / A3 POSTER',description:'실제 전시에서 사용한 OFFITA 로고 포스터입니다. 음악과 시각예술, 지역 프로젝트를 하나의 이름으로 연결합니다.',x:145,y:326,w:122,h:172},
+    {id:'poster-portrait',asset:'portrait',title:'OFFITA 아티스트 포트레이트',subtitle:'ARTIST PORTRAIT / A3 POSTER',description:'실제 전시 포트레이트 포스터입니다. 흑백 사진과 간결한 표식이 전시 입구의 시각적 출발점이 됩니다.',x:330,y:326,w:122,h:172},
+    {id:'poster-colors',asset:'colors',title:'대구의 도시 상징과 다섯 가지 색',subtitle:'DAEGU COLOR ARCHIVE / A3 POSTER',description:'대구의 풍경에서 추출한 겨자빛·베이지·남은 회색·먹빛·검정을 설명하는 실제 색채 포스터입니다.',x:515,y:326,w:122,h:172},
+    {id:'poster-welcome',asset:'welcome',title:'편하게 들어오셔서 관람하세요',subtitle:'FREE EXHIBITION / ENTRANCE SIGN',description:'무료 관람과 자유 관람을 알렸던 실제 전시장 출입문 안내문입니다. 표기된 기간은 2026년 당시의 기록입니다.',x:330,y:742,w:220,h:118}
   ],
   missions:[
     {id:'ART',title:'대구의 시선',desc:'SESSION 01에서 서로 다른 원화 3점을 감상하세요.',goal:3},
@@ -34,7 +40,14 @@ window.EXHIBITION_DATA = {
     {id:'SEBI',title:'서비를 찾아라',desc:'전시장 곳곳에 숨어 있는 제비 서비 3마리를 찾으세요.',goal:3},
     {id:'NOTE',title:'나의 관람 기록',desc:'마음에 드는 원화 한 점과 짧은 감상을 엽서로 남기세요.',goal:1}
   ],
-  assets:{artwork(i){return "/assets/uploads/projects/daegu-onna/"+['napjak-mandu.webp','fried-gizzard.webp','makchang.webp','yakki-udon.webp','daegu-man.webp','daegu-woman.webp','malchus.webp','maldo-motha.webp','syndrome.webp','rain.webp','sunlight.webp','humming.webp','ttaro-gukbap.webp','mungtigi.webp','jjimgalbi.webp'][i-1]},thumb(i){return "/assets/uploads/projects/daegu-onna/"+['card-mandu.webp','card-gizzard.webp','card-makchang.webp','card-yakki-udon.webp','daegu-man.webp','daegu-woman.webp','malchus.webp','card-maldo-motha.webp','card-syndrome.webp','card-rain.webp','card-sunlight.webp','card-humming.webp','card-ttaro.webp','card-mungtigi.webp','card-jjim.webp'][i-1]},archive(i){return "/assets/uploads/projects/daegu-onna/"+['field-yeonam.webp','field-breakfast.webp','field-sketch.webp','field-sketch.webp','field-yeonam.webp','field-food.webp','color-archive.webp','color-archive.webp','color-archive.webp','field-yeonam.webp','field-food.webp'][i]}} ,
+  assets:{
+    artwork(i){return "/assets/uploads/projects/daegu-onna/"+['napjak-mandu.webp','fried-gizzard.webp','makchang.webp','yakki-udon.webp','daegu-man.webp','daegu-woman.webp','malchus.webp','maldo-motha.webp','syndrome.webp','rain.webp','sunlight.webp','humming.webp','ttaro-gukbap.webp','mungtigi.webp','jjimgalbi.webp'][i-1]},
+    thumb(i){return "/daegu-onna/play/assets/art-"+String(i).padStart(2,'0')+'-thumb.webp'},
+    note(i){const name={1:'mandu',2:'gizzard',3:'makchang',4:'yakki-udon',7:'malgo',8:'maldo-motha',9:'syndrome',10:'rain',11:'sunlight',12:'humming',13:'ttaro',14:'mungtigi',15:'jjim'}[i];return name?'/assets/uploads/projects/daegu-onna/card-'+name+'.webp':null},
+    postcard(i){const name={1:'mandu',2:'gizzard',3:'makchang',4:'yakki',13:'ttaro',14:'mungtigi',15:'jjim'}[i];return name?'/daegu-onna/play/assets/postcard-'+name+'.webp':null},
+    poster(name){return '/daegu-onna/play/assets/'+name+'.webp'},
+    archive(i){return typeof i==='string'?this.poster(i):"/assets/uploads/projects/daegu-onna/"+['field-yeonam.webp','field-breakfast.webp','field-sketch.webp','field-sketch.webp','field-yeonam.webp','field-food.webp','color-archive.webp','color-archive.webp','color-archive.webp','field-yeonam.webp','field-food.webp'][i]}
+  },
   /* MUSIC: To enable full-track playback, add mp3 files in assets/audio and declare audioSrc on the corresponding artwork. */
   note:'해당 게임은 2026년 실제 전시에서 사용한 작품과 자료를 바탕으로 구성한 디지털 재해석입니다. 실제 전시장 구조를 측량하여 복원한 것은 아닙니다.'
 };
