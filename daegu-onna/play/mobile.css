@@ -209,3 +209,6 @@ button{-webkit-tap-highlight-color:transparent}
 .floorplan-jump small{font-size:11px;color:#6f6255;line-height:1.45}
 .floorplan-photo{width:100%;margin-top:14px;min-height:44px}
 @media(max-width:720px){.floorplan-shell{padding:44px 18px 24px}.floorplan-shell>p{font-size:12px;margin-bottom:13px}.floorplan-layout{grid-template-columns:1fr;gap:14px}.floorplan-figure img{max-height:none}.floorplan-figure figcaption{font-size:10px}.floorplan-aside h3{font-size:17px}.floorplan-jumps{grid-template-columns:1fr 1fr;gap:6px}.floorplan-jump{padding:9px 10px}.floorplan-jump strong{font-size:12px}.floorplan-jump small{font-size:10px}.floorplan-photo{margin-top:10px}}
+
+.scene-preview-link{display:inline-block;margin-top:14px;margin-right:16px;padding:7px 0;border-bottom:1px solid #947859;color:#594535;font-size:12px;font-weight:700;text-decoration:none}
+.floorplan-preview{display:block;text-align:center;text-decoration:none;margin-top:8px;min-height:44px}
