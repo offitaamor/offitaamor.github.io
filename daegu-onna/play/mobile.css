@@ -190,3 +190,22 @@ button{-webkit-tap-highlight-color:transparent}
 @media(max-width:720px){.splash-actions{gap:9px}.splash-actions .text-btn{font-size:11px}.venue-tour{display:flex;flex-direction:column;min-height:0}.venue-photo{min-height:0;padding:12px}.venue-photo img{max-height:37dvh}.venue-photo-foot{padding:0 14px 8px}.venue-aside{padding:18px 21px 22px}.venue-aside h2{font-size:23px;margin-bottom:4px}.venue-aside>p{font-size:11px;line-height:1.6;margin:4px 0}.venue-rule{margin:10px 0}.venue-aside h3{font-size:17px;margin:4px 0}.venue-points{padding-top:8px;gap:6px}.venue-points button{min-height:38px;padding:6px;font-size:11px}.venue-controls{margin-top:8px}.venue-controls .action-btn{min-height:40px}}
 @media(max-width:720px) and (max-height:700px){.venue-photo img{max-height:29dvh}.venue-aside>p:first-of-type{display:none}.venue-rule{margin:6px 0}}
 @media(max-width:390px){.hud-actions button{width:36px;height:36px;min-width:36px;min-height:36px;font-size:16px}.brand-lockup .brand-monogram,.brand-lockup small,.brand-lockup strong span{display:none}.brand-lockup strong{font-size:13px}}
+/* Evidence-led venue plan: physical layout and the game's unfolded navigation stay distinct. */
+.floorplan-modal{width:min(1100px,100%)}
+.floorplan-shell{padding:46px clamp(22px,4vw,55px) 35px}
+.floorplan-shell>p{max-width:760px;margin:0 0 22px}
+.floorplan-layout{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(280px,1fr);gap:28px;align-items:start}
+.floorplan-figure{margin:0;background:#f7f5ef;border:1px solid #c9c3b8;padding:10px 10px 14px;text-align:center}
+.floorplan-figure img{display:block;width:100%;height:auto;max-height:min(64dvh,680px);object-fit:contain}
+.floorplan-figure figcaption{font-size:11px;line-height:1.7;color:#6e665b;text-align:left;margin:5px 10px}
+.floorplan-aside h3{font-size:20px;margin:5px 0 5px}
+.floorplan-aside>p{font-size:12px;margin:0 0 12px}
+.floorplan-jumps{display:grid;gap:8px}
+.floorplan-jump{width:100%;background:#f9f4e9;border:1px solid #bcb09f;text-align:left;padding:13px 16px;display:grid;gap:4px;color:#38312b}
+.floorplan-jump:hover,.floorplan-jump:focus-visible{background:#eee2ce;border-color:#806b55}
+.floorplan-jump.active{border-color:#765944;box-shadow:inset 4px 0 #765944}
+.floorplan-jump span{font:10px Georgia,serif;letter-spacing:1.3px;color:#866e57}
+.floorplan-jump strong{font-size:15px}
+.floorplan-jump small{font-size:11px;color:#6f6255;line-height:1.45}
+.floorplan-photo{width:100%;margin-top:14px;min-height:44px}
+@media(max-width:720px){.floorplan-shell{padding:44px 18px 24px}.floorplan-shell>p{font-size:12px;margin-bottom:13px}.floorplan-layout{grid-template-columns:1fr;gap:14px}.floorplan-figure img{max-height:none}.floorplan-figure figcaption{font-size:10px}.floorplan-aside h3{font-size:17px}.floorplan-jumps{grid-template-columns:1fr 1fr;gap:6px}.floorplan-jump{padding:9px 10px}.floorplan-jump strong{font-size:12px}.floorplan-jump small{font-size:10px}.floorplan-photo{margin-top:10px}}

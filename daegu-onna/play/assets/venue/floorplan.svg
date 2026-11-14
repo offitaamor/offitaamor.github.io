@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 870" role="img" aria-labelledby="title desc">
+  <title id="title">OFFITA 대구온나 전시장 구조 평면도</title>
+  <desc id="desc">아래쪽 유리 출입문에서 긴 본실로 들어오면 왼쪽에 작품 선반과 자료 테이블, 오른쪽에 기록 타공판이 있다. 본실 중앙 뒤쪽에 안내대가 있고 정면 통로를 지나 안쪽 음악 방으로 들어간다. 음악 방에는 나무 테이블과 음악 작품, 스피커와 옷걸이가 있다. 본실 3 곱하기 5 미터, 안쪽 방 2 곱하기 3 미터는 첨부 개념 모델에 표기된 치수이다.</desc>
+  <defs>
+    <pattern id="peg" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#b9a084"/><circle cx="4.5" cy="4.5" r=".8" fill="#72614f"/></pattern>
+    <pattern id="concrete" width="26" height="26" patternUnits="userSpaceOnUse"><rect width="26" height="26" fill="#dddedb"/><circle cx="4" cy="12" r=".7" fill="#b9bcb9"/><circle cx="20" cy="4" r=".6" fill="#b9bcb9"/></pattern>
+    <style>
+      text{font-family:'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;fill:#343734}
+      .eyebrow{font-family:Georgia,serif;font-size:11px;letter-spacing:2.5px;fill:#8c7960}
+      .room{font-size:17px;font-weight:700}
+      .label{font-size:12px;font-weight:600}
+      .small{font-size:10px;fill:#6e6b65}
+      .dim{font-family:Georgia,serif;font-size:13px;fill:#756958}
+      .wall{fill:none;stroke:#3c3e3c;stroke-width:11;stroke-linecap:square}
+      .guide{fill:none;stroke:#9b988e;stroke-width:1;stroke-dasharray:4 5}
+    </style>
+  </defs>
+  <rect width="540" height="870" fill="#f7f5ef"/>
+  <text class="eyebrow" x="30" y="35">OFFITA × DAEGU / VENUE PLAN</text>
+  <text x="30" y="59" font-size="14" font-weight="700">사진과 첨부 모델을 대조한 구조도</text>
+
+  <!-- The photos establish the sequence and display surfaces; the model supplies provisional proportions. -->
+  <rect x="186" y="92" width="168" height="252" fill="#f0ece4"/>
+  <rect x="144" y="344" width="252" height="420" fill="url(#concrete)"/>
+  <path class="wall" d="M186 344 V92 H354 V344 M144 764 V344 H207 M333 344 H396 V764 M144 764 H238 M302 764 H396"/>
+  <path d="M207 344 H333" stroke="#b6a896" stroke-width="3" stroke-dasharray="9 6"/>
+  <path d="M238 764 H302" stroke="#8a9b9b" stroke-width="6"/>
+
+  <!-- Interior music room: desk, framed music art and clothing rail. -->
+  <rect x="211" y="177" width="113" height="95" rx="3" fill="#bf9c76" stroke="#80674e" stroke-width="2"/>
+  <rect x="220" y="185" width="19" height="19" fill="#e8dbbd" stroke="#756f63"/>
+  <rect x="244" y="185" width="19" height="19" fill="#e8dbbd" stroke="#756f63"/>
+  <rect x="268" y="185" width="19" height="19" fill="#e8dbbd" stroke="#756f63"/>
+  <rect x="292" y="185" width="19" height="19" fill="#e8dbbd" stroke="#756f63"/>
+  <rect x="293" y="245" width="22" height="16" fill="#333330"/>
+  <path d="M333 157 V262" stroke="#353734" stroke-width="3"/>
+  <path d="M326 162 H347" stroke="#353734" stroke-width="3"/>
+  <rect x="189" y="133" width="4" height="29" fill="#393a36"/>
+  <rect x="347" y="128" width="4" height="29" fill="#73716d"/>
+  <text class="room" x="270" y="125" text-anchor="middle">안쪽 음악 방</text>
+  <text class="small" x="270" y="145" text-anchor="middle">나무 테이블 · 앨범 작품 · 스피커</text>
+  <text class="small" x="270" y="302" text-anchor="middle">로고·초상 포스터 / 옷걸이</text>
+
+  <!-- Main room: the two facing exhibition walls. -->
+  <rect x="149" y="377" width="17" height="313" fill="#fdfcf8" stroke="#a4a49d" stroke-width="1.5"/>
+  <path d="M168 379 V688" stroke="#777a76" stroke-width="3"/>
+  <rect x="174" y="417" width="16" height="235" fill="#eae6de" stroke="#a6a29a"/>
+  <rect x="374" y="377" width="17" height="305" fill="url(#peg)" stroke="#89755f"/>
+  <rect x="349" y="429" width="20" height="34" fill="#f8f6f0" stroke="#b0aaa0"/>
+  <rect x="349" y="484" width="20" height="29" fill="#f8f6f0" stroke="#b0aaa0"/>
+  <rect x="349" y="535" width="20" height="47" fill="#f8f6f0" stroke="#b0aaa0"/>
+  <rect x="218" y="424" width="78" height="71" rx="2" fill="#b9936d" stroke="#856c51" stroke-width="2"/>
+  <ellipse cx="325" cy="667" rx="34" ry="25" fill="#ad8866" stroke="#80684f" stroke-width="2"/>
+  <text class="room" x="268" y="530" text-anchor="middle">본실</text>
+  <text class="small" x="268" y="549" text-anchor="middle">마주 보는 두 전시 벽</text>
+  <text class="label" x="88" y="452" text-anchor="middle">작품 선반</text>
+  <text class="small" x="88" y="470" text-anchor="middle">아래 자료 테이블</text>
+  <path class="guide" d="M124 457 H174"/>
+  <text class="label" x="453" y="448" text-anchor="middle">기록 타공판</text>
+  <path class="guide" d="M392 453 H418"/>
+  <text class="label" x="255" y="401" text-anchor="middle">나무 안내대</text>
+  <path class="guide" d="M257 405 V422"/>
+  <text class="small" x="325" y="711" text-anchor="middle">전시 테이블</text>
+
+  <!-- Door and dimensions from the supplied concept model, not an independent survey. -->
+  <path d="M270 802 V775" stroke="#8c7150" stroke-width="2" marker-end="none"/>
+  <path d="m264 781 6-8 6 8" fill="none" stroke="#8c7150" stroke-width="2"/>
+  <text class="label" x="270" y="820" text-anchor="middle">유리 출입문 · 관람 시작</text>
+  <path class="guide" d="M144 787 V775 M396 787 V775 M144 785 H396 M113 344 H137 M113 764 H137 M118 344 V764 M186 78 V85 M354 78 V85 M186 80 H354"/>
+  <text class="dim" x="414" y="789">3 m*</text>
+  <text class="dim" x="112" y="570" text-anchor="middle" transform="rotate(-90 112 570)">5 m*</text>
+  <text class="dim" x="270" y="76" text-anchor="middle">2 m*</text>
+  <text class="dim" x="370" y="227" text-anchor="middle" transform="rotate(90 370 227)">3 m*</text>
+  <text class="small" x="270" y="854" text-anchor="middle">* 첨부 3D 개념 모델의 표기 치수 · 현장 재측량 전</text>
+</svg>
