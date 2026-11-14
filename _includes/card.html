@@ -1,5 +1,5 @@
 {% if include.item.direct_external and include.item.external_url != blank %}
-<a class="content-card{% if include.item.music_type == 'release' %} music-cover-card{% endif %}" href="{{ include.item.external_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ include.item.title }} 프로젝트 사이트 새 탭에서 열기">
+<a class="content-card{% if include.item.music_type == 'release' %} music-cover-card{% endif %}{% if include.item.title == 'GYEONGGI TRACKS' %} regional-map-card{% endif %}" href="{{ include.item.external_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ include.item.title }} 프로젝트 사이트 새 탭에서 열기">
 {% else %}
 <a class="content-card{% if include.item.music_type == 'release' %} music-cover-card{% endif %}" href="{{ include.item.url | relative_url }}">
 {% endif %}
