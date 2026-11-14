@@ -11,7 +11,7 @@
     ...D.posters.map(a=>({id:a.id,type:'poster',data:a,x:a.x,y:a.y,w:a.w,h:a.h})),
     ...[780,1007,1234,1461,1688].map((x,i)=>({id:D.artworks[i].id,type:'art',data:D.artworks[i],x,y:320,w:145,h:145})),
     ...[870,1141,1412,1683].map((x,i)=>({id:D.artworks[i+5].id,type:'art',data:D.artworks[i+5],x,y:742,w:145,h:145})),
-    ...[2080,2315,2545].map((x,i)=>({id:D.archive[i].id,type:'archive',data:D.archive[i],x,y:319,w:147,h:164})),
+    ...[2075,2315,2555].map((x,i)=>({id:D.archive[i].id,type:'archive',data:D.archive[i],x,y:319,w:210,h:145})),
     ...[2080,2315,2545].map((x,i)=>({id:D.archive[i+3].id,type:'archive',data:D.archive[i+3],x,y:742,w:147,h:164})),
     ...[2980,3320,3645].map((x,i)=>({id:D.artworks[i+9].id,type:'art',data:D.artworks[i+9],x,y:325,w:177,h:177})),
     ...[2980,3320,3645].map((x,i)=>({id:D.artworks[i+12].id,type:'art',data:D.artworks[i+12],x,y:738,w:177,h:177})),
@@ -72,7 +72,6 @@
     for(const wall of WORLD.doors){ctx.fillStyle='#645342';ctx.fillRect(wall-17,90,34,359);ctx.fillRect(wall-17,648,34,255);ctx.fillStyle='#e7d2a7';ctx.fillRect(wall-10,90,7,359);ctx.fillRect(wall-10,648,7,255);ctx.fillStyle='#7f6550';ctx.fillRect(wall-2,438,4,14);ctx.fillRect(wall-2,647,4,16);ctx.strokeStyle='#ae936c';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(wall,448);ctx.lineTo(wall,647);ctx.stroke();}
     ctx.save();
     label('OFFITA  /  WALK THROUGH THE ART',325,174,18,'#f3e4c7','center','Georgia,serif');
-    label('실제 전시에서 사용한 포스터를 눌러 살펴보세요.',330,452,15,'#67533e');
     for(let i=0;i<3;i++){const bx=125+i*182;ctx.fillStyle='#d8c6a8';ctx.fillRect(bx,584,154,47);ctx.strokeStyle='#af9676';ctx.strokeRect(bx,584,154,47);label(['01 / DAEGU','02 / YEONAM','03 / MUSIC'][i],bx+77,608,12,'#6f5740','center','Georgia,serif')}
     ctx.restore();
     for(const z of ZONES.slice(1)){label(z.label,z.x+(z.end-z.x)/2,168,16,'#eee0c5','center','Georgia,serif');label(z.ko,z.x+(z.end-z.x)/2,204,15,'#ede0ce');}
