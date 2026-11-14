@@ -204,9 +204,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:500}
  .site-nav{
    display:none;position:absolute;top:66px;left:0;right:0;min-height:calc(100vh - 66px);
    padding:42px 20px;background:var(--ivory);border-bottom:1px solid var(--line);
-   flex-direction:column;align-items:flex-start;gap:3px
+   flex-direction:column;align-items:flex-start;gap:3px;max-height:calc(100dvh - 66px);overflow-y:auto
  }
  .site-nav.open{display:flex}
+ body.menu-open{overflow:hidden}
  .site-nav a{width:100%;padding:13px 0;border-bottom:1px solid var(--line-soft);font-family:var(--serif);font-size:35px;letter-spacing:-.01em}
  .site-nav a:after{display:none}
 

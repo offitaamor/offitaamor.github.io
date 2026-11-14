@@ -4,7 +4,7 @@ category: "LOCAL / VISUAL ARCHIVE / STORYTELLING"
 year: "2026"
 role: "Concept / Local Research / Visual Storytelling"
 medium: "Regional Archive / Visual / Web"
-summary: "경기북부의 열두 지역을 각자의 이야기가 담긴 하나의 트랙으로 읽는 지역 시각 아카이브. 마을의 사람과 기억, 생업과 풍경을 앨범처럼 펼치며 그림과 음악으로 연결하는 OFFITA의 프로젝트."
+summary: "경기북부의 열두 지역을 각자의 이야기가 담긴 하나의 트랙으로 읽는 지역 시각 아카이브. 지역의 사람과 기억, 생업과 풍경을 앨범처럼 펼치며 그림과 음악으로 연결하는 OFFITA의 프로젝트."
 cover: ""
 remote_cover: "https://offitaamor.github.io/gyeonggi-tracks/assets/maps/gyeonggi-north-map-current.webp"
 featured: false
