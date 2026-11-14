@@ -1,7 +1,7 @@
 // Mobile entry, orientation and installable web-app enhancements.
 (() => {
   'use strict';
-  const mobile=matchMedia('(pointer:coarse)');
+  const mobile=matchMedia('(pointer:coarse), (max-width:720px)');
   const welcome=document.getElementById('mobileWelcome');
   const accept=document.getElementById('mobileWelcomeOK');
   const start=document.getElementById('startBtn');
