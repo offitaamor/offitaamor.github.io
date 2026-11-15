@@ -75,7 +75,7 @@ article_class: "research-archive-page"
 고요한 골짜기인 쌍학골을 걸으며, 바람에 나무가 흔들리는 소리와 길 가운데에서 물이 흐르는 소리를 들었습니다. 경사가 가파라 조금 힘들었지만, 걷는 동안 느꼈던 평안은 자연 속에서 처음 경험해보는 것이었습니다. 이곳을 걷기 좋은 등산로로 만들면 어떨까 하는 생각이 들었지만, 이곳의 순수함이 파괴되지 않았으면 좋겠다는 마음도 들었습니다. 아직 제가 발견하지 못한 과거의 이야기가 더 있을 거라 생각합니다.
 
 <p class="research-source">SOURCE · 『고성군지』 · 명파 주민 구술 · 현장 탐사 기록</p>
-<a class="research-visual-link" href="/visual/myeongpa-artwork/#ssanghakgol"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 쌍학골</strong><em>VISUAL에서 보기 →</em></a>
+<a class="research-visual-link" href="{{ '/visual/myeongpa/ssanghakgol/' | relative_url }}"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 쌍학골</strong><em>작품 해설 보기 →</em></a>
 
 <span class="research-anchor" id="buchaesol"></span>
 <p class="research-section-label">ARCHIVE NOTE 02 · OLD PHOTOGRAPH / PRESS / ORAL HISTORY</p>
@@ -110,7 +110,7 @@ article_class: "research-archive-page"
 이 일을 계기로 저는 더 이상 이러한 이야기들이 사라지지 않도록, 청년으로서 예술을 통해 기록하고 관심을 가져야겠다는 사명을 갖게 되었습니다.
 
 <p class="research-source">SOURCE · 『고성군지』 · 1994년 강원일보 · 명파초등학교 사진 자료 · 명파 주민 구술</p>
-<a class="research-visual-link" href="/visual/myeongpa-artwork/#buchaesol"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 부채솔</strong><em>VISUAL에서 보기 →</em></a>
+<a class="research-visual-link" href="{{ '/visual/myeongpa/buchaesol/' | relative_url }}"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 부채솔</strong><em>작품 해설 보기 →</em></a>
 
 <span class="research-anchor" id="jojeam"></span>
 <p class="research-section-label">RESEARCH NOTE 03 · MAP / REPORT / UNREACHED PLACE</p>
@@ -143,7 +143,7 @@ article_class: "research-archive-page"
 그래서 저는 조제암을 정확하게 복원하려고 그리지 않았습니다. 제가 본 것은 실제 사찰의 모습이 아니라, 자료와 이름, 그리고 명파 안에 남아 있는 보이지 않는 장소의 기운이었습니다. 저는 그 보이지 않는 암자를 그림으로 먼저 불러오고 싶었습니다.
 
 <p class="research-source">SOURCE · 『고성 조제암지 정밀지표조사 보고서』(2021) · 불교문화유산연구소 관련 자료 · 명파 주민 구술</p>
-<a class="research-visual-link" href="/visual/myeongpa-artwork/#jojeam"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 조제암</strong><em>VISUAL에서 보기 →</em></a>
+<a class="research-visual-link" href="{{ '/visual/myeongpa/jojeam/' | relative_url }}"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 조제암</strong><em>작품 해설 보기 →</em></a>
 
 <span class="research-anchor" id="aeginangol"></span>
 <p class="research-section-label">FIELD NOTE 04 · LEGEND / LANDSCAPE / SITE RECORD</p>
@@ -174,7 +174,7 @@ article_class: "research-archive-page"
 마을에 머무는 동안 마을 임원분들과 함께 이 장소가 가진 고유한 가치에 대한 활용 방안을 구상해본 경험이 있었습니다. 언젠가 이곳에 민간인 출입이 가능해진다면, 경운기 투어 형태로 외부 사람들 또한 애기난골을 방문해 과거 주민들이 일했던 광산과 붉은 물길을 함께 경험해 보았으면 좋겠습니다.
 
 <p class="research-source">SOURCE · 고성문화원 자료 · 명파 주민 구술 · 현장 탐사 기록</p>
-<a class="research-visual-link" href="/visual/myeongpa-artwork/#aeginangol"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 애기난골</strong><em>VISUAL에서 보기 →</em></a>
+<a class="research-visual-link" href="{{ '/visual/myeongpa/aeginangol/' | relative_url }}"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 애기난골</strong><em>작품 해설 보기 →</em></a>
 
 <span class="research-anchor" id="muninseok"></span>
 <p class="research-section-label">DISCOVERY NOTE 05 · OLD RECORD / RESIDENT TESTIMONY / SITE DISCOVERY</p>
@@ -209,7 +209,7 @@ article_class: "research-archive-page"
 다만 이 석상들의 정확한 조성 시기와 역사적 가치는 더 전문적인 조사가 필요합니다. 저는 제가 발견한 사실을 확정적으로 해석하기보다, 앞으로 더 자세한 조사와 가치 평가가 이어지기를 기대하고 있습니다.
 
 <p class="research-source">SOURCE · 1990년 『고성군지』 · 명파 주민 진술 · 현장 탐사 · 고성문화원 후속 조사 요청 자료</p>
-<a class="research-visual-link" href="/visual/myeongpa-artwork/#muninseok"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 문관석</strong><em>VISUAL에서 보기 →</em></a>
+<a class="research-visual-link" href="{{ '/visual/myeongpa/muninseok/' | relative_url }}"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 명파리 문인석</strong><em>작품 해설 보기 →</em></a>
 
 <span class="research-anchor" id="seonangdang"></span>
 <p class="research-section-label">PARTICIPANT NOTE 06 · RITUAL / CAMERA RECORD / COMMUNITY</p>
@@ -244,7 +244,7 @@ article_class: "research-archive-page"
 제게 안골 서낭당은 단순히 제사를 지내는 건물이 아닙니다. 이곳은 명파 사람들이 마을의 안녕을 빌고, 오래된 규칙을 지키고, 서로의 자리를 확인하는 장소입니다. 동시에 제게는 명파 바깥에서 들어온 제가 조금 더 마을 안쪽으로 들어가게 된 장소이기도 합니다.
 
 <p class="research-source">SOURCE · 명파 주민 구술 · 제사 준비 및 당일 현장 동행 · 작가 촬영 기록</p>
-<a class="research-visual-link" href="/visual/myeongpa-artwork/#seonangdang"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 서낭당</strong><em>VISUAL에서 보기 →</em></a>
+<a class="research-visual-link" href="{{ '/visual/myeongpa/seonangdang/' | relative_url }}"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 안골 서낭당</strong><em>작품 해설 보기 →</em></a>
 
 <div class="research-archive-closing">
   <p class="research-kicker">AFTER THE FIELDWORK</p>

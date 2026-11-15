@@ -293,9 +293,8 @@ permalink: /humming-in-the-rain/
     }
   </style>
 
-  <!-- OFFITA analytics: add the GA4 Measurement ID (G-XXXXXXXXXX) below to activate. -->
   <script>
-    const OFFITA_GA4_ID = "G-JE8G23VQKE";
+    const OFFITA_GA4_ID = {{ site.data.site.ga4_measurement_id | jsonify }};
 
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }

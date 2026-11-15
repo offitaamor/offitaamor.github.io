@@ -39,20 +39,29 @@ layout: default
       </header>
       <div class="artwork-grid">
         {% for artwork in gallery_group.items %}
+        {% assign artwork_detail = nil %}
+        {% if page.url == '/visual/myeongpa-artwork/' and artwork.anchor %}
+          {% assign artwork_detail = site.myeongpa_works | where: 'slug', artwork.anchor | first %}
+        {% endif %}
         <figure class="artwork-card"{% if artwork.anchor %} id="{{ artwork.anchor }}"{% endif %}>
           {% assign artwork_src = artwork.remote_image %}
           {% if artwork.image %}{% assign artwork_src = artwork.image | relative_url %}{% endif %}
-          {% if artwork.drive_url %}<a class="artwork-image-link" href="{{ artwork.drive_url }}" target="_blank" rel="noopener">{% endif %}
+          {% if artwork_detail %}
+            <a class="artwork-image-link" href="{{ artwork_detail.url | relative_url }}" aria-label="{{ artwork_detail.title | escape }} 작품 해설 보기">
+          {% elsif artwork.drive_url %}
+            <a class="artwork-image-link" href="{{ artwork.drive_url }}" target="_blank" rel="noopener">
+          {% endif %}
             <div class="artwork-image-wrap">
               <img src="{{ artwork_src }}" alt="{{ artwork.title }}" loading="lazy" decoding="async">
             </div>
-          {% if artwork.drive_url %}</a>{% endif %}
+          {% if artwork_detail or artwork.drive_url %}</a>{% endif %}
           <figcaption>
             <div class="artwork-title-row">
               <h3>{{ artwork.title }}</h3>
               {% if artwork.drive_url %}<a href="{{ artwork.drive_url }}" target="_blank" rel="noopener" aria-label="{{ artwork.title }} 원본 보기">↗</a>{% endif %}
             </div>
             {% if artwork.note %}<p>{{ artwork.note }}</p>{% endif %}
+            {% if artwork_detail %}<a class="text-link" href="{{ artwork_detail.url | relative_url }}" aria-label="{{ artwork_detail.title | escape }} 작품 해설 보기">작품 해설 →</a>{% endif %}
           </figcaption>
         </figure>
         {% endfor %}

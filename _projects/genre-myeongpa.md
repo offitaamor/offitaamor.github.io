@@ -183,6 +183,7 @@ external_url: "https://goseongcf.or.kr/archive_art/93"
   <p>2024년에는 주민의 삶을 듣고 이를 그림과 음악으로 만들었다. 2025년에는 새로운 예술가들이 같은 지역에 들어올 수 있도록 환경과 관계를 조율했다. 2026년에는 그동안 축적된 시선과 기억을 다시 전시로 꺼냈다. OFFITA에게 명파는 한 번 사용하고 떠나는 창작 소재가 아니라, 시간이 지날수록 다른 작업과 역할을 만들어내는 지속적인 창작 기반이 되었다.</p>
 
   <div class="case-links">
+    <a href="{{ '/exhibitions/goseong-5th/' | relative_url }}"><span>VISUAL</span><strong>명파 X경 작품 해설</strong><em>→</em></a>
     <a href="https://goseongcf.or.kr/archive_art/93" target="_blank" rel="noopener"><span>2024</span><strong>고성문화재단 아트케이션 페스타 아카이브</strong><em>↗</em></a>
     <a href="https://blog.naver.com/arko_korea/223594830299" target="_blank" rel="noopener"><span>2024</span><strong>한국문화예술위원회 ARKO 소개</strong><em>↗</em></a>
     <a href="https://goseongcf.or.kr/calendar/1215" target="_blank" rel="noopener"><span>2026</span><strong>고성문화재단 《지금, 우리가 만난 명파》</strong><em>↗</em></a>

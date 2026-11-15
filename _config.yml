@@ -15,6 +15,9 @@ collections:
   visual:
     output: true
     permalink: /visual/:name/
+  myeongpa_works:
+    output: true
+    permalink: /visual/myeongpa/:name/
   projects:
     output: true
     permalink: /projects/:name/
@@ -35,6 +38,13 @@ defaults:
     values:
       layout: detail
       section: VISUAL
+  - scope:
+      path: ""
+      type: myeongpa_works
+    values:
+      layout: myeongpa-work
+      stylesheet: "/assets/css/myeongpa.css"
+      myeongpa_analytics: true
   - scope:
       path: ""
       type: projects

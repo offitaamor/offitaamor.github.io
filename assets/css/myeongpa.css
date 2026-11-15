@@ -1,0 +1,291 @@
+.myeongpa-page {
+  --myeongpa-serif: "Noto Serif KR", Batang, serif;
+  --myeongpa-muted: #65564a;
+  width: min(100% - 2.5rem, 74rem);
+  margin-inline: auto;
+  padding-block: clamp(1.15rem, 3.75vw, 3.25rem) clamp(3rem, 7vw, 6rem);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.myeongpa-page h1,
+.myeongpa-page h2,
+.myeongpa-page h3 {
+  font-family: var(--myeongpa-serif);
+  letter-spacing: -.04em;
+  line-height: 1.24;
+}
+
+.myeongpa-breadcrumb a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  font-size: .875rem;
+  color: var(--myeongpa-muted);
+}
+
+.myeongpa-page a:hover {
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+
+.myeongpa-work-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 6vw, 5.25rem);
+  align-items: center;
+  margin-top: clamp(.8rem, 3vw, 2.2rem);
+}
+
+.myeongpa-label {
+  margin: 0;
+  color: var(--myeongpa-muted);
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+}
+
+.myeongpa-page h1 {
+  margin: .28em 0 .22em;
+  font-size: clamp(2.3rem, 5.8vw, 5.1rem);
+  font-weight: 600;
+}
+
+.myeongpa-subtitle {
+  margin: 0;
+  font-family: var(--myeongpa-serif);
+  font-size: clamp(1.04rem, 2.1vw, 1.55rem);
+  line-height: 1.5;
+}
+
+.myeongpa-summary {
+  max-width: 38rem;
+  margin: clamp(.8rem, 2.5vw, 1.4rem) 0 0;
+  color: var(--charcoal);
+  font-size: clamp(.975rem, 1.65vw, 1.125rem);
+  line-height: 1.76;
+}
+
+.myeongpa-work-figure {
+  margin: 0;
+}
+
+.myeongpa-work-figure img,
+.myeongpa-card img {
+  width: 100%;
+  height: auto;
+  background: var(--oatmeal);
+}
+
+.myeongpa-work-figure img {
+  border: 1px solid var(--line);
+}
+
+.myeongpa-work-figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  margin-top: .25rem;
+  color: var(--myeongpa-muted);
+  font-size: .8125rem;
+}
+
+.myeongpa-work-figure figcaption a,
+.myeongpa-archive-links a {
+  display: inline-flex;
+  min-height: 44px;
+  gap: .55rem;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+
+.myeongpa-reading {
+  max-width: 43rem;
+  margin: clamp(2.2rem, 7vw, 6rem) auto 0;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.85;
+}
+
+.myeongpa-reading h2 {
+  margin: 1.65em 0 .58em;
+  font-size: clamp(1.4rem, 3.25vw, 2rem);
+}
+
+.myeongpa-reading h2:first-child,
+.myeongpa-reading p {
+  margin-top: 0;
+}
+
+.myeongpa-reading p {
+  color: var(--charcoal);
+  margin-bottom: 1.15em;
+}
+
+.myeongpa-sources {
+  padding-top: .85rem;
+  border-top: 1px solid var(--line);
+  font-size: .875rem;
+}
+
+.myeongpa-sources p {
+  margin-bottom: 0;
+}
+
+.myeongpa-sources strong {
+  margin-right: .45rem;
+}
+
+.myeongpa-sources a {
+  display: inline-flex;
+  min-height: 44px;
+  gap: .45rem;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+
+.myeongpa-work-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .6rem;
+  max-width: 43rem;
+  margin: clamp(1.5rem, 5vw, 3.25rem) auto 0;
+}
+
+.myeongpa-work-nav a {
+  display: flex;
+  min-height: 52px;
+  gap: .35rem;
+  align-items: center;
+  justify-content: center;
+  padding: .65rem .5rem;
+  border: 1px solid var(--line);
+  text-align: center;
+  font-size: .875rem;
+}
+
+.myeongpa-work-nav a:nth-child(2) {
+  background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.myeongpa-guide-hero {
+  padding: clamp(1.2rem, 5vw, 3.75rem) 0 clamp(1.75rem, 5vw, 3.75rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.myeongpa-guide-works {
+  scroll-margin-top: 6rem;
+  padding-top: clamp(1.35rem, 4vw, 2.5rem);
+}
+
+.myeongpa-guide-works > h2 {
+  margin: 0 0 .85em;
+  font-size: clamp(1.35rem, 2.8vw, 2.1rem);
+}
+
+.myeongpa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.75rem, 2.4vw, 1.75rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.myeongpa-card {
+  display: block;
+  height: 100%;
+  border: 1px solid var(--line);
+  background: rgba(210, 201, 188, .28);
+}
+
+.myeongpa-card-copy {
+  padding: .75rem clamp(.65rem, 2vw, 1.15rem) 1rem;
+}
+
+.myeongpa-card h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: .3rem;
+  margin: 0;
+  font-size: clamp(1rem, 2.2vw, 1.55rem);
+}
+
+.myeongpa-card h3 span {
+  color: var(--myeongpa-muted);
+  font-family: var(--sans);
+  font-size: .85em;
+}
+
+.myeongpa-card p {
+  margin: .42rem 0 0;
+  color: var(--myeongpa-muted);
+  font-size: clamp(.8125rem, 1.5vw, .9375rem);
+  line-height: 1.5;
+}
+
+.myeongpa-archive-links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: .875rem;
+}
+
+.myeongpa-links {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(.9rem, 4vw, 3rem);
+  margin-top: clamp(2.3rem, 7vw, 5rem);
+  padding: clamp(1.2rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  background: var(--oatmeal);
+}
+
+.myeongpa-links h2 {
+  margin: .4em 0;
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+}
+
+.myeongpa-links p:last-child {
+  max-width: 25rem;
+  margin-bottom: 0;
+  font-size: .9375rem;
+}
+
+.myeongpa-links ul {
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.myeongpa-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 44px;
+  padding-block: .45rem;
+  border-bottom: 1px solid var(--line);
+  font-size: .9rem;
+}
+
+@media (max-width: 42rem) {
+  .myeongpa-page {
+    width: calc(100% - 2rem);
+  }
+
+  .myeongpa-work-hero,
+  .myeongpa-links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .myeongpa-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

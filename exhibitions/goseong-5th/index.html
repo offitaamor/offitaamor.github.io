@@ -1,0 +1,44 @@
+---
+layout: default
+title: "명파 X경 작품 해설"
+summary: "고성 명파마을의 장소와 기억을 그린 OFFITA의 작품 해설."
+cover: "/assets/uploads/visual/myeongpa/buchaesol.webp"
+permalink: /exhibitions/goseong-5th/
+stylesheet: "/assets/css/myeongpa.css"
+myeongpa_analytics: true
+---
+<div class="myeongpa-page">
+  <nav class="myeongpa-breadcrumb" aria-label="명파 작품 아카이브">
+    <a href="{{ '/visual/myeongpa-artwork/' | relative_url }}">← 명파 시각 아카이브</a>
+  </nav>
+  <header class="myeongpa-guide-hero">
+    <p class="myeongpa-label">고성문화재단 5주년 기념 전시를 위해 마련한 작품 해설</p>
+    <h1>명파 X경</h1>
+    <p class="myeongpa-subtitle">명파에 머물며 보고 들은 여섯 장소의 이야기</p>
+    <p class="myeongpa-summary">고성 명파마을에는 주민의 기억과 오래된 기록을 따라가야 보이는 장소들이 있습니다. OFFITA는 골짜기를 걷고, 주민의 이야기를 듣고, 옛 사진과 지도를 살피며 그 장소들을 그림으로 옮겼습니다.</p>
+  </header>
+
+  <section class="myeongpa-guide-works" id="works" aria-labelledby="myeongpa-works-title">
+    <h2 id="myeongpa-works-title">작품별 해설</h2>
+    <ul class="myeongpa-grid">
+      {% assign works = site.myeongpa_works | sort: 'order' %}
+      {% for work in works %}
+        {% assign preview = '/assets/uploads/visual/myeongpa/guide/' | append: work.slug | append: '.webp' %}
+        <li>
+          <a class="myeongpa-card" href="{{ work.url | relative_url }}" data-myeongpa-destination="artwork">
+            <img src="{{ preview | relative_url }}" width="720" height="720" alt=""{% if forloop.index > 2 %} loading="lazy"{% endif %} decoding="async">
+            <div class="myeongpa-card-copy">
+              <h3>{{ work.title | escape }} <span aria-hidden="true">↗</span></h3>
+              <p>{{ work.subtitle | escape }}</p>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="myeongpa-archive-links">
+      <a href="{{ '/visual/myeongpa-artwork/' | relative_url }}">명파의 풍경과 인물 작품 보기 <span aria-hidden="true">→</span></a>
+      <a href="{{ '/writing/myeongpa-heritage/' | relative_url }}">《명파의 유산》 전체 기록 읽기 <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  {% include myeongpa-links.html %}
+</div>

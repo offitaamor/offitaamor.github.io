@@ -1,0 +1,17 @@
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.site.ga4_measurement_id | uri_escape }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', {{ site.data.site.ga4_measurement_id | jsonify }});
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('[data-myeongpa-destination]');
+    if (!link) return;
+
+    gtag('event', 'myeongpa_navigation', {
+      destination_type: link.dataset.myeongpaDestination,
+      link_path: link.pathname
+    });
+  });
+</script>

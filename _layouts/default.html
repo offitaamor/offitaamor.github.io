@@ -29,6 +29,10 @@
   <link rel="stylesheet" href="{{ '/assets/css/music.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/refinements.css' | relative_url }}?v=20261114">
   <link rel="stylesheet" href="{{ '/assets/css/daegu-onna.css' | relative_url }}?v=20261114">
+  {% if page.stylesheet %}<link rel="stylesheet" href="{{ page.stylesheet | relative_url }}">{% endif %}
+  {% if page.myeongpa_analytics and jekyll.environment == 'production' and site.data.site.ga4_measurement_id %}
+    {% include myeongpa-analytics.html %}
+  {% endif %}
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>

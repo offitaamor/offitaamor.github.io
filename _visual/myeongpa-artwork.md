@@ -62,7 +62,7 @@ gallery:
     image: "/assets/uploads/visual/myeongpa/buchaesol.webp"
     drive_url: "https://drive.google.com/file/d/1xumFEC2R0Aev-SEeBqq1iu3JQyFEmBOe/view"
     note: "이미 사라진 대상을 사진과 주민의 기억, 남아 있는 기록을 바탕으로 다시 이미지 안에 세운 작업."
-  - title: "서낭당"
+  - title: "안골 서낭당"
     anchor: "seonangdang"
     group: "PLACE / MEMORY"
     image: "/assets/uploads/visual/myeongpa/seonangdang.webp"
@@ -73,7 +73,7 @@ gallery:
     image: "/assets/uploads/visual/myeongpa/jojeam.webp"
     drive_url: "https://drive.google.com/file/d/1mnxVvxJzfqZwoYXZA9Yn8zP53IxyE_Kx/view"
     note: "현재 모습을 충분히 확인할 수 없는 장소를 이름과 기록, 상상을 통해 다시 바라본 작업."
-  - title: "문관석"
+  - title: "명파리 문인석"
     anchor: "muninseok"
     group: "PLACE / MEMORY"
     image: "/assets/uploads/visual/myeongpa/mungwanseok.webp"
@@ -187,3 +187,5 @@ Myeongpa Artwork는 한 지역을 아름다운 풍경으로 묘사하기보다, 
 이는 평범한 대상을 억지로 특별하게 만드는 것이 아니라, **이미 그 안에 존재하고 있었지만 충분히 보이지 않았던 가치를 발견해 새로운 관점으로 소개하는 작업**입니다.
 
 OFFITA는 이 작업에서 기록자와 창작자의 중간, 그리고 지역과 외부 관객 사이에서 이야기를 다시 전달하는 시각적 중개자의 위치를 탐색합니다.
+
+<a class="button" href="{{ '/exhibitions/goseong-5th/' | relative_url }}">명파 X경 작품 해설 →</a>

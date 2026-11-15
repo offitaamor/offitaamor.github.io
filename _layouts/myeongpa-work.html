@@ -1,0 +1,49 @@
+---
+layout: default
+---
+{% assign guide_url = '/exhibitions/goseong-5th/' %}
+{% assign preview = '/assets/uploads/visual/myeongpa/guide/' | append: page.slug | append: '.webp' %}
+{% assign research_url = '/writing/myeongpa-heritage/#' | append: page.slug %}
+<article class="myeongpa-page" aria-labelledby="myeongpa-title">
+  <nav class="myeongpa-breadcrumb" aria-label="작품 안내">
+    <a href="{{ guide_url | relative_url }}" data-myeongpa-destination="guide">← 명파 X경 해설 모아보기</a>
+  </nav>
+  <header class="myeongpa-work-hero">
+    <div class="myeongpa-work-heading">
+      <p class="myeongpa-label">고성 명파리 · 명파 X경</p>
+      <h1 id="myeongpa-title">{{ page.title | escape }}</h1>
+      <p class="myeongpa-subtitle">{{ page.subtitle | escape }}</p>
+      <p class="myeongpa-summary">{{ page.summary | escape }}</p>
+    </div>
+    <figure class="myeongpa-work-figure">
+      <img src="{{ preview | relative_url }}" width="720" height="720" alt="{{ page.image_alt | escape }}" fetchpriority="high" decoding="async">
+      <figcaption>
+        <span>OFFITA · 《{{ page.title | escape }}》</span>
+        <a href="{{ page.cover | relative_url }}">이미지 크게 보기 <span aria-hidden="true">↗</span></a>
+      </figcaption>
+    </figure>
+  </header>
+
+  <div class="myeongpa-reading">
+    {{ content }}
+    <div class="myeongpa-sources">
+      <p><strong>참고 자료</strong> {{ page.sources | escape }}</p>
+      <a href="{{ research_url | relative_url }}" data-myeongpa-destination="field_notes">해당 장소의 현장 기록 보기 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  {% assign works = site.myeongpa_works | sort: 'order' %}
+  {% assign work_count = works | size %}
+  {% for work in works %}
+    {% if work.url == page.url %}
+      {% assign next_index = forloop.index | modulo: work_count %}
+      {% assign next_work = works[next_index] %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  <nav class="myeongpa-work-nav" aria-label="명파 X경의 다른 작품">
+    <a href="{{ guide_url | relative_url }}#works" data-myeongpa-destination="guide">해설 모아보기</a>
+    {% if next_work %}<a href="{{ next_work.url | relative_url }}" data-myeongpa-destination="artwork">다음 작품 · {{ next_work.title | escape }} <span aria-hidden="true">→</span></a>{% endif %}
+  </nav>
+  {% include myeongpa-links.html %}
+</article>
