@@ -11,9 +11,9 @@ layout: default
   <header class="myeongpa-work-hero">
     <div class="myeongpa-work-heading">
       <p class="myeongpa-label">고성 명파리 · 명파 X경</p>
-      <h1 id="myeongpa-title">{{ page.title | escape }}</h1>
+      <h1 id="myeongpa-title">{{ page.source_title | default: page.title | escape }}</h1>
       <p class="myeongpa-subtitle">{{ page.subtitle | escape }}</p>
-      <p class="myeongpa-summary">{{ page.summary | escape }}</p>
+      {% if page.summary %}<p class="myeongpa-summary">{{ page.summary | escape }}</p>{% endif %}
     </div>
     <figure class="myeongpa-work-figure">
       <img src="{{ preview | relative_url }}" width="720" height="720" alt="{{ page.image_alt | escape }}" fetchpriority="high" decoding="async">

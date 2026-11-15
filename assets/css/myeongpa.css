@@ -289,3 +289,43 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Full original exhibition notes and photographs. */
+.myeongpa-document-figure {
+  margin: 2rem 0;
+  min-width: 0;
+}
+.myeongpa-document-figure a { display: block; }
+.myeongpa-document-figure a:focus-visible {
+  outline: 3px solid var(--charcoal);
+  outline-offset: 4px;
+}
+.myeongpa-document-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+.myeongpa-document-figure figcaption {
+  margin-top: .65rem;
+  color: var(--myeongpa-muted);
+  font-size: .875rem;
+  line-height: 1.7;
+}
+.myeongpa-document-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-block: 2rem;
+}
+.myeongpa-document-gallery figure { margin: 0; }
+.myeongpa-document-note {
+  padding: 1.25rem;
+  margin-block: 1.5rem;
+  background: var(--oatmeal);
+  border-left: 3px solid var(--myeongpa-muted);
+}
+.myeongpa-document-note p:last-child { margin-bottom: 0; }
+@media (max-width: 42rem) {
+  .myeongpa-document-gallery { grid-template-columns: minmax(0, 1fr); }
+}
