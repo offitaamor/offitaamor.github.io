@@ -28,7 +28,7 @@ myeongpa_analytics: true
           <a class="myeongpa-card" href="{{ work.url | relative_url }}" data-myeongpa-destination="artwork">
             <img src="{{ preview | relative_url }}" width="720" height="720" alt=""{% if forloop.index > 2 %} loading="lazy"{% endif %} decoding="async">
             <div class="myeongpa-card-copy">
-              <h3>{{ work.title | escape }} <span aria-hidden="true">↗</span></h3>
+              <h3>{{ work.title | escape }} <span aria-hidden="true">→</span></h3>
               <p>{{ work.subtitle | escape }}</p>
             </div>
           </a>

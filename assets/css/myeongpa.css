@@ -1,5 +1,5 @@
 .myeongpa-page {
-  --myeongpa-serif: "Noto Serif KR", Batang, serif;
+  --myeongpa-serif: "Noto Serif KR", "Noto Serif CJK KR", Batang, serif;
   --myeongpa-muted: #65564a;
   width: min(100% - 2.5rem, 74rem);
   margin-inline: auto;
