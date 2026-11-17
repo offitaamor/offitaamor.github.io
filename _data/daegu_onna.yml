@@ -31,3 +31,25 @@ cards:
   - {image: mungtigi, title: '대구 뭉티기'}
   - {image: ttaro, title: '대구 따로국밥'}
   - {image: jjim, title: '대구 찜갈비'}
+food_tasting:
+  jjimgalbi:
+    card: jjim
+    colors: ['#822722', '#dcd1c3', '#a88673']
+  mungtigi:
+    card: mungtigi
+    colors: ['#672e30', '#975f53', '#c4a284']
+  ttaro-gukbap:
+    card: ttaro
+    colors: ['#974f2e', '#cfab92', '#70594a']
+  napjak-mandu:
+    card: mandu
+    colors: ['#eed7b0', '#c68744', '#6f583d']
+  fried-gizzard:
+    card: gizzard
+    colors: ['#cb9c41', '#694a35', '#a46e3b']
+  makchang:
+    card: makchang
+    colors: ['#8b4f3d', '#e4d4c2', '#5a4039']
+  yakki-udon:
+    card: yakki-udon
+    colors: ['#d78a67', '#7c2f27', '#98825b']

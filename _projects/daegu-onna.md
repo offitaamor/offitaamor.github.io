@@ -51,7 +51,13 @@ featured: true
   <p class="d-section-intro">대구 음식 7점과 도시 인물 2점. 손그림의 선과 평면적인 색, 제목과 사투리를 하나의 시리즈로 묶었다. 작품을 누르면 크게 볼 수 있습니다.</p>
   <div class="d-art__grid">
     {% for work in site.data.daegu_onna.food %}
-    <figure class="d-art__item"><a href="{{ '/assets/uploads/projects/daegu-onna/' | append: work.image | append: '.webp' | relative_url }}" target="_blank" rel="noopener" aria-label="{{ work.title }} 크게 보기"><img src="{{ '/assets/uploads/projects/daegu-onna/' | append: work.image | append: '.webp' | relative_url }}" alt="{{ work.title }} — OFFITA 대구 음식 의인화 작품" loading="lazy" decoding="async"></a><figcaption><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }} / FOOD PORTRAIT</span><strong>{{ work.title }}</strong><p>{{ work.caption }}</p></figcaption></figure>
+    {% assign tasting = site.data.daegu_onna.food_tasting[work.image] %}
+    {% assign tasting_path = '/assets/uploads/projects/daegu-onna/card-' | append: tasting.card %}
+    <figure class="d-art__item d-art__item--food">
+      <a href="{{ '/assets/uploads/projects/daegu-onna/' | append: work.image | append: '.webp' | relative_url }}" target="_blank" rel="noopener" aria-label="{{ work.title }} 크게 보기"><img src="{{ '/assets/uploads/projects/daegu-onna/' | append: work.image | append: '.webp' | relative_url }}" alt="{{ work.title }} — OFFITA 대구 음식 의인화 작품" loading="lazy" decoding="async"></a>
+      {% include music-tasting-trigger.html item=work tasting=tasting path=tasting_path %}
+      <figcaption><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }} / FOOD PORTRAIT</span><strong>{{ work.title }}</strong><p>{{ work.caption }}</p></figcaption>
+    </figure>
     {% endfor %}
   </div>
   <div class="d-art__people-head"><span>DAEGU CITY PORTRAITS</span><h3>내가 바라본 대구의 사람들</h3></div>
@@ -61,6 +67,8 @@ featured: true
     {% endfor %}
   </div>
 </section>
+
+{% include tasting-dialog.html %}
 
 <section class="d-village" id="village" aria-labelledby="village-title"><div class="d-container">
   <div class="d-section-head"><span>03 / SESSION 02 · FIELD ARCHIVE</span><h2 id="village-title">연암서당골에서<br>보낸 하루.</h2></div>

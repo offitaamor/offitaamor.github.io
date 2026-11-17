@@ -1,0 +1,16 @@
+.d-art__item--food,
+.music-tasting-dialog {
+  --ivory: var(--paper);
+  --line-soft: var(--line);
+}
+
+.d-art__item .music-tasting-symbol {
+  width: 36px;
+  height: 25px;
+  aspect-ratio: auto;
+}
+
+.d-art__item--food figcaption {
+  margin-top: 0;
+  border-top: 0;
+}
