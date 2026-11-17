@@ -1,3 +1,6 @@
+{% if include.tasting %}
+<div class="music-release-card">
+{% endif %}
 {% if include.item.direct_external and include.item.external_url != blank %}
 <a class="content-card{% if include.item.music_type == 'release' %} music-cover-card{% endif %}{% if include.item.title == 'GYEONGGI TRACKS' %} regional-map-card{% endif %}" href="{{ include.item.external_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ include.item.title }} 프로젝트 사이트 새 탭에서 열기">
 {% else %}
@@ -14,6 +17,11 @@
       </div>
     {% endif %}
   </div>
+{% if include.tasting %}
+</a>
+{% include music-tasting-trigger.html tasting=include.tasting key=include.tasting_key item=include.item %}
+<a class="content-card music-release-meta" href="{{ include.item.url | relative_url }}">
+{% endif %}
   <div class="card-meta">
     <p>{{ include.item.category | default: include.item.section }}</p>
     <h3>{{ include.item.title }}{% if include.item.direct_external and include.item.external_url != blank %} <span aria-hidden="true">↗</span>{% endif %}</h3>
@@ -21,3 +29,6 @@
     {% if include.item.summary %}<p class="summary">{{ include.item.summary }}</p>{% endif %}
   </div>
 </a>
+{% if include.tasting %}
+</div>
+{% endif %}

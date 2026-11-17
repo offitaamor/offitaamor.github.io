@@ -3,6 +3,7 @@ layout: default
 title: Music
 description: "OFFITA의 작곡·보컬·프로덕션 철학과 발매 음반, 믹싱·마스터링 작업을 소개합니다."
 permalink: /music/
+stylesheet: /assets/css/music-tasting.css
 ---
 <section class="page-hero music-page-hero">
   <p class="eyebrow">SOUND PRACTICE / GENRE / COMPOSITION / PRODUCTION</p>
@@ -21,10 +22,23 @@ permalink: /music/
   {% assign items = site.music | where: "music_type", "release" | sort: "date" | reverse %}
   <div class="card-grid archive-grid">
     {% for item in items %}
-      {% include card.html item=item index=forloop.index %}
+      {% assign release_key = item.path | split: '/' | last | split: '.' | first %}
+      {% assign tasting = site.data.music_tasting[release_key] %}
+      {% include card.html item=item tasting=tasting tasting_key=release_key %}
     {% endfor %}
   </div>
 </section>
+
+<dialog id="music-tasting-dialog" class="music-tasting-dialog" aria-labelledby="music-tasting-title">
+  <div class="music-tasting-dialog-head">
+    <h2 id="music-tasting-title"></h2>
+    <form method="dialog">
+      <button type="submit" autofocus>닫기</button>
+    </form>
+  </div>
+  <div class="music-tasting-pages"></div>
+</dialog>
+<script src="{{ '/assets/js/music-tasting.js' | relative_url }}" defer></script>
 
 <section class="page-section music-practice-section" id="music-practice">
   <div class="two-col">

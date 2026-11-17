@@ -1,0 +1,99 @@
+.music-tasting-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 5px 9px;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.music-tasting-trigger:hover,
+.music-tasting-trigger:focus-visible {
+  background: var(--ivory);
+}
+
+.music-tasting-trigger:focus-visible {
+  outline: 2px solid var(--charcoal);
+  outline-offset: 2px;
+}
+
+.music-tasting-palette {
+  display: flex;
+  gap: 6px;
+}
+
+.music-tasting-palette span {
+  width: 13px;
+  height: 13px;
+  border: 1px solid rgb(0 0 0 / 15%);
+  border-radius: 50%;
+  background: var(--swatch);
+}
+
+.music-tasting-symbol {
+  object-fit: contain;
+}
+
+.music-tasting-dialog {
+  box-sizing: border-box;
+  width: min(94vw, 490px);
+  max-height: 92vh;
+  padding: 0 14px 14px;
+  border: 1px solid var(--line-soft);
+  background: var(--ivory);
+  color: var(--charcoal);
+  overscroll-behavior: contain;
+}
+
+.music-tasting-dialog::backdrop {
+  background: rgb(24 22 21 / 72%);
+}
+
+html:has(.music-tasting-dialog[open]) {
+  overflow: hidden;
+}
+
+.music-tasting-dialog-head {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  background: var(--ivory);
+}
+
+.music-tasting-dialog-head h2 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.music-tasting-dialog-head button {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line-soft);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.music-tasting-pages {
+  display: grid;
+  gap: 12px;
+}
+
+.music-tasting-pages img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 267 / 376;
+}

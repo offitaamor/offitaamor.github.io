@@ -1,0 +1,12 @@
+{% assign tasting_path = '/assets/images/music/tasting/' | append: include.key %}
+<button class="music-tasting-trigger" type="button"
+        aria-label="{{ include.item.title | escape }} 테이스팅 카드 보기"
+        aria-haspopup="dialog" aria-controls="music-tasting-dialog"
+        data-tasting-title="{{ include.item.title | escape }}"
+        data-tasting-card="{{ tasting_path | append: '.webp' | relative_url }}"
+        {% if include.tasting.track_card %}data-tasting-tracks="{{ tasting_path | append: '-track-by-track.webp' | relative_url }}"{% endif %}>
+  <span class="music-tasting-palette" aria-hidden="true">
+    {% for color in include.tasting.colors %}<span style="--swatch: {{ color }}"></span>{% endfor %}
+  </span>
+  <img class="music-tasting-symbol" src="{{ tasting_path | append: '-symbol.webp' | relative_url }}" alt="" width="36" height="25">
+</button>
