@@ -8,6 +8,11 @@ client: "소셜혁신연구소 · 디스에이블드 · 취향중개사"
 summary: "발달장애 예술인 여섯 명을 하나의 범주가 아닌 서로 다른 취향과 서사를 가진 개별 창작자로 소개하기 위해, 작품·애장품·문장·색을 각각의 ‘방’으로 번역한 협업 전시 프로젝트. OFFITA는 기획 논의, 작가·작품 소개 정리, 체험용 스티커 굿즈 제작과 현장 실행에 참여했다."
 cover: ""
 remote_cover: "https://drive.google.com/thumbnail?id=1W4tFaab4WcZutcHiJ4mdolXqBYomxDug&sz=w2000"
+archive_cover: "/assets/uploads/projects/archive/bangdeuli.webp"
+archive_cover_alt: "색과 소품이 서로 다른 여섯 개의 열린 방"
+archive_order: 4
+archive_role: "공동 기획 참여 · 체험 굿즈 제작 · 현장 운영"
+archive_tags: ["전시", "문화기획", "협업"]
 featured: true
 case_study: true
 highlights:

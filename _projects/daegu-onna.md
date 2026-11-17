@@ -9,6 +9,11 @@ medium: "Drawing / Music / Field Notes / Print"
 client: "대굴대굴 대구온나 로컬벤처 3차 · 연암서당골"
 summary: "대구의 음식과 인상을 인물로 그리고, 연암서당골에서 보낸 하루와 음악 작업을 함께 기록한 OFFITA의 체류 전시."
 cover: "/assets/uploads/projects/daegu-onna/cover.webp"
+archive_cover: "/assets/uploads/projects/archive/daegu-onna.webp"
+archive_cover_alt: "해 질 무렵 연암서당골 골목에 앉은 납작만두와 막창 캐릭터"
+archive_order: 1
+archive_role: "일러스트 · 음악 제작 · 전시"
+archive_tags: ["로컬문화", "전시", "일러스트"]
 featured: true
 ---
 <section class="d-intro d-container" aria-label="전시 소개">

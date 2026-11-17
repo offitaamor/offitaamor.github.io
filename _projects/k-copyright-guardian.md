@@ -8,6 +8,11 @@ client: "한국저작권보호원 (KCOPA)"
 summary: "2026 K-저작권 지킴이 활동에서 저작권의 원칙과 애매한 판단 지점을 캐릭터·서사·행동 선택으로 번역한 연속형 캠페인 프로젝트. 매월 새로운 인물을 설계하면서도 하나의 COPYRIGHT GUARDIAN 세계관 안에서 정보성과 창작성을 함께 구축했다."
 cover: ""
 remote_cover: "https://drive.google.com/thumbnail?id=1gpxuMJGNu9oWt2obyDhTLO68SMjY-oIm&sz=w2000"
+archive_cover: "/assets/uploads/projects/archive/k-copyright-guardian.webp"
+archive_cover_alt: "검은 음반 앞에서 등을 맞댄 푸른색 저작권 수호자와 어두운 복장의 상대"
+archive_order: 3
+archive_role: "콘텐츠 기획 · 캐릭터 디자인 · 음악 제작"
+archive_tags: ["공공캠페인", "캐릭터디자인", "스토리텔링"]
 featured: true
 case_study: true
 external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_seq=7535"

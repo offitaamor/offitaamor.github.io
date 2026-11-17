@@ -7,6 +7,11 @@ medium: "Regional Archive / Visual / Web"
 summary: "경기북부의 열두 지역을 각자의 이야기가 담긴 하나의 트랙으로 읽는 지역 시각 아카이브. 지역의 사람과 기억, 생업과 풍경을 앨범처럼 펼치며 그림과 음악으로 연결하는 OFFITA의 프로젝트."
 cover: ""
 remote_cover: "https://offitaamor.github.io/gyeonggi-tracks/assets/maps/gyeonggi-north-map-current.webp"
+archive_cover: "/assets/uploads/projects/archive/gyeonggi-tracks.webp"
+archive_cover_alt: "경기북부를 상징하는 지형과 지역 소재를 담은 검은 레코드판"
+archive_order: 5
+archive_role: "콘셉트 기획 · 지역 조사 · 시각 스토리텔링"
+archive_tags: ["경기북부", "로컬문화", "아카이브"]
 featured: false
 case_study: false
 direct_external: true

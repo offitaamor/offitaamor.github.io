@@ -1,0 +1,38 @@
+{% assign project = include.item %}
+{% assign project_cover = project.archive_cover | default: project.cover %}
+{% assign project_role = project.archive_role | default: project.role %}
+{% assign project_title_id = 'project-title-' | append: include.index %}
+{% assign project_is_external = false %}
+{% assign project_link = project.url | relative_url %}
+{% if project.direct_external and project.external_url and project.external_url != empty %}
+  {% assign project_is_external = true %}
+  {% assign project_link = project.external_url %}
+{% endif %}
+<li>
+  <a class="project-card" href="{{ project_link | escape }}" aria-labelledby="{{ project_title_id }}"{% if project_is_external %} target="_blank" rel="noopener noreferrer"{% endif %}>
+    <div class="project-card__cover">
+      {% if project_cover and project_cover != empty %}
+        <img src="{{ project_cover | relative_url }}" alt="{{ project.archive_cover_alt | escape }}"{% if project.archive_cover %} width="1200" height="1200"{% endif %} decoding="async"{% if include.index == 1 %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+      {% elsif project.remote_cover and project.remote_cover != empty %}
+        <img src="{{ project.remote_cover | escape }}" alt="" loading="lazy" decoding="async">
+      {% else %}
+        <div class="placeholder">
+          <img src="{{ '/assets/images/brand/offita-emblem.svg' | relative_url }}" alt="">
+        </div>
+      {% endif %}
+    </div>
+    <div class="project-card__body">
+      <h2 id="{{ project_title_id }}">{{ project.title | escape }}{% if project_is_external %} <span class="project-card__external" aria-hidden="true">↗</span><span class="project-card__sr-only"> (새 탭)</span>{% endif %}</h2>
+      {% if project.archive_tags and project.archive_tags.size > 0 %}
+        <ul class="project-card__tags" role="list" aria-label="프로젝트 분야">
+          {% for tag in project.archive_tags %}
+            <li>#{{ tag | escape }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if project.year or project_role %}
+        <p class="project-card__facts">{{ project.year | escape }}{% if project.year and project_role %} · {% endif %}{{ project_role | escape }}</p>
+      {% endif %}
+    </div>
+  </a>
+</li>

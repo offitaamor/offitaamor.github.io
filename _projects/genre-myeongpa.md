@@ -8,6 +8,11 @@ client: "고성문화재단 · 명파마을"
 summary: "명파마을에서 참여예술가로 시작해 현장감독과 후속 전시로 이어진 장기 로컬 프로젝트. 주민과의 관계, 장소 리서치, 음악·그림·전시를 통해 한 지역을 일회성 소재가 아닌 지속적인 창작 관계로 다뤘다."
 cover: ""
 remote_cover: "https://drive.google.com/thumbnail?id=1NkQ4IgaUsI5NRwLw5MmWLrKO3h9BQfmh&sz=w2000"
+archive_cover: "/assets/uploads/projects/archive/genre-myeongpa.webp"
+archive_cover_alt: "부채솔 아래 마을 지붕과 바다로 이어지는 명파의 풍경"
+archive_order: 2
+archive_role: "참여예술가 · 현장감독 · 전시작가"
+archive_tags: ["로컬문화", "아카이브", "음악제작"]
 featured: true
 case_study: true
 external_url: "https://goseongcf.or.kr/archive_art/93"

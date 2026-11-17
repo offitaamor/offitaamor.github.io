@@ -1,16 +1,16 @@
 ---
 layout: page
 title: Projects
-kicker: ART / LOCAL / COLLABORATION / EXTERNAL
-intro: 예술기획, 로컬 프로젝트, 협업과 대외활동 중 주요 프로젝트를 정리합니다.
+kicker: OFFITA
+intro: 장소와 사람을 만나 그림, 음악, 전시로 이어간 작업들입니다.
 permalink: /projects/
+stylesheet: /assets/css/projects.css
 ---
-<section class="page-section">
-{% assign items = site.projects | sort: "year" | reverse %}
-<div class="card-grid archive-grid">
-{% for item in items %}
-  {% include card.html item=item index=forloop.index %}
-{% endfor %}
-</div>
-
+<section class="page-section project-archive" aria-label="프로젝트 목록">
+  {% assign items = site.projects | sort: "year" | reverse | sort: "archive_order", "last" %}
+  <ul class="project-archive__grid" role="list">
+    {% for item in items %}
+      {% include project-card.html item=item index=forloop.index %}
+    {% endfor %}
+  </ul>
 </section>
