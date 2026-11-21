@@ -44,3 +44,18 @@
 .overview-links a:hover{border-color:var(--brick);color:var(--brick)}.overview-links small{color:var(--brick);font-weight:700;margin-right:5px}
 .overview-links .overview-pending{background:var(--paper2);color:var(--sub)}
 @media(max-width:690px){.detail-overview{display:block;padding:20px 0 27px}.overview-links{margin-top:16px}.overview-links a,.overview-links span{font-size:11px;padding:8px 10px}.album p{font-size:11px}}
+
+/* GYEONGGI TRACKS — project film / responsive Google Drive video */
+.project-film{padding:74px 0 76px;border-bottom:1px solid var(--line)}
+.film-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:26px}
+.film-heading h2{font:500 clamp(28px,3.7vw,47px)/1.4 var(--ko);letter-spacing:-.055em;margin:12px 0 14px}
+.film-heading h2 i{font-style:normal;color:var(--olive)}
+.film-heading p{color:var(--sub);font-size:13px;margin:0}
+.film-open{flex:none;font-size:12px;font-weight:700;border-bottom:1px solid var(--brick);padding-bottom:8px}
+.film-open span{color:var(--brick)}
+.film-open:hover{color:var(--brick)}
+.film-frame{width:100%;aspect-ratio:16/9;background:#272521;border:1px solid var(--line);box-shadow:0 13px 28px rgba(56,43,31,.08);overflow:hidden}
+.film-frame iframe{display:block;width:100%;height:100%;border:0}
+.film-caption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;color:var(--sub);font-size:11px;margin:12px 0 0}
+.film-caption span:first-child{letter-spacing:.09em;font-weight:700}
+@media(max-width:690px){.project-film{padding:53px 0 59px}.film-heading{display:block;margin-bottom:20px}.film-heading h2{font-size:clamp(25px,7vw,34px)}.film-heading p{font-size:12px}.film-open{display:inline-block;margin-top:18px}.film-caption{font-size:10px}}
