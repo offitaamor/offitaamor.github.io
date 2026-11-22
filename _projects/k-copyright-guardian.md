@@ -28,41 +28,42 @@ external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_se
 <section class="cg-archive" id="mission-archive" aria-labelledby="cg-archive-title">
   <header class="cg-archive-header">
     <div class="cg-archive-heading">
-      <p class="cg-eyebrow">CAMPAIGN / MISSION ARCHIVE</p>
-      <h2 id="cg-archive-title">월별 미션 아카이브</h2>
-      <p>매달 달라지는 주제와 인물. 작품을 선택하면 원본 카드뉴스를 순서대로 감상할 수 있습니다.</p>
+      <p class="cg-eyebrow">2026 / COPYRIGHT CAMPAIGN / SELECTED WORKS</p>
+      <h2 id="cg-archive-title">Mission Works</h2>
+      <p>각 표지는 하나의 독립된 미션입니다. 앨범아트를 고르듯 표지를 선택하면 카드뉴스 전체를 순서대로 감상할 수 있습니다.</p>
     </div>
-    <div class="cg-archive-stats" aria-label="아카이브 개요"><span>2026</span><strong>06—11</strong><small>6개월 · 8개 미션</small></div>
+    <p class="cg-archive-stats"><span>2026 · JUN—NOV</span><strong>08</strong><small>MISSIONS / 67 IMAGES</small></p>
   </header>
-  <nav class="cg-month-nav" aria-label="월별 미션 바로가기">
+  <nav class="cg-cover-filters" aria-label="미션 발행 월 필터" data-cg-filters>
+    <button type="button" class="cg-filter is-active" data-cg-filter="all" aria-pressed="true">ALL <span>08</span></button>
     {% for month in site.data.copyright_guardian.months %}
-    <a href="#cg-month-{{ month.number }}" aria-label="{{ month.number }}월 미션으로 이동"><span>{{ month.number }}</span><small>{{ month.en }}</small></a>
+    {% assign month_missions = site.data.copyright_guardian.missions | where: 'month', month.number %}
+    <button type="button" class="cg-filter" data-cg-filter="{{ month.number }}" aria-pressed="false">{{ month.number }} <span>{{ month_missions.size }}</span></button>
     {% endfor %}
   </nav>
-  {% for month in site.data.copyright_guardian.months %}
-  {% assign month_missions = site.data.copyright_guardian.missions | where: 'month', month.number %}
-  <section class="cg-month-section" id="cg-month-{{ month.number }}" aria-labelledby="cg-month-title-{{ month.number }}">
-    <div class="cg-month-heading">
-      <span class="cg-month-number">{{ month.number }}<small> / 2026</small></span>
-      <div><p class="cg-eyebrow">{{ month.en }} · {{ month_missions.size }} MISSION{% if month_missions.size > 1 %}S{% endif %}</p><h3 id="cg-month-title-{{ month.number }}">{{ month.title }}</h3><p>{{ month.summary }}</p></div>
-    </div>
-    <div class="cg-mission-grid">
-      {% for mission in month_missions %}
-      <a class="cg-mission-card" href="{{ mission.url | relative_url }}" aria-label="{{ month.number }}월 {{ mission.type_ko }}: {{ mission.title }} 작품 감상">
-        <div class="cg-card-image"><img src="{{ mission.cover_thumb }}" alt="{{ mission.title }} 카드뉴스 표지" loading="lazy" decoding="async" width="760" height="760"><span class="cg-card-corner">VIEW SERIES ↗</span></div>
-        <div class="cg-card-meta"><span>{{ mission.type_ko }} / {{ mission.type }}</span><span>{{ mission.card_count }} IMAGE{% if mission.card_count != 1 %}S{% endif %}</span></div>
-        <h4>{{ mission.title }}</h4>
-        <p class="cg-card-kicker">{{ mission.kicker }}</p>
-        <p class="cg-card-question">{{ mission.question }}</p>
-        <span class="cg-card-link">카드뉴스 전체 감상 <span aria-hidden="true">↗</span></span>
-      </a>
-      {% endfor %}
-    </div>
-  </section>
-  {% endfor %}
-  <p class="cg-archive-note">작품에 사용된 저작권 사례는 캠페인 콘텐츠입니다. 구체적인 이용 가능 여부는 권리 관계와 라이선스 조건에 따라 달라질 수 있습니다.</p>
+  <p class="cg-filter-status" data-cg-filter-status role="status" aria-live="polite">전체 8개 미션</p>
+  <div class="card-grid archive-grid cg-album-grid" data-cg-album-grid>
+    {% for mission in site.data.copyright_guardian.missions %}
+    <a class="content-card cg-album-card" href="{{ mission.url | relative_url }}" data-cg-cover-month="{{ mission.month }}" aria-label="2026년 {{ mission.month }}월 {{ mission.type_ko }} {{ mission.title }} 카드뉴스 감상">
+      <div class="card-image cg-album-image">
+        <img src="{{ mission.cover_thumb }}" alt="{{ mission.title }} 카드뉴스 표지" width="760" height="760" loading="lazy" decoding="async">
+        <span class="cg-album-hover" aria-hidden="true">OPEN SERIES ↗</span>
+      </div>
+      <div class="card-meta cg-album-meta">
+        <p>2026.{{ mission.month }} &nbsp;/&nbsp; {{ mission.type_ko }} &nbsp;/&nbsp; {{ mission.card_count }} IMAGES</p>
+        <h3>{{ mission.title }}</h3>
+        <p class="cg-album-subtitle">{{ mission.kicker }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="cg-archive-note">표지를 누르면 작품 감상 페이지로 이동합니다. 저작권 관련 실제 이용 가능 여부는 권리 관계와 라이선스 조건에 따라 달라질 수 있습니다.</p>
 </section>
+<script defer src="{{ '/assets/js/copyright-guardian.js' | relative_url }}"></script>
 
+<details class="cg-case-study-details" id="project-case-study">
+  <summary><span class="cg-case-label">PROJECT CASE STUDY</span><strong>프로젝트 기획 · 캐릭터 디자인 · 제작 과정</strong><span class="cg-case-indicator" aria-hidden="true">+</span></summary>
+  <div class="cg-case-study-inner">
 <section class="case-section">
   <div class="case-section-head">
     <p class="case-kicker">01 / CAMPAIGN SYSTEM</p>
@@ -70,7 +71,7 @@ external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_se
   </div>
 
   <p>월별 미션은 같은 메시지를 반복하지 않는다. 6월에는 <strong>‘나는 어떤 역할을 맡았는가’</strong>라는 정체성에서 출발하고, 7월에는 저작권을 지키는 행동을 세 가지 기능으로 나누며, 8월에는 실제 이용 상황에서 마주치는 유혹과 선택으로 이동한다. 9월에는 다시 한 단계 깊어져, 단순한 금지·허용보다 <strong>경계를 묻고 판단하는 능력</strong> 자체를 다룬다.</p>
-  <p>10월에는 〈Humming in the rain〉의 제작 과정을 따라 음악이 탄생하는 과정을 기록하고, 11월에는 BLOCK × BYPASS와 CREDIT을 통해 우회·차단·출처 확인이라는 실천의 문제까지 확장한다. 아래 아카이브에서 각 미션의 카드뉴스를 처음부터 끝까지 감상할 수 있다.</p>
+  <p>10월에는 〈Humming in the rain〉의 제작 과정을 따라 음악이 탄생하는 과정을 기록하고, 11월에는 BLOCK × BYPASS와 CREDIT을 통해 우회·차단·출처 확인이라는 실천의 문제까지 확장한다. 표지 아카이브에서 각 미션의 카드뉴스를 처음부터 끝까지 감상할 수 있다.</p>
 
   <div class="case-gallery case-gallery--mosaic">
     <figure class="case-media--wide">
@@ -202,3 +203,5 @@ external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_se
     <a href="https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_seq=7535" target="_blank" rel="noopener"><span>OFFICIAL</span><strong>2026 K-저작권 지킴이 공식 안내</strong><em>↗</em></a>
   </div>
 </section>
+  </div>
+</details>

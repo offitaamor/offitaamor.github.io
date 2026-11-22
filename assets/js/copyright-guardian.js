@@ -1,5 +1,29 @@
 /* OFFITA / K-COPYRIGHT GUARDIAN — accessible cardnews viewer */
 (() => {
+
+  const filterNav = document.querySelector('[data-cg-filters]');
+  const coverGrid = document.querySelector('[data-cg-album-grid]');
+  if (filterNav && coverGrid) {
+    const buttons = Array.from(filterNav.querySelectorAll('[data-cg-filter]'));
+    const cards = Array.from(coverGrid.querySelectorAll('[data-cg-cover-month]'));
+    const status = document.querySelector('[data-cg-filter-status]');
+    const applyFilter = (month) => {
+      let visible = 0;
+      cards.forEach((card) => {
+        const matched = month === 'all' || card.dataset.cgCoverMonth === month;
+        card.hidden = !matched;
+        if (matched) visible++;
+      });
+      buttons.forEach((button) => {
+        const active = button.dataset.cgFilter === month;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      if (status) status.textContent = month === 'all' ? '전체 ' + visible + '개 미션' : Number(month) + '월 ' + visible + '개 미션';
+    };
+    buttons.forEach((button) => button.addEventListener('click', () => applyFilter(button.dataset.cgFilter)));
+    applyFilter('all');
+  }
   document.querySelectorAll('[data-cg-viewer]').forEach((viewer) => {
     const payload = viewer.querySelector('[data-cg-cards]');
     if (!payload) return;
