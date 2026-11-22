@@ -121,3 +121,12 @@ QUOTE는 폰트·음악·AI 이미지처럼 경계가 모호한 창작 문제에
 이 시리즈의 공통된 목표는 저작권을 두려운 규칙으로 만드는 것이 아니라, **창작과 이용의 순간에 한 번 더 멈추고 확인할 수 있는 감각을 시각적으로 만드는 것**입니다.
 
 <p><a href="/projects/k-copyright-guardian/">PROJECT CASE STUDY →</a></p>
+
+
+**OCTOBER — HUMMING IN THE RAIN**  
+실제 곡을 만드는 과정을 허밍·편곡·믹싱·앨범아트의 단계로 기록하며 음악 창작과 권리의 관계를 탐구했습니다.
+
+**NOVEMBER — BLOCK × BYPASS / CREDIT**  
+우회와 차단의 갈등, 출처를 기록하는 행동을 서로 다른 인물과 이야기로 표현했습니다.
+
+[6~11월 8개 미션 카드뉴스 전체 감상하기](/projects/k-copyright-guardian/#mission-archive)

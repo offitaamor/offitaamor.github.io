@@ -1,0 +1,64 @@
+---
+layout: default
+---
+{% assign mission = site.data.copyright_guardian.missions | where: 'slug', page.mission_slug | first %}
+{% if mission %}
+<article class="cg-mission-page">
+  <nav class="cg-breadcrumb" aria-label="현재 위치">
+    <a href="{{ '/projects/' | relative_url }}">PROJECTS</a><span aria-hidden="true">/</span>
+    <a href="{{ '/projects/k-copyright-guardian/#mission-archive' | relative_url }}">K-COPYRIGHT GUARDIAN</a><span aria-hidden="true">/</span><span>{{ mission.month }} · {{ mission.type_ko }}</span>
+  </nav>
+  <header class="cg-detail-hero">
+    <div class="cg-detail-copy">
+      <p class="cg-eyebrow">2026.{{ mission.month }} / {{ mission.type }} MISSION / {{ mission.card_count }} IMAGES</p>
+      <h1>{{ mission.title }}</h1>
+      <p class="cg-detail-kicker">{{ mission.kicker }}</p>
+      <p class="cg-detail-summary">{{ mission.description }}</p>
+      <dl class="cg-detail-facts"><div><dt>CHARACTER</dt><dd>{{ mission.characters }}</dd></div><div><dt>FORMAT</dt><dd>Copyright Campaign · Card News</dd></div><div><dt>CREATOR</dt><dd>OFFITA</dd></div></dl>
+      <a class="cg-jump-link" href="#cg-viewer">작품 감상하기 <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="cg-detail-cover"><img src="{{ mission.cover }}" alt="{{ mission.title }} 표지 이미지" fetchpriority="high" decoding="async"></div>
+  </header>
+  <section class="cg-question-panel" aria-labelledby="cg-question-heading"><p class="cg-eyebrow" id="cg-question-heading">THE QUESTION</p><p class="cg-question">{{ mission.question }}</p><p class="cg-answer">{{ mission.lesson }}</p></section>
+  <section class="cg-viewer-section" id="cg-viewer" aria-labelledby="cg-viewer-heading">
+    <header class="cg-viewer-heading"><div><p class="cg-eyebrow">FULL SERIES / VISUAL ARCHIVE</p><h2 id="cg-viewer-heading">카드뉴스 전체 감상</h2></div><p>썸네일을 선택하거나 좌우 버튼으로 작품을 넘겨보세요.</p></header>
+    <div class="cg-viewer" data-cg-viewer>
+      <figure class="cg-stage">
+        <div class="cg-stage-image"><img data-cg-stage-img src="{{ mission.cards[0].src }}" alt="{{ mission.cards[0].label }}" decoding="async"></div>
+        <figcaption data-cg-stage-caption>{{ mission.cards[0].label }}</figcaption>
+      </figure>
+      <div class="cg-controls">
+        <div class="cg-arrow-controls"><button type="button" data-cg-prev aria-label="이전 이미지">← <span>이전</span></button><span class="cg-counter" aria-live="polite" data-cg-counter>01 / {{ mission.card_count }}</span><button type="button" data-cg-next aria-label="다음 이미지"><span>다음</span> →</button></div>
+        <div class="cg-actions"><button type="button" data-cg-expand>크게 보기 ⤢</button><a data-cg-original href="{{ mission.cards[0].original }}" target="_blank" rel="noopener noreferrer">원본 보기 ↗</a></div>
+      </div>
+      <div class="cg-thumb-track" role="group" aria-label="카드뉴스 이미지 목록">
+        {% for card in mission.cards %}
+        <button type="button" class="cg-thumb{% if forloop.first %} is-active{% endif %}" data-cg-index="{{ forloop.index0 }}" aria-label="{{ forloop.index }}번: {{ card.label }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"><img src="{{ card.thumb }}" alt="" loading="lazy" decoding="async"><span>{{ forloop.index }}</span></button>
+        {% endfor %}
+      </div>
+      <dialog class="cg-zoom" data-cg-dialog aria-label="카드뉴스 확대 보기">
+        <div class="cg-zoom-bar"><span>OFFITA / K-COPYRIGHT GUARDIAN</span><button type="button" data-cg-close aria-label="확대 보기 닫기">닫기 ×</button></div>
+        <img data-cg-zoom-img src="{{ mission.cards[0].src }}" alt="{{ mission.cards[0].label }}">
+        <div class="cg-zoom-bottom"><button type="button" data-cg-zoom-prev>← 이전</button><span data-cg-zoom-count>01 / {{ mission.card_count }}</span><button type="button" data-cg-zoom-next>다음 →</button></div>
+      </dialog>
+      <script type="application/json" data-cg-cards>{{ mission.cards | jsonify }}</script>
+    </div>
+    {% if mission.format_note %}<p class="cg-format-note">{{ mission.format_note }}</p>{% endif %}
+    {% if mission.extra_link %}<p class="cg-extra-link"><a href="{{ mission.extra_link }}" target="_blank" rel="noopener noreferrer">{{ mission.extra_label }} ↗</a></p>{% endif %}
+    <noscript><p>자바스크립트를 사용할 수 없는 경우 아래 링크에서 각 페이지를 열어볼 수 있습니다.</p><ol>{% for card in mission.cards %}<li><a href="{{ card.original }}" target="_blank" rel="noopener noreferrer">{{ card.label }}</a></li>{% endfor %}</ol></noscript>
+  </section>
+  <section class="cg-detail-footer" aria-label="다른 미션 둘러보기">
+    <div><p class="cg-eyebrow">NEXT / ARCHIVE</p><h2>다른 미션도 살펴보기</h2></div>
+    <div class="cg-other-missions">
+      {% for other in site.data.copyright_guardian.missions %}
+        {% if other.slug == mission.slug %}{% continue %}{% endif %}
+        {% if other.month == mission.month %}
+        <a href="{{ other.url | relative_url }}"><span>{{ other.month }} / {{ other.type_ko }}</span><strong>{{ other.title }}</strong><em aria-hidden="true">↗</em></a>
+        {% endif %}
+      {% endfor %}
+      <a class="cg-all-missions" href="{{ '/projects/k-copyright-guardian/#mission-archive' | relative_url }}"><span>ALL MISSIONS</span><strong>월별 미션 아카이브로 돌아가기</strong><em aria-hidden="true">↗</em></a>
+    </div>
+  </section>
+</article>
+<script defer src="{{ '/assets/js/copyright-guardian.js' | relative_url }}"></script>
+{% endif %}

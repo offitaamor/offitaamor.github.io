@@ -15,6 +15,7 @@ archive_role: "콘텐츠 기획 · 캐릭터 디자인 · 음악 제작"
 archive_tags: ["공공캠페인", "캐릭터디자인", "스토리텔링"]
 featured: true
 case_study: true
+stylesheet: "/assets/css/copyright-guardian.css"
 external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_seq=7535"
 ---
 
@@ -23,23 +24,44 @@ external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_se
   <p>2026 K-저작권 지킴이 개인 미션을 진행하며 OFFITA는 매달 다른 저작권 주제를 독립적인 카드뉴스로 끝내지 않고, <strong>COPYRIGHT GUARDIAN</strong>을 중심으로 이어지는 하나의 캠페인 세계관으로 설계했다. WARNING, LICENSE, SHARE, BYPASS, QUOTE, COPY, TRANSMIT 같은 인물들은 장식적인 마스코트가 아니라 각각 경고·허락·공유·우회·경계·복제·전송이라는 개념을 행동하는 캐릭터로 번역한 결과다.</p>
 </div>
 
-<div class="case-timeline">
-  <div>
-    <span>JUN</span>
-    <strong>BECOMING THE GUARDIAN</strong>
-    <p>발대식을 ‘보호자의 역할을 부여받는 위촉식’으로 재해석.</p>
-  </div>
-  <div>
-    <span>JUL</span>
-    <strong>THE THREE PILLARS</strong>
-    <p>WARNING · LICENSE · SHARE로 저작권 보호의 기본 행동을 구조화.</p>
-  </div>
-  <div>
-    <span>AUG</span>
-    <strong>BYPASS</strong>
-    <p>‘편리한 우회’의 유혹과 이용자의 선택을 대립 구조로 시각화.</p>
-  </div>
-</div>
+
+<section class="cg-archive" id="mission-archive" aria-labelledby="cg-archive-title">
+  <header class="cg-archive-header">
+    <div class="cg-archive-heading">
+      <p class="cg-eyebrow">CAMPAIGN / MISSION ARCHIVE</p>
+      <h2 id="cg-archive-title">월별 미션 아카이브</h2>
+      <p>매달 달라지는 주제와 인물. 작품을 선택하면 원본 카드뉴스를 순서대로 감상할 수 있습니다.</p>
+    </div>
+    <div class="cg-archive-stats" aria-label="아카이브 개요"><span>2026</span><strong>06—11</strong><small>6개월 · 8개 미션</small></div>
+  </header>
+  <nav class="cg-month-nav" aria-label="월별 미션 바로가기">
+    {% for month in site.data.copyright_guardian.months %}
+    <a href="#cg-month-{{ month.number }}" aria-label="{{ month.number }}월 미션으로 이동"><span>{{ month.number }}</span><small>{{ month.en }}</small></a>
+    {% endfor %}
+  </nav>
+  {% for month in site.data.copyright_guardian.months %}
+  {% assign month_missions = site.data.copyright_guardian.missions | where: 'month', month.number %}
+  <section class="cg-month-section" id="cg-month-{{ month.number }}" aria-labelledby="cg-month-title-{{ month.number }}">
+    <div class="cg-month-heading">
+      <span class="cg-month-number">{{ month.number }}<small> / 2026</small></span>
+      <div><p class="cg-eyebrow">{{ month.en }} · {{ month_missions.size }} MISSION{% if month_missions.size > 1 %}S{% endif %}</p><h3 id="cg-month-title-{{ month.number }}">{{ month.title }}</h3><p>{{ month.summary }}</p></div>
+    </div>
+    <div class="cg-mission-grid">
+      {% for mission in month_missions %}
+      <a class="cg-mission-card" href="{{ mission.url | relative_url }}" aria-label="{{ month.number }}월 {{ mission.type_ko }}: {{ mission.title }} 작품 감상">
+        <div class="cg-card-image"><img src="{{ mission.cover_thumb }}" alt="{{ mission.title }} 카드뉴스 표지" loading="lazy" decoding="async" width="760" height="760"><span class="cg-card-corner">VIEW SERIES ↗</span></div>
+        <div class="cg-card-meta"><span>{{ mission.type_ko }} / {{ mission.type }}</span><span>{{ mission.card_count }} IMAGE{% if mission.card_count != 1 %}S{% endif %}</span></div>
+        <h4>{{ mission.title }}</h4>
+        <p class="cg-card-kicker">{{ mission.kicker }}</p>
+        <p class="cg-card-question">{{ mission.question }}</p>
+        <span class="cg-card-link">카드뉴스 전체 감상 <span aria-hidden="true">↗</span></span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+  <p class="cg-archive-note">작품에 사용된 저작권 사례는 캠페인 콘텐츠입니다. 구체적인 이용 가능 여부는 권리 관계와 라이선스 조건에 따라 달라질 수 있습니다.</p>
+</section>
 
 <section class="case-section">
   <div class="case-section-head">
@@ -47,7 +69,8 @@ external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_se
     <h2>한 번 쓰고 끝나는 캐릭터가 아니라,<br>저작권 개념이 계속 확장되는 세계관</h2>
   </div>
 
-  <p>월별 미션은 같은 메시지를 반복하지 않는다. 6월에는 <strong>‘나는 어떤 역할을 맡았는가’</strong>라는 정체성에서 출발하고, 7월에는 저작권을 지키는 행동을 세 가지 기능으로 나누며, 8월에는 실제 이용 상황에서 마주치는 유혹과 선택으로 이동한다. 9월 기획에서는 다시 한 단계 깊어져, 단순한 금지·허용보다 <strong>경계를 묻고 판단하는 능력</strong> 자체를 다룬다.</p>
+  <p>월별 미션은 같은 메시지를 반복하지 않는다. 6월에는 <strong>‘나는 어떤 역할을 맡았는가’</strong>라는 정체성에서 출발하고, 7월에는 저작권을 지키는 행동을 세 가지 기능으로 나누며, 8월에는 실제 이용 상황에서 마주치는 유혹과 선택으로 이동한다. 9월에는 다시 한 단계 깊어져, 단순한 금지·허용보다 <strong>경계를 묻고 판단하는 능력</strong> 자체를 다룬다.</p>
+  <p>10월에는 〈Humming in the rain〉의 제작 과정을 따라 음악이 탄생하는 과정을 기록하고, 11월에는 BLOCK × BYPASS와 CREDIT을 통해 우회·차단·출처 확인이라는 실천의 문제까지 확장한다. 아래 아카이브에서 각 미션의 카드뉴스를 처음부터 끝까지 감상할 수 있다.</p>
 
   <div class="case-gallery case-gallery--mosaic">
     <figure class="case-media--wide">
@@ -103,8 +126,8 @@ external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_se
 
 <section class="case-section">
   <div class="case-section-head">
-    <p class="case-kicker">03 / SEPTEMBER — DEEPENING THE QUESTION</p>
-    <h2>금지와 허용에서, ‘어떻게 판단할 것인가’로</h2>
+    <p class="case-kicker">03 / SEPTEMBER — NOVEMBER · EXTENDING THE QUESTION</p>
+    <h2>경계를 묻는 질문에서, 창작과 기록의 실천으로</h2>
   </div>
 
   <div class="case-output-grid">
@@ -129,9 +152,11 @@ external_url: "https://www.kcopa.or.kr/lay1/bbs/S1T12C49/A/12/view.do?article_se
 
   <p><strong>〈COPY × TRANSMIT — 떠도는 사진, 사라지는 이름〉</strong>에서는 한 장의 지역 사진이 복제되고 전달되는 동안 원작자의 이름과 출처, 책임의 경계까지 흐려지는 과정을 따라간다. 마지막 질문은 “허락받았는가?”에서 끝나지 않고 <strong>“그 사람이 허락할 권리를 가진 사람이었는가?”</strong>까지 확장된다.</p>
 
+  <p><strong>〈Humming in the rain — 이 노래 하나를 만들기까지〉</strong>는 허밍, 작곡, 가사, 편곡, 음향 작업과 앨범아트까지 이어지는 창작의 여정을 시각적인 기록으로 편집했다. 11월의 <strong>〈BLOCK × BYPASS〉</strong>와 <strong>〈CREDIT〉</strong>에서는 저작권 보호의 행동 선택과 올바른 출처·권리 확인을 서로 다른 서사로 연결한다.</p>
+
   <div class="case-role-shift">
     <span>CONCEPT EVOLUTION</span>
-    <strong>IDENTITY → RULE → CHOICE → JUDGMENT → RESPONSIBILITY</strong>
+    <strong>IDENTITY → RULE → CHOICE → JUDGMENT → CREATION → RESPONSIBILITY</strong>
     <p>월별 미션이 진행될수록 메시지를 반복하기보다 저작권을 바라보는 사고의 깊이를 단계적으로 확장했다.</p>
   </div>
 </section>
