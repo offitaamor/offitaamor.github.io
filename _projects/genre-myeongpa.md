@@ -60,6 +60,10 @@ external_url: "https://goseongcf.or.kr/archive_art/93"
     </figure>
   </div>
 
+  <div class="case-links">
+    <a href="/writing/myeongpa-muninseok-research/"><span>FIELD RESEARCH</span><strong>명파리 석상 4구와 부호군 황성일 묘 조사</strong><em>→</em></a>
+  </div>
+
   <div class="case-output-grid">
     <div class="case-output-card">
       <span>VISUAL</span>

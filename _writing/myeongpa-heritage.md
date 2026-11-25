@@ -210,6 +210,7 @@ article_class: "research-archive-page"
 
 <p class="research-source">SOURCE · 1990년 『고성군지』 · 명파 주민 진술 · 현장 탐사 · 고성문화원 후속 조사 요청 자료</p>
 <a class="research-visual-link" href="{{ '/visual/myeongpa/muninseok/' | relative_url }}"><span>VISUAL INTERPRETATION</span><strong>명파 X경 — 명파리 문인석</strong><em>작품 해설 보기 →</em></a>
+<a class="research-visual-link" href="/writing/myeongpa-muninseok-research/"><span>FIELD RESEARCH ARCHIVE</span><strong>명파리 석상 4구와 부호군 황성일 묘 조사</strong><em>상세 연구기록 보기 →</em></a>
 
 <span class="research-anchor" id="seonangdang"></span>
 <p class="research-section-label">PARTICIPANT NOTE 06 · RITUAL / CAMERA RECORD / COMMUNITY</p>

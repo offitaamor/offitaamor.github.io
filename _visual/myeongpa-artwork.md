@@ -189,3 +189,5 @@ Myeongpa Artwork는 한 지역을 아름다운 풍경으로 묘사하기보다, 
 OFFITA는 이 작업에서 기록자와 창작자의 중간, 그리고 지역과 외부 관객 사이에서 이야기를 다시 전달하는 시각적 중개자의 위치를 탐색합니다.
 
 <a class="button" href="{{ '/exhibitions/goseong-5th/' | relative_url }}">명파 X경 작품 해설 →</a>
+
+<a class="button" href="/writing/myeongpa-muninseok-research/">명파리 석상 및 황성일 묘 상세 연구기록 →</a>
