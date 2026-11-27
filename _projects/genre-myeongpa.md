@@ -103,6 +103,13 @@ external_url: "https://goseongcf.or.kr/archive_art/93"
     <span>ARTCATION FESTA 2024</span>
     <p>2024.09.27 — 09.29 · 강원특별자치도 고성군 현내면 명파마을 일대</p>
   </div>
+  <div class="case-note">
+    <span>PRESS / 2024.10.23 · 강원고성신문</span>
+    <p>2024 아트케이션 페스타 관련 보도에서 금강산슈퍼에 선보인 OFFITA의 《명파팔경》과 《명파리 인물 사전》 스티커 작업이 소개되었다.</p>
+  </div>
+  <div class="case-links">
+    <a href="https://www.goseongnews.com/default/index_view_page.php?board_data=aWR4JTNEMzE4NTIlMjZzdGFydFBhZ2UlM0Q0MCUyNmxpc3RObyUzRDIxMCUyNnRvdGFsTGlzdCUzRDI1Mg%3D%3D%7C%7C&amp;search_items=cGFydF9pZHglM0QxNDUlMjZ2aWV3X2NudCUzRCUyNmdyb3VwX2lkJTNEJTI2dmlld19wYWdlJTNEJTI2c2VhcmNoX29yZGVyJTNE%7C%7C" target="_blank" rel="noopener"><span>PRESS</span><strong>“소멸 위기 대응 문화적 해법 찾기 시도”</strong><em>↗</em></a>
+  </div>
 </section>
 
 <section class="case-section">
