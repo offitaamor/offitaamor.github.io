@@ -35,7 +35,15 @@ permalink: /about/
   <h2>Press</h2>
   <div class="timeline">
     {% for row in site.data.about.press %}
-      <div><span>PRESS</span>{% if row.url != "" %}<a href="{{ row.url }}" target="_blank" rel="noopener">{{ row.title }}</a>{% else %}<strong>{{ row.title }}</strong>{% endif %}</div>
+      <div>
+        <span>{% if row.date %}{{ row.date | date: "%Y.%m.%d" }}{% else %}PRESS{% endif %}</span>
+        <section>
+          {% if row.outlet %}<p class="eyebrow">{{ row.outlet | escape }}{% if row.category %} · {{ row.category | escape }}{% endif %}</p>{% endif %}
+          {% if row.url and row.url != "" %}<a href="{{ row.url | escape }}" target="_blank" rel="noopener"><strong>{{ row.title | escape }} ↗</strong></a>{% else %}<strong>{{ row.title | escape }}</strong>{% endif %}
+          {% if row.author %}<p><small>{{ row.author | escape }}</small></p>{% endif %}
+          {% if row.summary %}<p>{{ row.summary | escape }}</p>{% endif %}
+        </section>
+      </div>
     {% endfor %}
   </div>
 </section>
